@@ -16,16 +16,22 @@ function EditPersonForm ({ person, onChange }) {
                 labelText="Last name"
                 id="last-name"
                 inputName="lastName"
+                inputValue={person.lastName}
+                onChange={onChange}
             />
             <PersonFormItem 
                 labelText="Headline"
                 id="person-headline"
                 inputName="headline"
+                inputValue={person.headline}
+                onChange={onChange}
             />
             <PersonFormItem 
                 labelText="Summary"
                 id="person-summary"
                 inputName="summary"
+                inputValue={person.summary}
+                onChange={onChange}
             />
             <div>
                 <button className="save-button">Save</button>
