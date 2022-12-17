@@ -13,7 +13,10 @@ export default function PersonModal({ modal, toggleModal }) {
                         <div className="modal-form__header">
                             <h2 className="game-over_title">Person info</h2>
                             <div>
-                                <button className="close-modal__button">X</button>
+                                <button 
+                                    className="close-modal__button" 
+                                    onClick={toggleModal}
+                                >X</button>
                             </div>
                         </div>
                         <EditPersonForm />
