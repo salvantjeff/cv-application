@@ -3,6 +3,7 @@ import Education from '../Education/Education';
 import Footer from '../Footer/Footer';
 import Leadership from '../Leadership/Leadership';
 import Person from '../Person/Person';
+import PersonModal from '../Person/PersonModal/PersonModal';
 import Professional from '../Professional/Professional';
 import Relevant from '../Relevant/Relevant';
 import Skills from '../Skills/Skills';
@@ -19,6 +20,7 @@ function Page () {
             <Leadership />
             <Contact />
             <Footer />
+            <PersonModal />
         </div>
     );
 };
