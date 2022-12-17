@@ -1,0 +1,28 @@
+.skills {
+    background-color: rgb(250, 250, 250);
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.all-skills {
+    display: flex;
+    justify-content: flex-start;
+    gap: .5rem;
+    flex-flow: row wrap;
+    list-style-position: outside;
+}
+
+.skill-item {
+    list-style: none;
+    /* margin-bottom: .5rem; */
+    display: grid;
+    grid-template-columns: 12px 1fr;
+    gap: 2px;
+}
+
+.sphere-icon {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
