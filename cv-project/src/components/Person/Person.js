@@ -33,9 +33,10 @@ function Person () {
     };
 
     function handleOnChange(e) {
+        console.log(e.target.name);
         const newPerson = {
             ...person,
-            firstName: e.target.value
+            [e.target.name]: e.target.value
         }
         setPerson(newPerson);
     }
