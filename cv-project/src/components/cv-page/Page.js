@@ -1,3 +1,4 @@
+import Contact from '../Contact/Contact';
 import Education from '../Education/Education';
 import Leadership from '../Leadership/Leadership';
 import Person from '../Person/Person';
@@ -15,6 +16,7 @@ function Page () {
             <Professional />
             <Relevant />
             <Leadership />
+            <Contact />
         </div>
     );
 };
