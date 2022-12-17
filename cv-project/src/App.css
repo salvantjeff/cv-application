@@ -3,3 +3,8 @@
     padding: 0;
     margin: 0;
 }
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+}
