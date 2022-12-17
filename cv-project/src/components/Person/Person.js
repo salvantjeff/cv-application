@@ -32,6 +32,14 @@ function Person () {
         toggleModal();
     };
 
+    function handleOnChange(e) {
+        const newPerson = {
+            ...person,
+            firstName: e.target.value
+        }
+        setPerson(newPerson);
+    }
+
     return (
         <div className='person'>
             <div className="section-heading">
@@ -59,6 +67,8 @@ function Person () {
             <PersonModal 
                 modal={modal}
                 toggleModal={toggleModal}
+                person={person}
+                onChange={handleOnChange}
             />
         </div>
     );

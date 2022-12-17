@@ -1,4 +1,10 @@
-function PersonFormItem ({ labelText, id, inputName }) {
+function PersonFormItem ({ 
+    labelText, 
+    id, 
+    inputName, 
+    inputValue,
+    onChange 
+}) {
     return (
         <p className="form_item">
             <label htmlFor={id}>
@@ -8,6 +14,8 @@ function PersonFormItem ({ labelText, id, inputName }) {
                 type="text"
                 id={id}
                 name={inputName}
+                value={inputValue}
+                onChange={onChange}
             />
         </p>
     );

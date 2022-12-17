@@ -1,13 +1,16 @@
 import PersonFormItem from "./FormItem/PersonFormItem";
 import './EditPersonForm.css';
 
-function EditPersonForm (props) {
+function EditPersonForm ({ person, onChange }) {
+    console.log(person);
     return (
         <form className="intro_form">
             <PersonFormItem 
                 labelText="First name"
                 id="first-name"
                 inputName="firstName"
+                inputValue={person.firstName}
+                onChange={onChange}
             />
             <PersonFormItem 
                 labelText="Last name"

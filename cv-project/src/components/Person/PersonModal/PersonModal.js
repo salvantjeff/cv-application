@@ -2,7 +2,13 @@ import React from "react";
 import EditPersonForm from "../Forms/EditPersonForm";
 import "./PersonModal.css";
 
-export default function PersonModal({ modal, toggleModal }) {
+export default function PersonModal({ 
+    modal, 
+    toggleModal, 
+    person, 
+    onChange 
+}) {
+    
     return (
         <>
             {modal && (
@@ -19,7 +25,10 @@ export default function PersonModal({ modal, toggleModal }) {
                                 >X</button>
                             </div>
                         </div>
-                        <EditPersonForm />
+                        <EditPersonForm 
+                            person={person}
+                            onChange={onChange}
+                        />
                     </div>
                 </div>
             </div> 
