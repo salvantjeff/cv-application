@@ -1,8 +1,10 @@
 import PersonFormItem from "./FormItem/PersonFormItem";
 import './EditPersonForm.css';
+import TextAreaFormItem from "./FormItem/TextAreaFormItem";
 
 function EditPersonForm ({ person, onChange }) {
     console.log(person);
+    const maxLength = 100;
     return (
         <form className="intro_form">
             <PersonFormItem 
@@ -26,12 +28,14 @@ function EditPersonForm ({ person, onChange }) {
                 inputValue={person.headline}
                 onChange={onChange}
             />
-            <PersonFormItem 
+
+            <TextAreaFormItem 
                 labelText="Summary"
                 id="person-summary"
                 inputName="summary"
                 inputValue={person.summary}
                 onChange={onChange}
+                maxLength={maxLength}
             />
             <div>
                 <button className="save-button">Save</button>

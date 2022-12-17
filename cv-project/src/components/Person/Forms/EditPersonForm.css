@@ -16,7 +16,8 @@
     cursor: pointer;
 }
 
-.form_item>input {
+.form_item>input,
+.form_item>textarea {
     font: inherit;
     border: 1px solid #777;
     display: block;
@@ -25,4 +26,9 @@
     background-color: rgb(243, 243, 243);
     outline-color: #222;
     width: 100%;
+}
+
+.form_item>textarea {
+    height: 150px;
+    font-size: .85rem;
 }

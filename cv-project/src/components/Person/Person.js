@@ -10,9 +10,7 @@ function Person () {
         lastName: 'Salvant',
         headline: 'Student',
         img: profileImg,
-        summary: `Virginia Commonwealth university graduate. Currently, studying software 
-            engineering to contribute in the tech industry.
-            ldkjflakfjasdlfkjasdlfkjsdlfkasdjflksdjflasdkjfldkfjaslfkjdlfkjasdflkj`,
+        summary: `Virginia Commonwealth university graduate. Currently, studying software engineering to contribute in the tech industry. ldkjflakfjasdlfkjasdlfkjsdlfkasdjflksdjflasdkjfldkfjaslfkjdlfkjasdflkj`,
     });
     const [modal, setModal] = useState(false);
 
