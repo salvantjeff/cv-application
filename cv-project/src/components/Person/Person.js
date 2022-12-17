@@ -19,13 +19,22 @@ function Person () {
     function toggleModal() {
         setModal(!modal);
     };
+
+    function handleEditClicked() {
+        toggleModal();
+    };
     
     return (
         <div className='person'>
             <div className="section-heading">
                 <h1 className="person-name">{person.firstName} {person.lastName}</h1>
                 <div>
-                    <img className="edit-section" src={editPencil} alt="edit section"/>
+                    <img 
+                        className="edit-section" 
+                        src={editPencil} 
+                        alt="edit section"
+                        onClick={handleEditClicked}
+                    />
                 </div>
             </div>
             <div className="person-details">
