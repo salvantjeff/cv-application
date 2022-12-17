@@ -1,4 +1,5 @@
 import Education from '../Education/Education';
+import Leadership from '../Leadership/Leadership';
 import Person from '../Person/Person';
 import Professional from '../Professional/Professional';
 import Relevant from '../Relevant/Relevant';
@@ -13,6 +14,7 @@ function Page () {
             <Skills />
             <Professional />
             <Relevant />
+            <Leadership />
         </div>
     );
 };
