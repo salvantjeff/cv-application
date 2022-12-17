@@ -45,3 +45,13 @@ body.active-modal {
     background-color: #bdbdbd;
     padding: .5rem 1rem;
 }
+
+.modal-form__header {
+    display: grid;
+    grid-template-columns: 1fr 30px;
+}
+
+.close-modal__button {
+    height: 100%;
+    width: 100%;
+}

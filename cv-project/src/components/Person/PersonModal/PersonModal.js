@@ -10,7 +10,12 @@ export default function PersonModal({ modal, toggleModal }) {
                 <div className="overlay" onClick={toggleModal}></div>
                 <div className="modal-content">
                     <div className="modal-content__wrapper">
-                        <h2 className="game-over_title">Person info</h2>
+                        <div className="modal-form__header">
+                            <h2 className="game-over_title">Person info</h2>
+                            <div>
+                                <button className="close-modal__button">X</button>
+                            </div>
+                        </div>
                         <EditPersonForm />
                     </div>
                 </div>
