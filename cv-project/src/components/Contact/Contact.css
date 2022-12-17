@@ -1,0 +1,48 @@
+.contact {
+    background-color: rgb(250, 250, 250);
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    padding-right: 0;
+}
+
+.all-contacts {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-card {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: .5rem;
+}
+
+.contact-icon-box {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.contact-card__details-title {
+    font-weight: 600;
+}
+
+.contact-linkedin-link {
+    text-decoration: none;
+}
+
+.contact-edit-section {
+    padding-right: 1rem;
+}
+
+.contact-card__details {
+    border-bottom: 1px solid rgb(230, 230, 230);
+    padding-bottom: .5rem;
+}
