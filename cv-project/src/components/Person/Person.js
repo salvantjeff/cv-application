@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Person.css';
 import profileImg from '../../img/messi.jpeg';
 import editPencil from '../../img/pencil.png';
@@ -16,6 +16,14 @@ function Person () {
     });
     const [modal, setModal] = useState(false);
 
+    useEffect(() => {
+        if (modal) {
+            document.body.classList.add('active-modal');
+        } else {
+            document.body.classList.remove('active-modal');
+        }
+    }, [modal]);
+    
     function toggleModal() {
         setModal(!modal);
     };
@@ -23,7 +31,7 @@ function Person () {
     function handleEditClicked() {
         toggleModal();
     };
-    
+
     return (
         <div className='person'>
             <div className="section-heading">
@@ -50,6 +58,7 @@ function Person () {
             </div>
             <PersonModal 
                 modal={modal}
+                toggleModal={toggleModal}
             />
         </div>
     );
