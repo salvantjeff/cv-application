@@ -5,13 +5,17 @@ import editPencil from '../../img/pencil.png';
 import PersonModal from './PersonModal/PersonModal';
 
 function Person () {
-    const [person, setPerson] = useState({
+    const initPersonInfo = {
         firstName: 'Jeff',
         lastName: 'Salvant',
         headline: 'Student',
         img: profileImg,
         summary: `Virginia Commonwealth university graduate. Currently, studying software engineering to contribute in the tech industry. ldkjflakfjasdlfkjasdlfkjsdlfkasdjflksdjflasdkjfldkfjaslfkjdlfkjasdflkj`,
-    });
+    };
+
+    const [personInfo, setPersonInfo] = useState(initPersonInfo);
+
+    const [person, setPerson] = useState(initPersonInfo);
     const [modal, setModal] = useState(false);
 
     useEffect(() => {
@@ -37,12 +41,12 @@ function Person () {
             [e.target.name]: e.target.value
         }
         setPerson(newPerson);
-    }
+    };
 
     return (
         <div className='person'>
             <div className="section-heading">
-                <h1 className="person-name">{person.firstName} {person.lastName}</h1>
+                <h1 className="person-name">{personInfo.firstName} {personInfo.lastName}</h1>
                 <div>
                     <img 
                         className="edit-section" 
@@ -54,13 +58,13 @@ function Person () {
             </div>
             <div className="person-details">
                 <div className='person-info'>
-                    <p className="person-position">{person.headline}</p>
+                    <p className="person-position">{personInfo.headline}</p>
                     <p className="person-summary">
-                        {person.summary}
+                        {personInfo.summary}
                     </p>
                 </div>
                 <div className="person-image-box">
-                    <img className="person-image" src={person.img} alt="profile pic"/>
+                    <img className="person-image" src={personInfo.img} alt="profile pic"/>
                 </div>
             </div>
             <PersonModal 
