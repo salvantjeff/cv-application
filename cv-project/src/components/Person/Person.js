@@ -5,7 +5,8 @@ import editPencil from '../../img/pencil.png';
 
 function Person () {
     const [person, setPerson] = useState({
-        name: 'Jeff Salvant',
+        firstName: 'Jeff',
+        lastName: 'Salvant',
         position: 'Student',
         img: profileImg,
         summary: `Virginia Commonwealth university graduate. Currently, studying software 
@@ -16,7 +17,7 @@ function Person () {
     return (
         <div className='person'>
             <div className="section-heading">
-                <h1 className="person-name">{person.name}</h1>
+                <h1 className="person-name">{person.firstName} {person.lastName}</h1>
                 <div>
                     <img className="edit-section" src={editPencil} alt="edit section"/>
                 </div>
