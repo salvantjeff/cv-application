@@ -2,16 +2,20 @@ import React from "react";
 import EditPersonForm from "../Forms/EditPersonForm";
 import "./PersonModal.css";
 
-export default function PersonModal(props) {
+export default function PersonModal({ modal }) {
     return (
-        <div className="modal">
-            <div className="overlay"></div>
-            <div className="modal-content">
-                <div className="modal-content__wrapper">
-                    <h2 className="game-over_title">Person info</h2>
-                    <EditPersonForm />
+        <>
+            {modal && (
+            <div className="modal">
+                <div className="overlay"></div>
+                <div className="modal-content">
+                    <div className="modal-content__wrapper">
+                        <h2 className="game-over_title">Person info</h2>
+                        <EditPersonForm />
+                    </div>
                 </div>
-            </div>
-        </div> 
+            </div> 
+            )}
+        </>
     );
 };
