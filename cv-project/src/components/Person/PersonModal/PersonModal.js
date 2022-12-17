@@ -2,12 +2,12 @@ import React from "react";
 import EditPersonForm from "../Forms/EditPersonForm";
 import "./PersonModal.css";
 
-export default function PersonModal({ modal }) {
+export default function PersonModal({ modal, toggleModal }) {
     return (
         <>
             {modal && (
             <div className="modal">
-                <div className="overlay"></div>
+                <div className="overlay" onClick={toggleModal}></div>
                 <div className="modal-content">
                     <div className="modal-content__wrapper">
                         <h2 className="game-over_title">Person info</h2>
