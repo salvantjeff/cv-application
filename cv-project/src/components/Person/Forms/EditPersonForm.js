@@ -20,12 +20,12 @@ function EditPersonForm ({ person, onChange }) {
             <PersonFormItem 
                 labelText="Headline"
                 id="person-headline"
-                inputName="personHeadline"
+                inputName="headline"
             />
             <PersonFormItem 
                 labelText="Summary"
                 id="person-summary"
-                inputName="personSummary"
+                inputName="summary"
             />
             <div>
                 <button className="save-button">Save</button>

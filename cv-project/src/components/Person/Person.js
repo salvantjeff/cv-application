@@ -8,7 +8,7 @@ function Person () {
     const [person, setPerson] = useState({
         firstName: 'Jeff',
         lastName: 'Salvant',
-        position: 'Student',
+        headline: 'Student',
         img: profileImg,
         summary: `Virginia Commonwealth university graduate. Currently, studying software 
             engineering to contribute in the tech industry.
@@ -56,7 +56,7 @@ function Person () {
             </div>
             <div className="person-details">
                 <div className='person-info'>
-                    <p className="person-position">{person.position}</p>
+                    <p className="person-position">{person.headline}</p>
                     <p className="person-summary">
                         {person.summary}
                     </p>
