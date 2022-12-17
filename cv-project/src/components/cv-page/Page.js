@@ -1,5 +1,6 @@
 import Education from '../Education/Education';
 import Person from '../Person/Person';
+import Professional from '../Professional/Professional';
 import Skills from '../Skills/Skills';
 import './Page.css';
 
@@ -9,6 +10,7 @@ function Page () {
             <Person />
             <Education />
             <Skills />
+            <Professional />
         </div>
     );
 };
