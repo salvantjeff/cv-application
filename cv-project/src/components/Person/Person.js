@@ -16,6 +16,10 @@ function Person () {
     });
     const [modal, setModal] = useState(false);
 
+    function toggleModal() {
+        setModal(!modal);
+    };
+    
     return (
         <div className='person'>
             <div className="section-heading">
