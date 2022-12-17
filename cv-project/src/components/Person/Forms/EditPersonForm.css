@@ -1,0 +1,28 @@
+.intro_form {
+    display: grid;
+    gap: 1rem;
+}
+
+.save-button {
+    font: inherit;
+    cursor: pointer;
+    padding: .5rem;
+    display: block;
+    background-color: rgb(19, 196, 255);
+    color: white;
+    width: 100%;
+    border: none;
+    border-radius: .8rem;
+    cursor: pointer;
+}
+
+.form_item>input {
+    font: inherit;
+    border: 1px solid #777;
+    display: block;
+    padding: .5rem;
+    border-radius: .5rem;
+    background-color: rgb(243, 243, 243);
+    outline-color: #222;
+    width: 100%;
+}
