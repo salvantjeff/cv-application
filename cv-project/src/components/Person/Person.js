@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Person.css';
 import profileImg from '../../img/messi.jpeg';
 import editPencil from '../../img/pencil.png';
+import PersonModal from './PersonModal/PersonModal';
 
 function Person () {
     const [person, setPerson] = useState({
@@ -13,6 +14,7 @@ function Person () {
             engineering to contribute in the tech industry.
             ldkjflakfjasdlfkjasdlfkjsdlfkasdjflksdjflasdkjfldkfjaslfkjdlfkjasdflkj`,
     });
+    const [modal, setModal] = useState(false);
 
     return (
         <div className='person'>
@@ -33,6 +35,9 @@ function Person () {
                     <img className="person-image" src={person.img} alt="profile pic"/>
                 </div>
             </div>
+            <PersonModal 
+                modal={modal}
+            />
         </div>
     );
 };
