@@ -1,0 +1,47 @@
+.education {
+    background-color: rgb(250, 250, 250);
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    padding-right: 0;
+}
+
+/* dsafd */
+.education-all-items {
+    display: grid;
+    gap: 1rem;
+}
+
+.education-item {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: .5rem;
+}
+
+.education-details {
+    padding-bottom: .5rem;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.university {
+    font-weight: 600;
+}
+
+.major,
+.duration,
+.gpa {
+    font-size: .85rem;
+    color: #707070;
+}
+
+.education-icon-box {
+    height: 50px;
+    width: 100%;
+}
+
+.education-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
