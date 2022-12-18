@@ -1,29 +1,88 @@
+import React, { useEffect, useState } from 'react';
 import './Person.css';
 import profileImg from '../../img/messi.jpeg';
 import editPencil from '../../img/pencil.png';
+import PersonModal from './PersonModal/PersonModal';
 
 function Person () {
+    const initPersonInfo = {
+        firstName: 'Jeff',
+        lastName: 'Salvant',
+        headline: 'Student',
+        img: profileImg,
+        summary: `Virginia Commonwealth university graduate. Currently, studying software engineering to contribute in the tech industry. ldkjflakfjasdlfkjasdlfkjsdlfkasdjflksdjflasdkjfldkfjaslfkjdlfkjasdflkj`,
+    };
+
+    const [personInfo, setPersonInfo] = useState(initPersonInfo);
+
+    const [person, setPerson] = useState(initPersonInfo);
+    const [modal, setModal] = useState(false);
+
+    useEffect(() => {
+        if (modal) {
+            document.body.classList.add('active-modal');
+        } else {
+            document.body.classList.remove('active-modal');
+        }
+    }, [modal]);
+    
+    function toggleModal() {
+        setModal(!modal);
+    };
+
+    function handleEditClicked() {
+        toggleModal();
+    };
+
+    function handleOnChange(e) {
+        console.log(e.target.name);
+        const newPerson = {
+            ...person,
+            [e.target.name]: e.target.value
+        }
+        setPerson(newPerson);
+    };
+
+    function handleSubmitForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newPerson = {...person};
+        setPersonInfo(newPerson);
+        console.log('UPDATE COMPLETE');
+        toggleModal();
+    }
+
     return (
         <div className='person'>
             <div className="section-heading">
-                <h1 className="person-name">Jeff Salvant</h1>
+                <h1 className="person-name">{personInfo.firstName} {personInfo.lastName}</h1>
                 <div>
-                    <img className="edit-section" src={editPencil} alt="edit section"/>
+                    <img 
+                        className="edit-section" 
+                        src={editPencil} 
+                        alt="edit section"
+                        onClick={handleEditClicked}
+                    />
                 </div>
             </div>
             <div className="person-details">
                 <div className='person-info'>
-                    <p className="person-position">Student</p>
+                    <p className="person-position">{personInfo.headline}</p>
                     <p className="person-summary">
-                        Virginia Commonwealth university graduate. Currently, studying software 
-                        engineering to contribute in the tech industry.
-                        ldkjflakfjasdlfkjasdlfkjsdlfkasdjflksdjflasdkjfldkfjaslfkjdlfkjasdflkj
+                        {personInfo.summary}
                     </p>
                 </div>
                 <div className="person-image-box">
-                    <img className="person-image" src={profileImg} alt="profile pic"/>
+                    <img className="person-image" src={personInfo.img} alt="profile pic"/>
                 </div>
             </div>
+            <PersonModal 
+                modal={modal}
+                toggleModal={toggleModal}
+                person={person}
+                onChange={handleOnChange}
+                onSubmit={handleSubmitForm}
+            />
         </div>
     );
 };
