@@ -2,8 +2,20 @@ import './Education.css';
 import vcuLogo from '../../img/vcu-logo.jpeg';
 import editPencil from '../../img/pencil.png';
 import addSymbol from '../../img/add-1.png';
+import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 function Education () {
+    let initEducation = {
+        university: 'Virginia Commonwealth University',
+        major: 'Mechanical Engineering',
+        startYear: '2018',
+        endYear: '2022',
+        gpa: 3.5,
+        id: uuidv4(),
+    };
+    const [education, setEducation] = useState(initEducation);
+    const [educationList, setEducationList] = useState([initEducation])
     return (
         <div className='education'>
             <div className="heading-block">
@@ -16,38 +28,25 @@ function Education () {
                 </div>
             </div>
             <div className='education-all-items'>
-                <div className='education-item'>
-                    <div className="education-icon-box">
-                        <img className="education-icon" src={vcuLogo} alt="education icon"/>
-                    </div>
-                    <div className='education-details'>
-                        <div className="section-card">
-                            <p className='university'>Virginia Commonwealth University</p>
-                            <div className="edit-section-box">
-                                <img className="edit-section" src={editPencil} alt="edit section"/>
-                            </div>
+                {educationList.map(currEd => {
+                    return (
+                    <div className='education-item' key={currEd.id}>
+                        <div className="education-icon-box">
+                            <img className="education-icon" src={vcuLogo} alt="education icon"/>
                         </div>
-                        <p className='major'>Mechanical Engineering</p>
-                        <p className='duration'>2018 - 2022</p>
-                        <p className='gpa'>GPA: 3.5</p>
-                    </div>
-                </div>
-                <div className='education-item'>
-                    <div className="education-icon-box">
-                        <img className="education-icon" src={vcuLogo} alt="education icon"/>
-                    </div>
-                    <div className='education-details'>
-                        <div className="section-card">
-                            <p className='university'>Virginia Commonwealth University</p>
-                            <div className="edit-section-box">
-                                <img className="edit-section" src={editPencil} alt="edit section"/>
+                        <div className='education-details'>
+                            <div className="section-card">
+                                <p className='university'>{currEd.university}</p>
+                                <div className="edit-section-box">
+                                    <img className="edit-section" src={editPencil} alt="edit section"/>
+                                </div>
                             </div>
+                            <p className='major'>{currEd.major}</p>
+                            <p className='duration'>{currEd.startYear} - {currEd.endYear}</p>
+                            <p className='gpa'>GPA: {currEd.gpa}</p>
                         </div>
-                        <p className='major'>Mechanical Engineering</p>
-                        <p className='duration'>2018 - 2022</p>
-                        <p className='gpa'>GPA: 3.5</p>
-                    </div>
-                </div>
+                    </div>)
+                })}
             </div>
         </div>
     );
