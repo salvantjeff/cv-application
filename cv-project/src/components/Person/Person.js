@@ -43,6 +43,15 @@ function Person () {
         setPerson(newPerson);
     };
 
+    function handleSubmitForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newPerson = {...person};
+        setPersonInfo(newPerson);
+        console.log('UPDATE COMPLETE');
+        toggleModal();
+    }
+
     return (
         <div className='person'>
             <div className="section-heading">
@@ -72,6 +81,7 @@ function Person () {
                 toggleModal={toggleModal}
                 person={person}
                 onChange={handleOnChange}
+                onSubmit={handleSubmitForm}
             />
         </div>
     );

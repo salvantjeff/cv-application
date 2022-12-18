@@ -2,11 +2,11 @@ import PersonFormItem from "./FormItem/PersonFormItem";
 import './EditPersonForm.css';
 import TextAreaFormItem from "./FormItem/TextAreaFormItem";
 
-function EditPersonForm ({ person, onChange }) {
+function EditPersonForm ({ person, onChange, onSubmit }) {
     console.log(person);
     const maxLength = 100;
     return (
-        <form className="intro_form">
+        <form onSubmit={onSubmit} className="intro_form">
             <PersonFormItem 
                 labelText="First name"
                 id="first-name"

@@ -6,7 +6,8 @@ export default function PersonModal({
     modal, 
     toggleModal, 
     person, 
-    onChange 
+    onChange,
+    onSubmit 
 }) {
     
     return (
@@ -28,6 +29,7 @@ export default function PersonModal({
                         <EditPersonForm 
                             person={person}
                             onChange={onChange}
+                            onSubmit={onSubmit}
                         />
                     </div>
                 </div>
