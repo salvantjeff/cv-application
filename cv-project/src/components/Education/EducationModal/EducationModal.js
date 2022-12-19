@@ -1,4 +1,5 @@
 import React from "react";
+import EditEducationForm from "../Forms/EditEducationForm";
 
 export default function EducationModal({ 
     modal,
@@ -13,7 +14,7 @@ export default function EducationModal({
                 <div className="modal-content">
                     <div className="modal-content__wrapper">
                         <div className="modal-form__header">
-                            <h2 className="game-over_title">Person info</h2>
+                            <h2 className="game-over_title">Education info</h2>
                             <div>
                                 <button 
                                     className="close-modal__button" 
@@ -21,7 +22,9 @@ export default function EducationModal({
                                 >X</button>
                             </div>
                         </div>
-
+                        <EditEducationForm 
+                        
+                        />
                     </div>
                 </div>
             </div> 
