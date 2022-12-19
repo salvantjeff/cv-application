@@ -1,14 +1,15 @@
 import React from "react";
 
 export default function EducationModal({ 
-    modal, 
+    modal,
+    toggleModal 
 }) {
     
     return (
         <>
             {modal && (
             <div className="modal">
-                <div className="overlay" ></div>
+                <div className="overlay" onClick={toggleModal}></div>
                 <div className="modal-content">
                     <div className="modal-content__wrapper">
                         <div className="modal-form__header">
@@ -16,7 +17,7 @@ export default function EducationModal({
                             <div>
                                 <button 
                                     className="close-modal__button" 
-                                   
+                                    onClick={toggleModal}
                                 >X</button>
                             </div>
                         </div>

@@ -71,6 +71,7 @@ function Education () {
             </div>
             <EducationModal 
                 modal={modal}
+                toggleModal={toggleModal}
             />
         </div>
     );
