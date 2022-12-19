@@ -26,7 +26,7 @@ function EditEducationForm ({ education, onChange }) {
                 id="start-date"
                 inputName="startDate"
                 type="month"
-                inputValue={education.startYear}
+                inputValue={education.startDate}
                 onChange={onChange}
             />
             <EducationFormItem 
@@ -34,7 +34,7 @@ function EditEducationForm ({ education, onChange }) {
                 id="end-date"
                 inputName="endDate"
                 type="month"
-                inputValue={education.endYear}
+                inputValue={education.endDate}
                 onChange={onChange}
             />
             <EducationFormItem 

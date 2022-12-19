@@ -10,8 +10,8 @@ function Education () {
     let initEducation = {
         university: 'Virginia Commonwealth University',
         major: 'Mechanical Engineering',
-        startYear: '2018-08',
-        endYear: '2022-05',
+        startDate: '2018-08',
+        endDate: '2022-05',
         gpa: 3.5,
         id: uuidv4(),
     };
@@ -34,8 +34,17 @@ function Education () {
 
     function handleOnChange(e) {
         console.log(e.target.name);
-        
+        const newEducation = {
+            ...education,
+            [e.target.name]: [e.target.value]
+        };
+        setEducation(newEducation);
     };
+
+    useEffect(() => {
+        setEducation(initEducation)
+    }, []);
+    
     return (
         <div className='education'>
             <div className="heading-block">
@@ -67,7 +76,7 @@ function Education () {
                                 </div>
                             </div>
                             <p className='major'>{currEd.major}</p>
-                            <p className='duration'>{currEd.startYear} - {currEd.endYear}</p>
+                            <p className='duration'>{currEd.startDate} - {currEd.endDate}</p>
                             <p className='gpa'>GPA: {currEd.gpa}</p>
                         </div>
                     </div>)
