@@ -3,7 +3,9 @@ import EditEducationForm from "../Forms/EditEducationForm";
 
 export default function EducationModal({ 
     modal,
-    toggleModal 
+    toggleModal,
+    education,
+    onChange
 }) {
     
     return (
@@ -23,7 +25,8 @@ export default function EducationModal({
                             </div>
                         </div>
                         <EditEducationForm 
-                        
+                            education={education}
+                            onChange={onChange}
                         />
                     </div>
                 </div>

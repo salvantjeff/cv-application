@@ -16,6 +16,7 @@ function EducationFormItem ({
                 id={id}
                 name={inputName}
                 value={inputValue}
+                onChange={onChange}
             />
         </p>
     );

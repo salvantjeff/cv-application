@@ -10,8 +10,8 @@ function Education () {
     let initEducation = {
         university: 'Virginia Commonwealth University',
         major: 'Mechanical Engineering',
-        startYear: '2018',
-        endYear: '2022',
+        startYear: '2018-08',
+        endYear: '2022-05',
         gpa: 3.5,
         id: uuidv4(),
     };
@@ -32,6 +32,10 @@ function Education () {
         setModal(!modal);
     };
 
+    function handleOnChange(e) {
+        console.log(e.target.name);
+        
+    };
     return (
         <div className='education'>
             <div className="heading-block">
@@ -72,6 +76,8 @@ function Education () {
             <EducationModal 
                 modal={modal}
                 toggleModal={toggleModal}
+                education={education}
+                onChange={handleOnChange}
             />
         </div>
     );

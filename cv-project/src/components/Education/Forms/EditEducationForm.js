@@ -1,7 +1,7 @@
 import EducationFormItem from "./FormItem/EducationFormItem";
 import './EditEducationForm.css';
 
-function EditEducationForm ({ education }) {
+function EditEducationForm ({ education, onChange }) {
     console.log(education);
     return (
         <form className="intro_form">
@@ -10,30 +10,40 @@ function EditEducationForm ({ education }) {
                 id="university"
                 inputName="university"
                 type="text"
+                inputValue={education.university}
+                onChange={onChange}
             />
             <EducationFormItem 
                 labelText="Major"
                 id="major"
                 inputName="major"
                 type="text"
+                inputValue={education.major}
+                onChange={onChange}
             />
             <EducationFormItem 
                 labelText="Start date"
                 id="start-date"
                 inputName="startDate"
                 type="month"
+                inputValue={education.startYear}
+                onChange={onChange}
             />
             <EducationFormItem 
                 labelText="End date"
                 id="end-date"
                 inputName="endDate"
                 type="month"
+                inputValue={education.endYear}
+                onChange={onChange}
             />
             <EducationFormItem 
                 labelText="GPA"
                 id="gpa"
                 inputName="gpa"
                 type="number"
+                inputValue={education.gpa}
+                onChange={onChange}
             />
             <div>
                 <button className="save-button">Save</button>
