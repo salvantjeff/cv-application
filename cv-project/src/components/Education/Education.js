@@ -15,11 +15,19 @@ function Education () {
         gpa: 3.5,
         id: uuidv4(),
     };
-    const [education, setEducation] = useState(initEducation);
-    const [educationList, setEducationList] = useState([initEducation])
+    let initEducation2 = {
+        university: 'NYU',
+        major: 'Computer Science',
+        startDate: '2022-08',
+        endDate: '2024-05',
+        gpa: 3.0,
+        id: uuidv4(),
+    };
+    const [education, setEducation] = useState([initEducation]);
+    const [educationList, setEducationList] = useState([initEducation,  initEducation2]);
     
     const [modal, setModal] = useState(false);
-
+    const [index, setIndex] = useState(0);
     useEffect(() => {
         if (modal) {
             document.body.classList.add('active-modal');
@@ -32,17 +40,43 @@ function Education () {
         setModal(!modal);
     };
 
+    function handleEditClicked(e) {
+        const newIndex = parseInt(e.target.dataset.index);
+        console.log(newIndex);
+        setIndex(newIndex);
+        toggleModal();
+    }
+
     function handleOnChange(e) {
-        console.log(e.target.name);
-        const newEducation = {
-            ...education,
-            [e.target.name]: [e.target.value]
-        };
+        const newEducation = education.map((currEd, i) => {
+            if (i === index) {
+                return {
+                    ...currEd,
+                    [e.target.name]: [e.target.value]
+                };
+            } else {
+                return currEd;
+            }
+        });
+
         setEducation(newEducation);
     };
 
+    function handleSubmitForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newEducation = {...education};
+        // setEducationList([
+        //     ...educationList,
+        //     newEducation,
+        // ]);
+        console.log('UPDATE COMPLETE');
+        toggleModal();
+    };
+
+
     useEffect(() => {
-        setEducation(initEducation)
+        setEducation([initEducation, initEducation2])
     }, []);
     
     return (
@@ -57,7 +91,7 @@ function Education () {
                 </div>
             </div>
             <div className='education-all-items'>
-                {educationList.map(currEd => {
+                {educationList.map((currEd, index) => {
                     return (
                     <div className='education-item' key={currEd.id}>
                         <div className="education-icon-box">
@@ -71,7 +105,8 @@ function Education () {
                                         className="edit-section" 
                                         src={editPencil} 
                                         alt="edit section"
-                                        onClick={toggleModal}
+                                        onClick={handleEditClicked}
+                                        data-index={index}
                                     />
                                 </div>
                             </div>
@@ -86,6 +121,7 @@ function Education () {
                 modal={modal}
                 toggleModal={toggleModal}
                 education={education}
+                index={index}
                 onChange={handleOnChange}
             />
         </div>

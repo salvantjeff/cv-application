@@ -5,7 +5,8 @@ export default function EducationModal({
     modal,
     toggleModal,
     education,
-    onChange
+    onChange,
+    index
 }) {
     
     return (
@@ -27,6 +28,7 @@ export default function EducationModal({
                         <EditEducationForm 
                             education={education}
                             onChange={onChange}
+                            index={index}
                         />
                     </div>
                 </div>

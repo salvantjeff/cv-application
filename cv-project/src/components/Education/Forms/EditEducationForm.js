@@ -1,7 +1,8 @@
 import EducationFormItem from "./FormItem/EducationFormItem";
 import './EditEducationForm.css';
 
-function EditEducationForm ({ education, onChange }) {
+function EditEducationForm ({ education, onChange, index }) {
+    const ed = education[index];
     console.log(education);
     return (
         <form className="intro_form">
@@ -10,7 +11,7 @@ function EditEducationForm ({ education, onChange }) {
                 id="university"
                 inputName="university"
                 type="text"
-                inputValue={education.university}
+                inputValue={ed.university}
                 onChange={onChange}
             />
             <EducationFormItem 
@@ -18,7 +19,7 @@ function EditEducationForm ({ education, onChange }) {
                 id="major"
                 inputName="major"
                 type="text"
-                inputValue={education.major}
+                inputValue={ed.major}
                 onChange={onChange}
             />
             <EducationFormItem 
@@ -26,7 +27,7 @@ function EditEducationForm ({ education, onChange }) {
                 id="start-date"
                 inputName="startDate"
                 type="month"
-                inputValue={education.startDate}
+                inputValue={ed.startDate}
                 onChange={onChange}
             />
             <EducationFormItem 
@@ -34,7 +35,7 @@ function EditEducationForm ({ education, onChange }) {
                 id="end-date"
                 inputName="endDate"
                 type="month"
-                inputValue={education.endDate}
+                inputValue={ed.endDate}
                 onChange={onChange}
             />
             <EducationFormItem 
@@ -42,7 +43,7 @@ function EditEducationForm ({ education, onChange }) {
                 id="gpa"
                 inputName="gpa"
                 type="number"
-                inputValue={education.gpa}
+                inputValue={ed.gpa}
                 onChange={onChange}
             />
             <div>
