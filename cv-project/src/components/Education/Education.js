@@ -2,8 +2,9 @@ import './Education.css';
 import vcuLogo from '../../img/vcu-logo.jpeg';
 import editPencil from '../../img/pencil.png';
 import addSymbol from '../../img/add-1.png';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import EducationModal from './EducationModal/EducationModal';
 
 function Education () {
     let initEducation = {
@@ -16,6 +17,21 @@ function Education () {
     };
     const [education, setEducation] = useState(initEducation);
     const [educationList, setEducationList] = useState([initEducation])
+    
+    const [modal, setModal] = useState(false);
+
+    useEffect(() => {
+        if (modal) {
+            document.body.classList.add('active-modal');
+        } else {
+            document.body.classList.remove('active-modal');
+        }
+    }, [modal]);
+    
+    function toggleModal() {
+        setModal(!modal);
+    };
+
     return (
         <div className='education'>
             <div className="heading-block">
@@ -38,7 +54,12 @@ function Education () {
                             <div className="section-card">
                                 <p className='university'>{currEd.university}</p>
                                 <div className="edit-section-box">
-                                    <img className="edit-section" src={editPencil} alt="edit section"/>
+                                    <img 
+                                        className="edit-section" 
+                                        src={editPencil} 
+                                        alt="edit section"
+                                        onClick={toggleModal}
+                                    />
                                 </div>
                             </div>
                             <p className='major'>{currEd.major}</p>
@@ -48,6 +69,9 @@ function Education () {
                     </div>)
                 })}
             </div>
+            <EducationModal 
+                modal={modal}
+            />
         </div>
     );
 };
