@@ -4,10 +4,10 @@ import RelevantTextAreaItem from "./FormItem/RelevantTextAreaItem";
 function EditRelevantForm ({ relevantExps, onChange, index, onSubmit }) {
     const currExp = relevantExps[index];
     console.log(relevantExps);
-    const maxLength = 100;
+    const maxLength = 200;
     return (
         <form 
-            // onSubmit={onSubmit} 
+            onSubmit={onSubmit} 
             className="intro_form"
         >
             <RelevantFormItem 

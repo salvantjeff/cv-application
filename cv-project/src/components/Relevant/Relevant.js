@@ -61,6 +61,15 @@ function Relevant () {
         setRelevantExps(newRelevantExps);
     };
 
+    function handleSubmitForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newRelevantExpsInfo = [...relevantExps];
+        setRelevantExpsInfo(newRelevantExpsInfo);
+        console.log('UPDATE COMPLETE');
+        toggleModal();
+    };
+
     return (
         <div className="relevant">
             <div className="heading-block rel">
@@ -102,6 +111,7 @@ function Relevant () {
                 onChange={handleOnChange}
                 relevantExps={relevantExps}
                 index={index}
+                onSubmit={handleSubmitForm}
             />
         </div>
     );

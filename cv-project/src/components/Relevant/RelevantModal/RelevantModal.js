@@ -27,16 +27,11 @@ export default function RelevantModal({
                                 >X</button>
                             </div>
                         </div>
-                        {/* <EditProfessionalForm 
-                            professionals={professionals}
-                            index={index}
-                            onChange={onChange}
-                            onSubmit={onSubmit}
-                        /> */}
                         <EditRelevantForm 
                             onChange={onChange}
                             relevantExps={relevantExps}
                             index={index}
+                            onSubmit={onSubmit}
                         />
                     </div>
                 </div>
