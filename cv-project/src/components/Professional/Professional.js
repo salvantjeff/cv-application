@@ -64,20 +64,20 @@ function Professional () {
     }
 
     function handleOnChange(e) {
-        // const newEducation = education.map((currEd, i) => {
-        //     if (i === index) {
-        //         return {
-        //             ...currEd,
-        //             [e.target.name]: [e.target.value]
-        //         };
-        //     } else {
-        //         return currEd;
-        //     }
-        // });
-
-        // setEducation(newEducation);
+        const newProfessionals = professionals.map((currProf, i) => {
+            if (i === index) {
+                return {
+                    ...currProf,
+                    [e.target.name]: [e.target.value]
+                }
+            } else {
+                return currProf;
+            }
+        });
+        setProfessionals(newProfessionals);
     };
-    console.log(professionalsInfo);
+
+    console.log(professionals);
     return(
         <div className='professional'>
             <div className="heading-block">
