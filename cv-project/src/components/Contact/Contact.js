@@ -36,7 +36,11 @@ function Contact () {
     }
 
     function handleOnChange(e) {
-        
+        const newContacts = {
+            ...contacts,
+            [e.target.name]: [e.target.value]
+        };
+        setContacts(newContacts);
     };
 
     return (
