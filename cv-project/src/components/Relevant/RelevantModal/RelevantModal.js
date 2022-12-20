@@ -5,7 +5,7 @@ import './RelevantModal.css';
 export default function RelevantModal({ 
     modal,
     toggleModal,
-    professionals,
+    relevantExps,
     onChange,
     index,
     onSubmit
@@ -34,7 +34,9 @@ export default function RelevantModal({
                             onSubmit={onSubmit}
                         /> */}
                         <EditRelevantForm 
-                        
+                            onChange={onChange}
+                            relevantExps={relevantExps}
+                            index={index}
                         />
                     </div>
                 </div>

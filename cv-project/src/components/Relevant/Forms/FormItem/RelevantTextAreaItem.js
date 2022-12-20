@@ -16,7 +16,7 @@ function RelevantTextAreaItem ({
                 id={id}
                 name={inputName}
                 value={inputValue}
-                // onChange={onChange}
+                onChange={onChange}
             ></textarea>
         </p>
     );

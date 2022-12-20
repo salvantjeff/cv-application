@@ -2,8 +2,8 @@ import RelevantFormItem from "./FormItem/RelevantFormItem";
 import RelevantTextAreaItem from "./FormItem/RelevantTextAreaItem";
 
 function EditRelevantForm ({ relevantExps, onChange, index, onSubmit }) {
-    // const currExp = relevantExps[index];
-    // console.log(relevantExps);
+    const currExp = relevantExps[index];
+    console.log(relevantExps);
     const maxLength = 100;
     return (
         <form 
@@ -15,8 +15,8 @@ function EditRelevantForm ({ relevantExps, onChange, index, onSubmit }) {
                 id="project-name"
                 inputName="project"
                 type="text"
-                // inputValue={currProf.position}
-                // onChange={onChange}
+                inputValue={currExp.project}
+                onChange={onChange}
             />
     
             <RelevantFormItem 
@@ -24,16 +24,16 @@ function EditRelevantForm ({ relevantExps, onChange, index, onSubmit }) {
                 id="project-start-date"
                 inputName="startDate"
                 type="month"
-                // inputValue={currProf.startDate}
-                // onChange={onChange}
+                inputValue={currExp.startDate}
+                onChange={onChange}
             />
             <RelevantFormItem 
                 labelText="End date"
                 id="project-end-date"
                 inputName="endDate"
                 type="month"
-                // inputValue={currProf.endDate}
-                // onChange={onChange}
+                inputValue={currExp.endDate}
+                onChange={onChange}
             />
             <RelevantTextAreaItem 
                 labelText="Summary"
@@ -41,8 +41,8 @@ function EditRelevantForm ({ relevantExps, onChange, index, onSubmit }) {
                 inputName="summary"
                 type="textarea"
                 maxLength={maxLength}
-                // inputValue={currProf.summary}
-                // onChange={onChange}
+                inputValue={currExp.summary}
+                onChange={onChange}
             />
             <div>
                 <button className="save-button">Save</button>

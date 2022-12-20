@@ -23,7 +23,7 @@ function Relevant () {
         }
     ];
 
-    // const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(0);
     const [relevantExps, setRelevantExps] = useState(initRelevantExps);
     const [relevantExpsInfo, setRelevantExpsInfo] = useState(initRelevantExps);
 
@@ -41,11 +41,25 @@ function Relevant () {
     };
 
     function handleEditClicked(e) {
-        // const newIndex = parseInt(e.target.dataset.index);
-        // console.log(newIndex);
-        // setIndex(newIndex);
+        const newIndex = parseInt(e.target.dataset.index);
+        console.log(newIndex);
+        setIndex(newIndex);
         toggleModal();
     }
+
+    function handleOnChange(e) {
+        // const newProfessionals = professionals.map((currProf, i) => {
+        //     if (i === index) {
+        //         return {
+        //             ...currProf,
+        //             [e.target.name]: [e.target.value]
+        //         }
+        //     } else {
+        //         return currProf;
+        //     }
+        // });
+        // setProfessionals(newProfessionals);
+    };
 
     return (
         <div className="relevant">
@@ -85,6 +99,9 @@ function Relevant () {
             <RelevantModal 
                 modal={modal}
                 toggleModal={toggleModal}
+                onChange={handleOnChange}
+                relevantExps={relevantExps}
+                index={index}
             />
         </div>
     );
