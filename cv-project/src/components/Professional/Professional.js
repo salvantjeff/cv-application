@@ -3,8 +3,29 @@ import ngLogo from '../../img/ng-logo.png';
 import neofectLogo from '../../img/neofect-logo.jpeg';
 import editPencil from '../../img/pencil.png';
 import addSymbol from '../../img/add-1.png';
+import React, { useState, useEffect } from 'react';
+import ProfessionalModal from './ProfessionalModal/ProfessionalModal';
 
 function Professional () {
+    const [modal, setModal] = useState(false);
+    useEffect(() => {
+        if (modal) {
+            document.body.classList.add('active-modal');
+        } else {
+            document.body.classList.remove('active-modal');
+        }
+    }, [modal]);
+    
+    function toggleModal() {
+        setModal(!modal);
+    };
+
+    function handleEditClicked(e) {
+        // const newIndex = parseInt(e.target.dataset.index);
+        // console.log(newIndex);
+        // setIndex(newIndex);
+        toggleModal();
+    }
     return(
         <div className='professional'>
             <div className="heading-block">
@@ -25,7 +46,12 @@ function Professional () {
                         <div className="section-card">
                             <p className='position'>Structural Design Engineer Intern</p>
                             <div className="edit-section-box">
-                                <img className="edit-section" src={editPencil} alt="edit section"/>
+                                <img 
+                                className="edit-section" 
+                                src={editPencil} 
+                                alt="edit section"
+                                onClick={handleEditClicked}
+                                />
                             </div>
                         </div>
                         <p className='company'>Northrop Grumman</p>
@@ -66,6 +92,10 @@ function Professional () {
                     </div>
                 </div>
             </div>
+            <ProfessionalModal 
+                toggleModal={toggleModal}
+                modal={modal}
+            />
         </div>
     );
 };
