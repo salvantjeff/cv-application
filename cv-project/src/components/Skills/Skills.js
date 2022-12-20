@@ -31,6 +31,10 @@ function Skills () {
         setModal(!modal);
     };
 
+    function handleOnChange(e) {
+
+    };
+
     return (
         <div className="skills">
             <div>
@@ -64,35 +68,12 @@ function Skills () {
                         </li>
                     )
                 })}
-                
-                {/* <li className='skill-item'>
-                    <div>
-                    <img className="sphere-icon" src={sphere} alt="dot icon"/>
-                    </div>
-                    <div>React</div>
-                </li>
-                <li className='skill-item'>
-                    <div>
-                    <img className="sphere-icon" src={sphere} alt="dot icon"/>
-                    </div>
-                    <div>Node</div>
-                </li>
-                <li className='skill-item'>
-                    <div>
-                    <img className="sphere-icon" src={sphere} alt="dot icon"/>
-                    </div>
-                    <div>Java</div>
-                </li>
-                <li className='skill-item'>
-                    <div>
-                    <img className="sphere-icon" src={sphere} alt="dot icon"/>
-                    </div>
-                    <div>Typescript</div>
-                </li> */}
             </ul>
             <SkillsModal 
                 modal={modal}
                 toggleModal={toggleModal}
+                onChange={handleOnChange}
+                skills={skills}
             />
         </div>
     );

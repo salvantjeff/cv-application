@@ -1,8 +1,12 @@
 import SkillsFormItem from "./FormItems/SkillsFormItem";
 
 function EditSkillsForm ({ skills, onChange, index, onSubmit }) {
-    // const ed = education[index];
-    // console.log(education);
+    let allSkills = '';
+    for (let i = 0; i < skills.length; i++) {
+        const currSkill = skills[i];
+        allSkills += `-${currSkill.skill} `;
+    };
+    console.log(allSkills);
     const maxLength = 300;
     return (
         <form 
@@ -15,8 +19,8 @@ function EditSkillsForm ({ skills, onChange, index, onSubmit }) {
                 inputName="skills"
                 type="text"
                 maxLength={maxLength}
-                // inputValue={ed.university}
-                // onChange={onChange}
+                inputValue={allSkills}
+                onChange={onChange}
             />
             <div>
                 <button className="save-button">Save</button>

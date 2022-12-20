@@ -4,6 +4,8 @@ import EditSkillsForm from "../Forms/EditSkillsForm";
 export default function SkillsModal({ 
     modal,
     toggleModal,
+    onChange,
+    skills
 }) {
     
     return (
@@ -23,7 +25,8 @@ export default function SkillsModal({
                             </div>
                         </div>
                         <EditSkillsForm 
-                        
+                            onChange={onChange}
+                            skills={skills}
                         />
                     </div>
                 </div>
