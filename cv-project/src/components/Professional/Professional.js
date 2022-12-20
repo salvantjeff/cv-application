@@ -3,8 +3,90 @@ import ngLogo from '../../img/ng-logo.png';
 import neofectLogo from '../../img/neofect-logo.jpeg';
 import editPencil from '../../img/pencil.png';
 import addSymbol from '../../img/add-1.png';
+import React, { useState, useEffect } from 'react';
+import ProfessionalModal from './ProfessionalModal/ProfessionalModal';
+import { v4 as uuidv4 } from 'uuid';
 
 function Professional () {
+    const initProfessionals = [
+        {
+            position: 'Structural Design Engineer Intern',
+            company: 'Northrop Grumman',
+            startDate: '2021-05',
+            endDate: '2021-08',
+            location: 'Palmdale, California',
+            summary: `Contributed to the structural design team by reviewing and fixing drawing designs`,
+            id: uuidv4(),
+        },
+        {
+            position: 'Customer support Intern',
+            company: 'Neofect',
+            startDate: '2019-06',
+            endDate: '2019-08',
+            location: 'Richmond, Virginia',
+            summary: `
+                flsdkafjlasdkfjl;akfjldkfjaslkfjdl;kfjsdalkjflkasdjf
+                lsdakfjlasd;kfjsdalfkjslakfjsdlkfjasdlkfjslakfjasdlkfjasdlkfjsdlkf
+                jaslkfjl;sakfjsdal;fkj;sdlfkjdaslf;ksdjflkasjdflkdsjflasdkjflasd
+                kfjlsdkfjlkfjal;kfjasdl;fkjsdlofksjflaskfjldkfjasdl;fkjdl;askjfas
+                ifjffoijfkldsfjaklfjdklfjaldjflo;aifjdsl;ifjawofiejlofasdjnvlsdf
+                jkgjoigjgpoiawgjaopigjerpgiorjgtoiaerghjoighjeoaighjaergtyiojrgkl
+                sdfgjnlkfghjadefpioghjopigjdfigjskgjsgkljfkjfkfaklfjslakfjalkfks
+                jflksajflksdfjokjlkjlfkjsldakfjlksdjfklsjfslakfjasl;dfjo2itjugo
+                uhjoighjoighjeraoguihag
+            `,
+            id: uuidv4(),
+        }
+    ];
+
+    const [index, setIndex] = useState(0);
+    const [professionals, setProfessionals] = useState(initProfessionals);
+    const [professionalsInfo, setProfessionalsInfo] = useState(initProfessionals);
+
+    const [modal, setModal] = useState(false);
+    useEffect(() => {
+        if (modal) {
+            document.body.classList.add('active-modal');
+        } else {
+            document.body.classList.remove('active-modal');
+        }
+    }, [modal]);
+    
+    function toggleModal() {
+        setModal(!modal);
+    };
+
+    function handleEditClicked(e) {
+        const newIndex = parseInt(e.target.dataset.index);
+        console.log(newIndex);
+        setIndex(newIndex);
+        toggleModal();
+    }
+
+    function handleOnChange(e) {
+        const newProfessionals = professionals.map((currProf, i) => {
+            if (i === index) {
+                return {
+                    ...currProf,
+                    [e.target.name]: [e.target.value]
+                }
+            } else {
+                return currProf;
+            }
+        });
+        setProfessionals(newProfessionals);
+    };
+
+    function handleSubmitForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newProfessionalsInfo = [...professionals];
+        setProfessionalsInfo(newProfessionalsInfo);
+        console.log('UPDATE COMPLETE');
+        toggleModal();
+    };
+
+    console.log(professionals);
     return(
         <div className='professional'>
             <div className="heading-block">
@@ -17,55 +99,44 @@ function Professional () {
                 </div>
             </div>
             <div className='all-professional-exp'>
-                <div className='professional-exp'>
-                    <div className='professional-icon-box'>
-                        <img className="professional-icon" src={ngLogo} alt="professional icon"/>
-                    </div>
-                    <div className='professional-exp__details'>
-                        <div className="section-card">
-                            <p className='position'>Structural Design Engineer Intern</p>
-                            <div className="edit-section-box">
-                                <img className="edit-section" src={editPencil} alt="edit section"/>
+                {professionalsInfo.map((professional, index) => {
+                    return (
+                        <div key={professional.id} className='professional-exp'>
+                            <div className='professional-icon-box'>
+                                <img className="professional-icon" src={ngLogo} alt="professional icon"/>
+                            </div>
+                            <div className='professional-exp__details'>
+                                <div className="section-card">
+                                    <p className='position'>{professional.position}</p>
+                                    <div className="edit-section-box">
+                                        <img 
+                                            className="edit-section" 
+                                            src={editPencil} 
+                                            alt="edit section"
+                                            onClick={handleEditClicked}
+                                            data-index={index}
+                                        />
+                                    </div>
+                                </div>
+                                <p className='company'>{professional.company}</p>
+                                <p className='time-worked'>{professional.startDate} - {professional.endDate}</p>
+                                <p className='work-location'>{professional.location}</p>
+                                <p className='work-summary'>
+                                    {professional.summary}
+                                </p>
                             </div>
                         </div>
-                        <p className='company'>Northrop Grumman</p>
-                        <p className='time-worked'>May 2021 - Aug 2021</p>
-                        <p className='work-location'>Palmdale, California</p>
-                        <p className='work-summary'>
-                            Contributed to the structural design team by 
-                            reviewing and fixing drawing designs
-                        </p>
-                    </div>
-                </div>
-
-                <div className='professional-exp'>
-                    <div className='professional-icon-box'>
-                        <img className="professional-icon" src={neofectLogo} alt="professional icon"/>
-                    </div>
-                    <div className='professional-exp__details'>
-                        <div className="section-card">
-                            <p className='position'>Structural Design Engineer Intern</p>
-                            <div className="edit-section-box">
-                                <img className="edit-section" src={editPencil} alt="edit section"/>
-                            </div>
-                        </div>                        <p className='company'>Northrop Grumman</p>
-                        <p className='time-worked'>May 2021 - Aug 2021</p>
-                        <p className='work-location'>Palmdale, California</p>
-                        <p className='work-summary'>
-                            Contributed to the structural design team by reviewing and fixing 
-                            drawing designs flsdkafjlasdkfjl;akfjldkfjaslkfjdl;kfjsdalkjflkasdjf
-                            lsdakfjlasd;kfjsdalfkjslakfjsdlkfjasdlkfjslakfjasdlkfjasdlkfjsdlkf
-                            jaslkfjl;sakfjsdal;fkj;sdlfkjdaslf;ksdjflkasjdflkdsjflasdkjflasd
-                            kfjlsdkfjlkfjal;kfjasdl;fkjsdlofksjflaskfjldkfjasdl;fkjdl;askjfas
-                            ifjffoijfkldsfjaklfjdklfjaldjflo;aifjdsl;ifjawofiejlofasdjnvlsdf
-                            jkgjoigjgpoiawgjaopigjerpgiorjgtoiaerghjoighjeoaighjaergtyiojrgkl
-                            sdfgjnlkfghjadefpioghjopigjdfigjskgjsgkljfkjfkfaklfjslakfjalkfks
-                            jflksajflksdfjokjlkjlfkjsldakfjlksdjfklsjfslakfjasl;dfjo2itjugo
-                            uhjoighjoighjeraoguihag
-                        </p>
-                    </div>
-                </div>
+                    )
+                })}
             </div>
+            <ProfessionalModal 
+                toggleModal={toggleModal}
+                modal={modal}
+                professionals={professionals}
+                index={index}
+                onChange={handleOnChange}
+                onSubmit={handleSubmitForm}
+            />
         </div>
     );
 };
