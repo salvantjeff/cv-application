@@ -48,17 +48,17 @@ function Relevant () {
     }
 
     function handleOnChange(e) {
-        // const newProfessionals = professionals.map((currProf, i) => {
-        //     if (i === index) {
-        //         return {
-        //             ...currProf,
-        //             [e.target.name]: [e.target.value]
-        //         }
-        //     } else {
-        //         return currProf;
-        //     }
-        // });
-        // setProfessionals(newProfessionals);
+        const newRelevantExps = relevantExps.map((currExp, i) => {
+            if (i === index) {
+                return {
+                    ...currExp,
+                    [e.target.name]: [e.target.value]
+                }
+            } else {
+                return currExp;
+            }
+        });
+        setRelevantExps(newRelevantExps);
     };
 
     return (
