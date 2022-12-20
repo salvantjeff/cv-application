@@ -64,6 +64,15 @@ function Leadership () {
         setLeaderships(newLeaderships);
     };
 
+    function handleSubmitForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newLeadershipsInfo = [...leaderships];
+        setLeadershipsInfo(newLeadershipsInfo);
+        console.log('UPDATE COMPLETE');
+        toggleModal();
+    };
+
     return (
         <div className="leadership">
             <div className="heading-block">
@@ -109,6 +118,7 @@ function Leadership () {
                 onChange={handleOnChange}
                 leaderships={leaderships}
                 index={index}
+                onSubmit={handleSubmitForm}
             />
         </div>
     );

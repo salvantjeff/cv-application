@@ -30,7 +30,7 @@ export default function LeadershipModal({
                             leaderships={leaderships}
                             index={index}
                             onChange={onChange}
-                            // onSubmit={onSubmit}
+                            onSubmit={onSubmit}
                         />
                     </div>
                 </div>
