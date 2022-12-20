@@ -1,5 +1,6 @@
 import React from "react";
 import EditRelevantForm from "../Forms/EditRelevantForm";
+import './RelevantModal.css';
 
 export default function RelevantModal({ 
     modal,
@@ -13,12 +14,12 @@ export default function RelevantModal({
     return (
         <>
             {modal && (
-            <div className="modal prof">
-                <div className="overlay prof" onClick={toggleModal}></div>
-                <div className="modal-content prof">
-                    <div className="modal-content__wrapper prof">
-                        <div className="modal-form__header prof">
-                            <h2 className="game-over_title prof">Relevant Exp info</h2>
+            <div className="modal rel">
+                <div className="overlay rel" onClick={toggleModal}></div>
+                <div className="modal-content rel">
+                    <div className="modal-content__wrapper rel">
+                        <div className="modal-form__header rel">
+                            <h2 className="game-over_title rel">Relevant Exp info</h2>
                             <div>
                                 <button 
                                     className="close-modal__button" 
