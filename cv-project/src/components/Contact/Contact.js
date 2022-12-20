@@ -3,14 +3,38 @@ import emailLogo from '../../img/mail.png';
 import phoneLogo from '../../img/phones.png';
 import linkedInLogo from '../../img/linkedin-logo.png';
 import editPencil from '../../img/pencil.png';
+import ContactModal from './ContactModal/ContactModal';
+import React, { useState, useEffect } from 'react';
 
 function Contact () {
+    const [modal, setModal] = useState(false);
+    useEffect(() => {
+        if (modal) {
+            document.body.classList.add('active-modal');
+        } else {
+            document.body.classList.remove('active-modal');
+        }
+    }, [modal]);
+    
+    function toggleModal() {
+        setModal(!modal);
+    };
+
+    function handleEditClicked(e) {
+        toggleModal();
+    }
+
     return (
         <div className="contact">
             <div className="section-heading">
                 <h4 className="contact-title">Contact</h4>
                 <div className="contact-edit-section">
-                    <img className="edit-section" src={editPencil} alt="edit section"/>
+                    <img 
+                        className="edit-section" 
+                        src={editPencil} 
+                        alt="edit section"
+                        onClick={handleEditClicked}
+                    />
                 </div>
             </div>
             <div className="all-contacts">
@@ -46,6 +70,10 @@ function Contact () {
                         </p>
                     </div>
                 </div>
+                <ContactModal 
+                    modal={modal}
+                    toggleModal={toggleModal}
+                />
             </div>
         </div>
     );
