@@ -44,9 +44,9 @@ function Leadership () {
     };
 
     function handleEditClicked(e) {
-        // const newIndex = parseInt(e.target.dataset.index);
-        // console.log(newIndex);
-        // setIndex(newIndex);
+        const newIndex = parseInt(e.target.dataset.index);
+        console.log(newIndex);
+        setIndex(newIndex);
         toggleModal();
     }
 
