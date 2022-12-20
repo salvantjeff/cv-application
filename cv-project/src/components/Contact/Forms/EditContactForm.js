@@ -3,7 +3,7 @@ function EditContactForm ({ contacts, onChange, onSubmit }) {
     console.log(contacts);
     return (
         <form 
-            // onSubmit={onSubmit} 
+            onSubmit={onSubmit} 
             className="intro_form"
         >
             <ContactFormItem 

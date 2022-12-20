@@ -43,6 +43,15 @@ function Contact () {
         setContacts(newContacts);
     };
 
+    function handleSubmitForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newContactsInfo = {...contacts};
+        setContactsInfo(newContactsInfo);
+        console.log('UPDATE COMPLETE');
+        toggleModal();
+    };
+
     return (
         <div className="contact">
             <div className="section-heading">
@@ -94,6 +103,7 @@ function Contact () {
                     toggleModal={toggleModal}
                     contacts={contacts}
                     onChange={handleOnChange}
+                    onSubmit={handleSubmitForm}
                 />
             </div>
         </div>
