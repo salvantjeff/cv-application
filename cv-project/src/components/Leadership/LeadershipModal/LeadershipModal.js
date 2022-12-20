@@ -28,8 +28,8 @@ export default function LeadershipModal({
                         </div>
                         <EditLeadershipForm 
                             leaderships={leaderships}
-                            // index={index}
-                            // onChange={onChange}
+                            index={index}
+                            onChange={onChange}
                             // onSubmit={onSubmit}
                         />
                     </div>

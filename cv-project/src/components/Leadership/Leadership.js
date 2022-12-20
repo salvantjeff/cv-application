@@ -50,6 +50,20 @@ function Leadership () {
         toggleModal();
     }
 
+    function handleOnChange(e) {
+        // const newProfessionals = professionals.map((currProf, i) => {
+        //     if (i === index) {
+        //         return {
+        //             ...currProf,
+        //             [e.target.name]: [e.target.value]
+        //         }
+        //     } else {
+        //         return currProf;
+        //     }
+        // });
+        // setProfessionals(newProfessionals);
+    };
+
     return (
         <div className="leadership">
             <div className="heading-block">
@@ -92,6 +106,9 @@ function Leadership () {
             <LeadershipModal 
                 modal={modal}
                 toggleModal={toggleModal}
+                onChange={handleOnChange}
+                leaderships={leaderships}
+                index={index}
             />
         </div>
     );

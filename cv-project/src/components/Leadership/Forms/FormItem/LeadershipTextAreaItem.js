@@ -16,7 +16,7 @@ function LeadershipTextAreaItem ({
                 id={id}
                 name={inputName}
                 value={inputValue}
-                // onChange={onChange}
+                onChange={onChange}
             ></textarea>
         </p>
     );
