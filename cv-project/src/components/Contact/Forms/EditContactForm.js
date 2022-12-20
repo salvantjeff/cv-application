@@ -11,24 +11,24 @@ function EditContactForm ({ contacts, onChange, onSubmit }) {
                 id="email-contact"
                 inputName="email"
                 type="email"
-                // inputValue={currExp.organization}
-                // onChange={onChange}
+                inputValue={contacts.email}
+                onChange={onChange}
             />
             <ContactFormItem 
                 labelText="Phone number"
                 id="phone-number-contact"
                 inputName="phoneNumber"
                 type="text"
-                // inputValue={currExp.titleRole}
-                // onChange={onChange}
+                inputValue={contacts.phoneNumber}
+                onChange={onChange}
             />
             <ContactFormItem 
                 labelText="LinkedIn"
                 id="linkedin-contact"
                 inputName="linkedIn"
                 type="text"
-                // inputValue={currExp.startDate}
-                // onChange={onChange}
+                inputValue={contacts.linkedIn}
+                onChange={onChange}
             />
             <div>
                 <button className="save-button">Save</button>

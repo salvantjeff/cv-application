@@ -16,7 +16,7 @@ function ContactFormItem ({
                 id={id}
                 name={inputName}
                 value={inputValue}
-                // onChange={onChange}
+                onChange={onChange}
             />
         </p>
     );

@@ -26,8 +26,8 @@ export default function ContactModal({
                             </div>
                         </div>
                         <EditContactForm 
-                            // contacts={contacts}
-                            // onChange={onChange}
+                            contacts={contacts}
+                            onChange={onChange}
                             // onSubmit={onSubmit}
                         />
                     </div>

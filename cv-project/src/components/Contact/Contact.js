@@ -35,6 +35,10 @@ function Contact () {
         toggleModal();
     }
 
+    function handleOnChange(e) {
+        
+    };
+
     return (
         <div className="contact">
             <div className="section-heading">
@@ -84,6 +88,8 @@ function Contact () {
                 <ContactModal 
                     modal={modal}
                     toggleModal={toggleModal}
+                    contacts={contacts}
+                    onChange={handleOnChange}
                 />
             </div>
         </div>
