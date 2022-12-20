@@ -65,11 +65,8 @@ function Education () {
     function handleSubmitForm(e) {
         e.preventDefault();
         console.log('form has been submitted!');
-        const newEducation = {...education};
-        // setEducationList([
-        //     ...educationList,
-        //     newEducation,
-        // ]);
+        const newEducation = [...education];
+        setEducationList(newEducation);
         console.log('UPDATE COMPLETE');
         toggleModal();
     };
@@ -123,6 +120,7 @@ function Education () {
                 education={education}
                 index={index}
                 onChange={handleOnChange}
+                onSubmit={handleSubmitForm}
             />
         </div>
     );

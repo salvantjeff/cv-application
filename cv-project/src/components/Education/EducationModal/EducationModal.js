@@ -6,7 +6,8 @@ export default function EducationModal({
     toggleModal,
     education,
     onChange,
-    index
+    index,
+    onSubmit
 }) {
     
     return (
@@ -29,6 +30,7 @@ export default function EducationModal({
                             education={education}
                             onChange={onChange}
                             index={index}
+                            onSubmit={onSubmit}
                         />
                     </div>
                 </div>

@@ -1,11 +1,11 @@
 import EducationFormItem from "./FormItem/EducationFormItem";
 import './EditEducationForm.css';
 
-function EditEducationForm ({ education, onChange, index }) {
+function EditEducationForm ({ education, onChange, index, onSubmit }) {
     const ed = education[index];
     console.log(education);
     return (
-        <form className="intro_form">
+        <form onSubmit={onSubmit} className="intro_form">
             <EducationFormItem 
                 labelText="University"
                 id="university"
