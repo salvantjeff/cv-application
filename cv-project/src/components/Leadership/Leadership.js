@@ -2,8 +2,30 @@ import './Leadership.css';
 import nsbeLogo from '../../img/nsbe-logo.png';
 import editPencil from '../../img/pencil.png';
 import addSymbol from '../../img/add-1.png';
+import React, { useState, useEffect } from 'react';
+import LeadershipModal from './LeadershipModal/LeadershipModal';
 
 function Leadership () {
+    const [modal, setModal] = useState(false);
+    useEffect(() => {
+        if (modal) {
+            document.body.classList.add('active-modal');
+        } else {
+            document.body.classList.remove('active-modal');
+        }
+    }, [modal]);
+    
+    function toggleModal() {
+        setModal(!modal);
+    };
+
+    function handleEditClicked(e) {
+        // const newIndex = parseInt(e.target.dataset.index);
+        // console.log(newIndex);
+        // setIndex(newIndex);
+        toggleModal();
+    }
+
     return (
         <div className="leadership">
             <div className="heading-block">
@@ -24,7 +46,12 @@ function Leadership () {
                         <div className="section-card">
                             <p className="leadership-organization">National Society of Black Engineers</p>
                             <div className="edit-section-box">
-                                <img className="edit-section" src={editPencil} alt="edit section"/>
+                                <img 
+                                    className="edit-section" 
+                                    src={editPencil} 
+                                    alt="edit section"
+                                    onClick={handleEditClicked}
+                                />
                             </div>
                         </div>
                         <p className="leadership-position">Freshman Representative</p>
@@ -58,6 +85,10 @@ function Leadership () {
                     </div>
                 </div>
             </div>
+            <LeadershipModal 
+                modal={modal}
+                toggleModal={toggleModal}
+            />
         </div>
     );
 };
