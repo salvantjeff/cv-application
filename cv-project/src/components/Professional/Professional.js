@@ -56,11 +56,12 @@ function Professional () {
     };
 
     function handleEditClicked(e) {
-        // const newIndex = parseInt(e.target.dataset.index);
-        // console.log(newIndex);
-        // setIndex(newIndex);
+        const newIndex = parseInt(e.target.dataset.index);
+        console.log(newIndex);
+        setIndex(newIndex);
         toggleModal();
     }
+    
     console.log(professionalsInfo);
     return(
         <div className='professional'>
