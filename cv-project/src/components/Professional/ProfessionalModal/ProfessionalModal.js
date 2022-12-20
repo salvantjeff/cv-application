@@ -27,16 +27,11 @@ export default function ProfessionalModal({
                                 >X</button>
                             </div>
                         </div>
-                        {/* <EditEducationForm 
-                            education={education}
-                            onChange={onChange}
-                            index={index}
-                            onSubmit={onSubmit}
-                        /> */}
                         <EditProfessionalForm 
                             professionals={professionals}
                             index={index}
                             onChange={onChange}
+                            onSubmit={onSubmit}
                         />
                     </div>
                 </div>

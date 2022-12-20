@@ -77,6 +77,15 @@ function Professional () {
         setProfessionals(newProfessionals);
     };
 
+    function handleSubmitForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newProfessionalsInfo = [...professionals];
+        setProfessionalsInfo(newProfessionalsInfo);
+        console.log('UPDATE COMPLETE');
+        toggleModal();
+    };
+
     console.log(professionals);
     return(
         <div className='professional'>
@@ -126,6 +135,7 @@ function Professional () {
                 professionals={professionals}
                 index={index}
                 onChange={handleOnChange}
+                onSubmit={handleSubmitForm}
             />
         </div>
     );
