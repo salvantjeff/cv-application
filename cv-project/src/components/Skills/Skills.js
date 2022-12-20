@@ -4,8 +4,19 @@ import editPencil from '../../img/pencil.png';
 import addSymbol from '../../img/add-1.png';
 import React, { useState, useEffect } from 'react';
 import SkillsModal from './SkillsModal/SkillsModal';
+import { v4 as uuidv4 } from 'uuid';
 
 function Skills () {
+    const initSkills = [
+        {id: uuidv4(), skill: 'AI'},
+        {id: uuidv4(), skill: 'React'},
+        {id: uuidv4(), skill: 'Node'},
+        {id: uuidv4(), skill: 'Java'},
+        {id: uuidv4(), skill: 'TypeScript'}
+    ];
+
+    const [skills, setSkills] = useState(initSkills);
+    const [skillsInfo, setSkillsInfo] = useState(initSkills);
 
     const [modal, setModal] = useState(false);
     useEffect(() => {
@@ -43,13 +54,18 @@ function Skills () {
             </div>
 
             <ul className='all-skills'>
-                <li className='skill-item'>
-                    <div>
-                    <img className="sphere-icon" src={sphere} alt="dot icon"/>
-                    </div>
-                    <div>AI</div>
-                </li>
-                <li className='skill-item'>
+                {skillsInfo.map((skill, index) => {
+                    return (
+                        <li key={skill.id} className='skill-item'>
+                            <div>
+                            <img className="sphere-icon" src={sphere} alt="dot icon"/>
+                            </div>
+                            <div>{skill.skill}</div>
+                        </li>
+                    )
+                })}
+                
+                {/* <li className='skill-item'>
                     <div>
                     <img className="sphere-icon" src={sphere} alt="dot icon"/>
                     </div>
@@ -72,7 +88,7 @@ function Skills () {
                     <img className="sphere-icon" src={sphere} alt="dot icon"/>
                     </div>
                     <div>Typescript</div>
-                </li>
+                </li> */}
             </ul>
             <SkillsModal 
                 modal={modal}
