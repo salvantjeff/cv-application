@@ -3,7 +3,7 @@ function SkillsFormItem ({
     id, 
     inputName, 
     inputValue,
-    // onChange,
+    onChange,
     maxLength, 
 }) {
     return (
@@ -16,7 +16,7 @@ function SkillsFormItem ({
                 id={id}
                 name={inputName}
                 value={inputValue}
-                // onChange={onChange}
+                onChange={onChange}
             ></textarea>
         </p>
     );

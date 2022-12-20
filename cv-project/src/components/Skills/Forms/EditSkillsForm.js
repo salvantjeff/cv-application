@@ -4,7 +4,11 @@ function EditSkillsForm ({ skills, onChange, index, onSubmit }) {
     let allSkills = '';
     for (let i = 0; i < skills.length; i++) {
         const currSkill = skills[i];
-        allSkills += `-${currSkill.skill} `;
+        if (i === skills.length - 1) {
+            allSkills += `${currSkill.skill}`;
+        } else {
+            allSkills += `${currSkill.skill},`;
+        }
     };
     console.log(allSkills);
     const maxLength = 300;

@@ -32,7 +32,19 @@ function Skills () {
     };
 
     function handleOnChange(e) {
-
+        console.log(e.target.name);
+        const res = (e.target.value).split(',');
+        console.log(res);
+        if (res.length === skills.length) {
+            const newSkills = skills.map((skill, i) => {
+                return {
+                    ...skill,
+                    skill: res[i]
+                }
+            });
+            setSkills(newSkills);
+        }
+        console.log('you can\'t add a skill, only edit what is there');
     };
 
     return (
