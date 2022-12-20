@@ -47,6 +47,15 @@ function Skills () {
         console.log('you can\'t add a skill, only edit what is there');
     };
 
+    function handleSubmitForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newSkills = [...skills];
+        setSkillsInfo(newSkills);
+        console.log('UPDATE COMPLETE');
+        toggleModal();
+    };
+
     return (
         <div className="skills">
             <div>
@@ -86,6 +95,7 @@ function Skills () {
                 toggleModal={toggleModal}
                 onChange={handleOnChange}
                 skills={skills}
+                onSubmit={handleSubmitForm}
             />
         </div>
     );

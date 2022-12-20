@@ -5,7 +5,8 @@ export default function SkillsModal({
     modal,
     toggleModal,
     onChange,
-    skills
+    skills,
+    onSubmit
 }) {
     
     return (
@@ -27,6 +28,7 @@ export default function SkillsModal({
                         <EditSkillsForm 
                             onChange={onChange}
                             skills={skills}
+                            onSubmit={onSubmit}
                         />
                     </div>
                 </div>

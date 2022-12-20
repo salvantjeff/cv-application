@@ -1,6 +1,6 @@
 import SkillsFormItem from "./FormItems/SkillsFormItem";
 
-function EditSkillsForm ({ skills, onChange, index, onSubmit }) {
+function EditSkillsForm ({ skills, onChange, onSubmit }) {
     let allSkills = '';
     for (let i = 0; i < skills.length; i++) {
         const currSkill = skills[i];
@@ -14,7 +14,7 @@ function EditSkillsForm ({ skills, onChange, index, onSubmit }) {
     const maxLength = 300;
     return (
         <form 
-            // onSubmit={onSubmit} 
+            onSubmit={onSubmit} 
             className="intro_form"
         >
             <SkillsFormItem 
