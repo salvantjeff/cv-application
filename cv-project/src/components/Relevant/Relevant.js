@@ -3,6 +3,7 @@ import editPencil from '../../img/pencil.png';
 import addSymbol from '../../img/add-1.png';
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import RelevantModal from './RelevantModal/RelevantModal';
 
 function Relevant () {
     const initRelevantExps = [
@@ -81,6 +82,10 @@ function Relevant () {
                     )
                 })}
             </div>
+            <RelevantModal 
+                modal={modal}
+                toggleModal={toggleModal}
+            />
         </div>
     );
 };
