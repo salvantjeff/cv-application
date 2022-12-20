@@ -13,7 +13,7 @@ function Leadership () {
             titleRole: 'Freshman rep',
             startDate: '2018-08',
             endDate: '2019-05',
-            summary: '',
+            summary: 'Presented upcoming events during weekly meetings',
             id: uuidv4(),
         },
         {
@@ -21,7 +21,7 @@ function Leadership () {
             titleRole: 'Volunteer',
             startDate: '2021-05',
             endDate: '2021-08',
-            summary: '',
+            summary: 'Help organize tables and props for career fair',
             id: uuidv4(),
         }
     ];
@@ -77,6 +77,7 @@ function Leadership () {
                                             src={editPencil} 
                                             alt="edit section"
                                             onClick={handleEditClicked}
+                                            data-index={index}
                                         />
                                     </div>
                                 </div>
