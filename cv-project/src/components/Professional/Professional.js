@@ -85,10 +85,11 @@ function Professional () {
                                     <p className='position'>{professional.position}</p>
                                     <div className="edit-section-box">
                                         <img 
-                                        className="edit-section" 
-                                        src={editPencil} 
-                                        alt="edit section"
-                                        onClick={handleEditClicked}
+                                            className="edit-section" 
+                                            src={editPencil} 
+                                            alt="edit section"
+                                            onClick={handleEditClicked}
+                                            data-index={index}
                                         />
                                     </div>
                                 </div>
