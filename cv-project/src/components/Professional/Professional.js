@@ -12,8 +12,8 @@ function Professional () {
         {
             position: 'Structural Design Engineer Intern',
             company: 'Northrop Grumman',
-            startDate: 'May 2021',
-            endDate: 'Aug 2021',
+            startDate: '2021-05',
+            endDate: '2021-08',
             location: 'Palmdale, California',
             summary: `Contributed to the structural design team by reviewing and fixing drawing designs`,
             id: uuidv4(),
@@ -21,8 +21,8 @@ function Professional () {
         {
             position: 'Customer support Intern',
             company: 'Neofect',
-            startDate: 'June 2019',
-            endDate: 'Aug 2019',
+            startDate: '2019-06',
+            endDate: '2019-08',
             location: 'Richmond, Virginia',
             summary: `
                 flsdkafjlasdkfjl;akfjldkfjaslkfjdl;kfjsdalkjflkasdjf
@@ -38,6 +38,7 @@ function Professional () {
             id: uuidv4(),
         }
     ];
+
     const [index, setIndex] = useState(0);
     const [professionals, setProfessionals] = useState(initProfessionals);
     const [professionalsInfo, setProfessionalsInfo] = useState(initProfessionals);
@@ -61,7 +62,21 @@ function Professional () {
         setIndex(newIndex);
         toggleModal();
     }
-    
+
+    function handleOnChange(e) {
+        // const newEducation = education.map((currEd, i) => {
+        //     if (i === index) {
+        //         return {
+        //             ...currEd,
+        //             [e.target.name]: [e.target.value]
+        //         };
+        //     } else {
+        //         return currEd;
+        //     }
+        // });
+
+        // setEducation(newEducation);
+    };
     console.log(professionalsInfo);
     return(
         <div className='professional'>
@@ -108,6 +123,9 @@ function Professional () {
             <ProfessionalModal 
                 toggleModal={toggleModal}
                 modal={modal}
+                professionals={professionals}
+                index={index}
+                onChange={handleOnChange}
             />
         </div>
     );

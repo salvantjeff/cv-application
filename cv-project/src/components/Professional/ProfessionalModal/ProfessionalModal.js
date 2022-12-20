@@ -5,7 +5,7 @@ import './ProfessionalModal.css';
 export default function ProfessionalModal({ 
     modal,
     toggleModal,
-    education,
+    professionals,
     onChange,
     index,
     onSubmit
@@ -34,7 +34,9 @@ export default function ProfessionalModal({
                             onSubmit={onSubmit}
                         /> */}
                         <EditProfessionalForm 
-                        
+                            professionals={professionals}
+                            index={index}
+                            onChange={onChange}
                         />
                     </div>
                 </div>

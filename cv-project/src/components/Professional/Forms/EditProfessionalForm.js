@@ -1,9 +1,9 @@
 import ProfessionalFormItem from "./FormItem/ProfessionalFormItem";
 import ProfessionalTextAreaItem from "./FormItem/ProfessionalTextAreaItem";
 
-function EditProfessionalForm ({ professional, onChange, index, onSubmit }) {
-    // const profExp = professional[index];
-    // console.log(professional);
+function EditProfessionalForm ({ professionals, onChange, index, onSubmit }) {
+    const currProf = professionals[index];
+    console.log(professionals);
     const maxLength = 100;
     return (
         <form 
@@ -15,40 +15,40 @@ function EditProfessionalForm ({ professional, onChange, index, onSubmit }) {
                 id="work-position"
                 inputName="position"
                 type="text"
-                // inputValue={ed.university}
-                // onChange={onChange}
+                inputValue={currProf.position}
+                onChange={onChange}
             />
             <ProfessionalFormItem 
                 labelText="company"
                 id="work-company"
                 inputName="company"
                 type="text"
-                // inputValue={ed.major}
-                // onChange={onChange}
+                inputValue={currProf.company}
+                onChange={onChange}
             />
             <ProfessionalFormItem 
                 labelText="Start date"
                 id="work-start-date"
                 inputName="startDate"
                 type="month"
-                // inputValue={ed.startDate}
-                // onChange={onChange}
+                inputValue={currProf.startDate}
+                onChange={onChange}
             />
             <ProfessionalFormItem 
                 labelText="End date"
                 id="work-end-date"
                 inputName="endDate"
                 type="month"
-                // inputValue={ed.endDate}
-                // onChange={onChange}
+                inputValue={currProf.endDate}
+                onChange={onChange}
             />
             <ProfessionalFormItem 
                 labelText="location"
                 id="work-location"
                 inputName="location"
                 type="text"
-                // inputValue={ed.gpa}
-                // onChange={onChange}
+                inputValue={currProf.location}
+                onChange={onChange}
             />
             <ProfessionalTextAreaItem 
                 labelText="summary"
@@ -56,8 +56,8 @@ function EditProfessionalForm ({ professional, onChange, index, onSubmit }) {
                 inputName="summary"
                 type="textarea"
                 maxLength={maxLength}
-                // inputValue={ed.gpa}
-                // onChange={onChange}
+                inputValue={currProf.summary}
+                onChange={onChange}
             />
             <div>
                 <button className="save-button">Save</button>
