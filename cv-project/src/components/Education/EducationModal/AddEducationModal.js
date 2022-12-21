@@ -8,7 +8,6 @@ export default function AddEducationModal({
     onChange,
     onSubmit
 }) {
-    
     return (
         <>
             {modal && (
