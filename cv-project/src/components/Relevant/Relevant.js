@@ -78,7 +78,7 @@ function Relevant () {
         setRelevantExps(newRelevantExps);
     };
 
-    function handleOnChangeForAddNewLeadershipExp(e) {
+    function handleOnChangeForAddNewRelevantExp(e) {
         const newRelevantExps = {
             ...addNewRelevantExp,
             [e.target.name]: [e.target.value]
@@ -146,7 +146,7 @@ function Relevant () {
                 modal={addModal}
                 toggleModal={toggleAddModal}
                 addNewRelevantExp={addNewRelevantExp}
-                onChange={handleOnChangeForAddNewLeadershipExp}
+                onChange={handleOnChangeForAddNewRelevantExp}
             />
         </div>
     );
