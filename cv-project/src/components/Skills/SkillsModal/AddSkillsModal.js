@@ -8,7 +8,6 @@ export default function AddSkillsModal({
     addNewSkills,
     onSubmit
 }) {
-    
     return (
         <>
             {modal && (

@@ -8,7 +8,7 @@ function EditSkillsForm ({ skills, onChange, onSubmit }) {
             allSkills += `${currSkill.skill}`;
         } else {
             allSkills += `${currSkill.skill},`;
-        }
+        };
     };
     console.log(allSkills);
     const maxLength = 300;

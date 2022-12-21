@@ -9,7 +9,6 @@ export default function AddProfessionalModal({
     onChange,
     onSubmit
 }) {
-    
     return (
         <>
             {modal && (

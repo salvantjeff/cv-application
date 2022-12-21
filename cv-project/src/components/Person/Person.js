@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Person.css';
-import profileImg from '../../img/messi.jpeg';
+import profileImg from '../../img/profile-pic.jpeg';
 import editPencil from '../../img/pencil.png';
 import PersonModal from './PersonModal/PersonModal';
 
@@ -8,14 +8,14 @@ function Person () {
     const initPersonInfo = {
         firstName: 'Jeff',
         lastName: 'Salvant',
-        headline: 'Student',
+        headline: 'Software Engineering Student',
         img: profileImg,
-        summary: `Virginia Commonwealth university graduate. Currently, studying software engineering to contribute in the tech industry. ldkjflakfjasdlfkjasdlfkjsdlfkasdjflksdjflasdkjfldkfjaslfkjdlfkjasdflkj`,
+        summary: 'Currently, studying software engineering to begin my career in the tech industry. Looking to help contribute towards companies that are positively impacting the world.',
     };
 
     const [personInfo, setPersonInfo] = useState(initPersonInfo);
-
     const [person, setPerson] = useState(initPersonInfo);
+    
     const [modal, setModal] = useState(false);
 
     useEffect(() => {
@@ -39,7 +39,7 @@ function Person () {
         const newPerson = {
             ...person,
             [e.target.name]: e.target.value
-        }
+        };
         setPerson(newPerson);
     };
 
@@ -50,7 +50,7 @@ function Person () {
         setPersonInfo(newPerson);
         console.log('UPDATE COMPLETE');
         toggleModal();
-    }
+    };
 
     return (
         <div className='person'>

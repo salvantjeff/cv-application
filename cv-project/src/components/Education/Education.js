@@ -8,26 +8,27 @@ import EducationModal from './EducationModal/EducationModal';
 import AddEducationModal from './EducationModal/AddEducationModal';
 
 function Education () {
-    let initEducation = {
-        university: 'Virginia Commonwealth University',
-        major: 'Mechanical Engineering',
-        startDate: '2018-08',
-        endDate: '2022-05',
-        gpa: 3.5,
-        id: uuidv4(),
-    };
-
-    let initEducation2 = {
-        university: 'NYU',
-        major: 'Computer Science',
-        startDate: '2022-08',
-        endDate: '2024-05',
-        gpa: 3.0,
-        id: uuidv4(),
-    };
-
-    const [education, setEducation] = useState([initEducation]);
-    const [educationList, setEducationList] = useState([initEducation,  initEducation2]);
+    let initEducation = [
+        {
+            university: 'Virginia Commonwealth University',
+            major: 'Mechanical Engineering',
+            startDate: '2018-08',
+            endDate: '2022-05',
+            gpa: 3.5,
+            id: uuidv4(),
+        },
+        {
+            university: 'NYU',
+            major: 'Computer Science',
+            startDate: '2022-08',
+            endDate: '2024-05',
+            gpa: 3.0,
+            id: uuidv4(),
+        }
+    ];
+    
+    const [education, setEducation] = useState(initEducation);
+    const [educationList, setEducationList] = useState(initEducation);
     const [addNewEducation, setAddNewEducation] = useState({
         university: '',
         major: '',
@@ -41,6 +42,7 @@ function Education () {
     const [addModal, setAddModal] = useState(false);
 
     const [index, setIndex] = useState(0);
+
     useEffect(() => {
         if (modal || addModal) {
             document.body.classList.add('active-modal');
@@ -59,7 +61,7 @@ function Education () {
 
     function handleAddNewEducation() {
         toggleAddModal();
-    }
+    };
 
     function handleEditClicked(e) {
         const newIndex = parseInt(e.target.dataset.index);
@@ -92,10 +94,6 @@ function Education () {
         toggleModal();
     };
 
-    useEffect(() => {
-        setEducation([initEducation, initEducation2])
-    }, []);
-    
     function handleOnChangeForAddNewEducation(e) {
         const newEducation = {
             ...addNewEducation,

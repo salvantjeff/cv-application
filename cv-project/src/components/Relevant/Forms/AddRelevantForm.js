@@ -3,7 +3,6 @@ import RelevantTextAreaItem from "./FormItem/RelevantTextAreaItem";
 
 function AddRelevantForm ({ addNewRelevantExp, onChange, onSubmit }) {
     const currExp = addNewRelevantExp;
-    // console.log(relevantExps);
     const maxLength = 200;
     return (
         <form 

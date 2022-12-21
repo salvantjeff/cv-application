@@ -3,7 +3,6 @@ import ProfessionalTextAreaItem from "./FormItem/ProfessionalTextAreaItem";
 
 function AddProfessionalForm ({ addNewProfessional, onChange, index, onSubmit }) {
     const currProf = addNewProfessional;
-    // console.log(professionals);
     const maxLength = 100;
     return (
         <form 

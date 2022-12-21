@@ -9,7 +9,6 @@ export default function AddRelevantModal({
     onChange,
     onSubmit
 }) {
-    
     return (
         <>
             {modal && (

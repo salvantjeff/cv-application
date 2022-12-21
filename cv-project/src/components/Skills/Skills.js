@@ -22,6 +22,7 @@ function Skills () {
         id: uuidv4(), 
         skill: ''
     });
+
     const [modal, setModal] = useState(false);
     const [addModal, setAddModal] = useState(false);
 
@@ -54,10 +55,10 @@ function Skills () {
                 return {
                     ...skill,
                     skill: res[i]
-                }
+                };
             });
             setSkills(newSkills);
-        }
+        };
         console.log('you can\'t add a skill, only edit what is there');
     };
 
