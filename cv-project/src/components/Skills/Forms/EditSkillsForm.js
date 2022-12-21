@@ -20,7 +20,7 @@ function EditSkillsForm ({ skills, onChange, onSubmit }) {
             <SkillsFormItem 
                 labelText="skills"
                 id="skills"
-                inputName="skills"
+                inputName="skill"
                 type="text"
                 maxLength={maxLength}
                 inputValue={allSkills}

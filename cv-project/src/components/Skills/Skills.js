@@ -62,12 +62,12 @@ function Skills () {
     };
 
     function handleOnChangeForAddNewSkills(e) {
-        // const newEducation = {
-        //     ...addNewEducation,
-        //     [e.target.name]: [e.target.value]
-        // };
+        const newSkills = {
+            ...addNewSkills,
+            [e.target.name]: [e.target.value]
+        };
 
-        // setAddNewEducation(newEducation);
+        setAddNewSkills(newSkills);
     };
 
     function handleSubmitForm(e) {
