@@ -42,6 +42,7 @@ function Education () {
     const [addModal, setAddModal] = useState(false);
 
     const [index, setIndex] = useState(0);
+
     useEffect(() => {
         if (modal || addModal) {
             document.body.classList.add('active-modal');
@@ -60,7 +61,7 @@ function Education () {
 
     function handleAddNewEducation() {
         toggleAddModal();
-    }
+    };
 
     function handleEditClicked(e) {
         const newIndex = parseInt(e.target.dataset.index);
@@ -93,10 +94,6 @@ function Education () {
         toggleModal();
     };
 
-    // useEffect(() => {
-    //     setEducation([initEducation, initEducation2])
-    // }, []);
-    
     function handleOnChangeForAddNewEducation(e) {
         const newEducation = {
             ...addNewEducation,
