@@ -5,6 +5,7 @@ import addSymbol from '../../img/add-1.png';
 import React, { useState, useEffect } from 'react';
 import LeadershipModal from './LeadershipModal/LeadershipModal';
 import { v4 as uuidv4 } from 'uuid';
+import AddLeadershipModal from './LeadershipModal/AddLeadershipModal';
 
 function Leadership () {
     const initLeaderships = [
@@ -31,16 +32,22 @@ function Leadership () {
     const [leadershipsInfo, setLeadershipsInfo] = useState(initLeaderships);
 
     const [modal, setModal] = useState(false);
+    const [addModal, setAddModal] = useState(false);
+
     useEffect(() => {
-        if (modal) {
+        if (modal || addModal) {
             document.body.classList.add('active-modal');
         } else {
             document.body.classList.remove('active-modal');
         }
-    }, [modal]);
+    }, [modal, addModal]);
     
     function toggleModal() {
         setModal(!modal);
+    };
+
+    function toggleAddModal() {
+        setAddModal(!addModal);
     };
 
     function handleEditClicked(e) {
@@ -48,7 +55,11 @@ function Leadership () {
         console.log(newIndex);
         setIndex(newIndex);
         toggleModal();
-    }
+    };
+
+    function handleAddNewLeadership() {
+        toggleAddModal();
+    };
 
     function handleOnChange(e) {
         const newLeaderships = leaderships.map((currExp, i) => {
@@ -81,7 +92,10 @@ function Leadership () {
                     <div>
                         <img className="add-new__button-icon" src={addSymbol} alt="plus icon"/>
                     </div>
-                    <p className="add-new__button-text">Add new leadership</p>
+                    <p 
+                        className="add-new__button-text"
+                        onClick={handleAddNewLeadership}
+                    >Add new leadership</p>
                 </div>
             </div>
             <div className="all-leaderships">
@@ -119,6 +133,10 @@ function Leadership () {
                 leaderships={leaderships}
                 index={index}
                 onSubmit={handleSubmitForm}
+            />
+            <AddLeadershipModal 
+                modal={addModal}
+                toggleModal={toggleAddModal}
             />
         </div>
     );
