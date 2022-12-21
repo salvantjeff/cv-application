@@ -95,8 +95,12 @@ function Professional () {
         setProfessionals(newProfessionals);
     };
 
-    function handleOnChangeForAddNewProfessional() {
-
+    function handleOnChangeForAddNewProfessional(e) {
+        const newProfessional = {
+            ...addNewProfessional,
+            [e.target.name]: [e.target.value]
+        };
+        setAddNewProfessional(newProfessional);
     };
 
     function handleSubmitForm(e) {
