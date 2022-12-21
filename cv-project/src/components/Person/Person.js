@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Person.css';
-import profileImg from '../../img/messi.jpeg';
+import profileImg from '../../img/profile-pic.jpeg';
 import editPencil from '../../img/pencil.png';
 import PersonModal from './PersonModal/PersonModal';
 
