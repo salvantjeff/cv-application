@@ -44,12 +44,12 @@ function Professional () {
     const [professionals, setProfessionals] = useState(initProfessionals);
     const [professionalsInfo, setProfessionalsInfo] = useState(initProfessionals);
     const [addNewProfessional, setAddNewProfessional] = useState({
-        position: 'hi',
-        company: 'hi',
+        position: '',
+        company: '',
         startDate: '',
         endDate: '',
-        location: 'hi',
-        summary: 'hi',
+        location: '',
+        summary: '',
         id: uuidv4(),
     });
     const [modal, setModal] = useState(false);
@@ -112,6 +112,30 @@ function Professional () {
         toggleModal();
     };
 
+    function handleSubmitAddNewProfessionalForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+
+        const newProfessionalsInfo = [
+            ...professionalsInfo,
+            addNewProfessional
+        ];
+
+        setProfessionalsInfo(newProfessionalsInfo);
+        setProfessionals(newProfessionalsInfo);
+        setAddNewProfessional({
+            position: '',
+            company: '',
+            startDate: '',
+            endDate: '',
+            location: '',
+            summary: '',
+            id: uuidv4(),
+        });
+        console.log('UPDATE COMPLETE');
+        toggleAddModal();
+    };
+
     console.log(professionals);
     return(
         <div className='professional'>
@@ -171,6 +195,7 @@ function Professional () {
                 toggleModal={toggleAddModal}
                 addNewProfessional={addNewProfessional}
                 onChange={handleOnChangeForAddNewProfessional}
+                onSubmit={handleSubmitAddNewProfessionalForm}
             />
         </div>
     );

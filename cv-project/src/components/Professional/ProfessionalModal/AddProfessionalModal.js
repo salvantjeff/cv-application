@@ -7,7 +7,6 @@ export default function AddProfessionalModal({
     toggleModal,
     addNewProfessional,
     onChange,
-    index,
     onSubmit
 }) {
     
@@ -30,10 +29,7 @@ export default function AddProfessionalModal({
                         <AddProfessionalForm 
                             addNewProfessional={addNewProfessional}
                             onChange={onChange}
-                            // professionals={professionals}
-                            // index={index}
-                            // onChange={onChange}
-                            // onSubmit={onSubmit}
+                            onSubmit={onSubmit}
                         />
                     </div>
                 </div>
