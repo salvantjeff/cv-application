@@ -2,7 +2,7 @@ import LeadershipFormItem from "./FormItem/LeadershipFormItem";
 import LeadershipTextAreaItem from "./FormItem/LeadershipTextAreaItem";
 
 function AddLeadershipForm ({ addNewLeadership, onChange, index, onSubmit }) {
-    // const currExp = addNewLeadership;
+    const currExp = addNewLeadership;
     // console.log(leaderships);
     const maxLength = 100;
     return (
@@ -15,32 +15,32 @@ function AddLeadershipForm ({ addNewLeadership, onChange, index, onSubmit }) {
                 id="organization"
                 inputName="organization"
                 type="text"
-                // inputValue={currExp.organization}
-                // onChange={onChange}
+                inputValue={currExp.organization}
+                onChange={onChange}
             />
             <LeadershipFormItem 
                 labelText="Title Role"
                 id="title-role"
                 inputName="titleRole"
                 type="text"
-                // inputValue={currExp.titleRole}
-                // onChange={onChange}
+                inputValue={currExp.titleRole}
+                onChange={onChange}
             />
             <LeadershipFormItem 
                 labelText="Start date"
                 id="leadership-start-date"
                 inputName="startDate"
                 type="month"
-                // inputValue={currExp.startDate}
-                // onChange={onChange}
+                inputValue={currExp.startDate}
+                onChange={onChange}
             />
             <LeadershipFormItem 
                 labelText="End date"
                 id="leadership-end-date"
                 inputName="endDate"
                 type="month"
-                // inputValue={currExp.endDate}
-                // onChange={onChange}
+                inputValue={currExp.endDate}
+                onChange={onChange}
             />
             <LeadershipTextAreaItem 
                 labelText="Summary"
@@ -48,8 +48,8 @@ function AddLeadershipForm ({ addNewLeadership, onChange, index, onSubmit }) {
                 inputName="summary"
                 type="textarea"
                 maxLength={maxLength}
-                // inputValue={currExp.summary}
-                // onChange={onChange}
+                inputValue={currExp.summary}
+                onChange={onChange}
             />
             <div>
                 <button className="save-button">Save</button>

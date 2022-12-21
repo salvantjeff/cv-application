@@ -30,7 +30,14 @@ function Leadership () {
     const [index, setIndex] = useState(0);
     const [leaderships, setLeaderships] = useState(initLeaderships);
     const [leadershipsInfo, setLeadershipsInfo] = useState(initLeaderships);
-
+    const [addNewLeadership, setAddNewLeadership] = useState(        {
+        organization: 'hi',
+        titleRole: 'hi',
+        startDate: '',
+        endDate: '',
+        summary: 'hi',
+        id: uuidv4(),
+    });
     const [modal, setModal] = useState(false);
     const [addModal, setAddModal] = useState(false);
 
@@ -74,6 +81,10 @@ function Leadership () {
         });
         setLeaderships(newLeaderships);
     };
+
+    function handleOnChangeForAddNewLeadership() {
+
+    }
 
     function handleSubmitForm(e) {
         e.preventDefault();
@@ -137,6 +148,8 @@ function Leadership () {
             <AddLeadershipModal 
                 modal={addModal}
                 toggleModal={toggleAddModal}
+                addNewLeadership={addNewLeadership}
+                onChange={handleOnChangeForAddNewLeadership}
             />
         </div>
     );

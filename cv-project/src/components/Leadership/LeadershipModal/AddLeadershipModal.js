@@ -4,9 +4,8 @@ import AddLeadershipForm from "../Forms/AddLeadershipForm";
 export default function AddLeadershipModal({ 
     modal,
     toggleModal,
-    leaderships,
+    addNewLeadership,
     onChange,
-    index,
     onSubmit
 }) {
     
@@ -27,8 +26,8 @@ export default function AddLeadershipModal({
                             </div>
                         </div>
                         <AddLeadershipForm 
-                            
-                            // onChange={onChange}
+                            addNewLeadership={addNewLeadership}
+                            onChange={onChange}
                             // onSubmit={onSubmit}
                         />
                     </div>
