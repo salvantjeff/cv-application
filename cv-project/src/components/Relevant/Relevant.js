@@ -28,10 +28,10 @@ function Relevant () {
     const [relevantExps, setRelevantExps] = useState(initRelevantExps);
     const [relevantExpsInfo, setRelevantExpsInfo] = useState(initRelevantExps);
     const [addNewRelevantExp, setAddNewRelevantExp] = useState({
-        project: 'hi',
+        project: '',
         startDate: '',
         endDate: '',
-        summary:'hi',
+        summary:'',
         id: uuidv4(),
     });
     const [modal, setModal] = useState(false);
