@@ -37,6 +37,7 @@ function Education () {
         startDate: '',
         endDate: '',
         gpa: 0,
+        imageURL: '',
         id: uuidv4(),
     });
 
@@ -120,6 +121,7 @@ function Education () {
             startDate: '',
             endDate: '',
             gpa: 0,
+            imageURL: '',
             id: uuidv4(),
         });
         console.log('UPDATE COMPLETE');
