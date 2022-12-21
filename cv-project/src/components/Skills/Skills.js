@@ -100,7 +100,7 @@ function Skills () {
                     <p 
                         className="add-new__button-text"
                         onClick={handleAddNewSkills}
-                    >Add new leadership exp</p>
+                    >Add new technical skill</p>
                 </div>
             </div>
 
