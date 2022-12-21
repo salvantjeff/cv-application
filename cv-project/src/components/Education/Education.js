@@ -96,6 +96,9 @@ function Education () {
         setEducation([initEducation, initEducation2])
     }, []);
     
+    function handleOnChangeForAddNewEducation() {
+        
+    }
     return (
         <div className='education'>
             <div className="heading-block">
