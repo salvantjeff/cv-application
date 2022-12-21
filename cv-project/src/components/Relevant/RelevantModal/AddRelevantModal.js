@@ -5,7 +5,7 @@ import AddRelevantForm from "../Forms/AddRelevantForm";
 export default function AddRelevantModal({ 
     modal,
     toggleModal,
-    relevantExps,
+    addNewRelevantExp,
     onChange,
     onSubmit
 }) {
@@ -27,9 +27,8 @@ export default function AddRelevantModal({
                             </div>
                         </div>
                         <AddRelevantForm 
-                            // onChange={onChange}
-                            // relevantExps={relevantExps}
-                            // index={index}
+                            onChange={onChange}
+                            addNewRelevantExp={addNewRelevantExp}
                             // onSubmit={onSubmit}
                         />
                     </div>

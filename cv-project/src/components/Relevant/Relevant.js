@@ -27,7 +27,13 @@ function Relevant () {
     const [index, setIndex] = useState(0);
     const [relevantExps, setRelevantExps] = useState(initRelevantExps);
     const [relevantExpsInfo, setRelevantExpsInfo] = useState(initRelevantExps);
-
+    const [addNewRelevantExp, setAddNewRelevantExp] = useState({
+        project: 'hi',
+        startDate: '',
+        endDate: '',
+        summary:'hi',
+        id: uuidv4(),
+    });
     const [modal, setModal] = useState(false);
     const [addModal, setAddModal] = useState(false);
     
@@ -70,6 +76,10 @@ function Relevant () {
             }
         });
         setRelevantExps(newRelevantExps);
+    };
+
+    function handleOnChangeForAddNewLeadershipExp(e) {
+
     };
 
     function handleSubmitForm(e) {
@@ -130,6 +140,8 @@ function Relevant () {
             <AddRelevantModal 
                 modal={addModal}
                 toggleModal={toggleAddModal}
+                addNewRelevantExp={addNewRelevantExp}
+                onChange={handleOnChangeForAddNewLeadershipExp}
             />
         </div>
     );
