@@ -82,9 +82,14 @@ function Leadership () {
         setLeaderships(newLeaderships);
     };
 
-    function handleOnChangeForAddNewLeadership() {
+    function handleOnChangeForAddNewLeadership(e) {
+        const newLeadership = {
+            ...addNewLeadership,
+            [e.target.name]: [e.target.value]
+        };
 
-    }
+        setAddNewLeadership(newLeadership);
+    };
 
     function handleSubmitForm(e) {
         e.preventDefault();
