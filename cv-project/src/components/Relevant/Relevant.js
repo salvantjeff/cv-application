@@ -4,6 +4,7 @@ import addSymbol from '../../img/add-1.png';
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import RelevantModal from './RelevantModal/RelevantModal';
+import AddRelevantModal from './RelevantModal/AddRelevantModal';
 
 function Relevant () {
     const initRelevantExps = [
@@ -28,16 +29,22 @@ function Relevant () {
     const [relevantExpsInfo, setRelevantExpsInfo] = useState(initRelevantExps);
 
     const [modal, setModal] = useState(false);
+    const [addModal, setAddModal] = useState(false);
+    
     useEffect(() => {
-        if (modal) {
+        if (modal || addModal) {
             document.body.classList.add('active-modal');
         } else {
             document.body.classList.remove('active-modal');
         }
-    }, [modal]);
+    }, [modal, addModal]);
     
     function toggleModal() {
         setModal(!modal);
+    };
+
+    function toggleAddModal() {
+        setAddModal(!addModal);
     };
 
     function handleEditClicked(e) {
@@ -45,7 +52,11 @@ function Relevant () {
         console.log(newIndex);
         setIndex(newIndex);
         toggleModal();
-    }
+    };
+
+    function handleAddNewRelevant() {
+        toggleAddModal();
+    };
 
     function handleOnChange(e) {
         const newRelevantExps = relevantExps.map((currExp, i) => {
@@ -78,7 +89,10 @@ function Relevant () {
                     <div>
                         <img className="add-new__button-icon" src={addSymbol} alt="plus icon"/>
                     </div>
-                    <p className="add-new__button-text rel">Add new relevant</p>
+                    <p 
+                        className="add-new__button-text rel"
+                        onClick={handleAddNewRelevant}
+                    >Add new relevant</p>
                 </div>
             </div>
             <div className="all-projects rel">
@@ -112,6 +126,10 @@ function Relevant () {
                 relevantExps={relevantExps}
                 index={index}
                 onSubmit={handleSubmitForm}
+            />
+            <AddRelevantModal 
+                modal={addModal}
+                toggleModal={toggleAddModal}
             />
         </div>
     );
