@@ -5,7 +5,7 @@ import AddProfessionalForm from "../Forms/AddProfessionalForm";
 export default function AddProfessionalModal({ 
     modal,
     toggleModal,
-    professionals,
+    addNewProfessional,
     onChange,
     index,
     onSubmit
@@ -28,6 +28,8 @@ export default function AddProfessionalModal({
                             </div>
                         </div>
                         <AddProfessionalForm 
+                            addNewProfessional={addNewProfessional}
+                            onChange={onChange}
                             // professionals={professionals}
                             // index={index}
                             // onChange={onChange}

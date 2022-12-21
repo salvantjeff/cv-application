@@ -43,7 +43,15 @@ function Professional () {
     const [index, setIndex] = useState(0);
     const [professionals, setProfessionals] = useState(initProfessionals);
     const [professionalsInfo, setProfessionalsInfo] = useState(initProfessionals);
-
+    const [addNewProfessional, setAddNewProfessional] = useState({
+        position: 'hi',
+        company: 'hi',
+        startDate: '',
+        endDate: '',
+        location: 'hi',
+        summary: 'hi',
+        id: uuidv4(),
+    });
     const [modal, setModal] = useState(false);
     const [addModal, setAddModal] = useState(false);
 
@@ -85,6 +93,10 @@ function Professional () {
             }
         });
         setProfessionals(newProfessionals);
+    };
+
+    function handleOnChangeForAddNewProfessional() {
+
     };
 
     function handleSubmitForm(e) {
@@ -153,6 +165,8 @@ function Professional () {
             <AddProfessionalModal 
                 modal={addModal}
                 toggleModal={toggleAddModal}
+                addNewProfessional={addNewProfessional}
+                onChange={handleOnChangeForAddNewProfessional}
             />
         </div>
     );
