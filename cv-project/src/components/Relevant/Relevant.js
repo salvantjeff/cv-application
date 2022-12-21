@@ -4,6 +4,7 @@ import addSymbol from '../../img/add-1.png';
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import RelevantModal from './RelevantModal/RelevantModal';
+import AddRelevantModal from './RelevantModal/AddRelevantModal';
 
 function Relevant () {
     const initRelevantExps = [
@@ -26,18 +27,30 @@ function Relevant () {
     const [index, setIndex] = useState(0);
     const [relevantExps, setRelevantExps] = useState(initRelevantExps);
     const [relevantExpsInfo, setRelevantExpsInfo] = useState(initRelevantExps);
-
+    const [addNewRelevantExp, setAddNewRelevantExp] = useState({
+        project: 'hi',
+        startDate: '',
+        endDate: '',
+        summary:'hi',
+        id: uuidv4(),
+    });
     const [modal, setModal] = useState(false);
+    const [addModal, setAddModal] = useState(false);
+    
     useEffect(() => {
-        if (modal) {
+        if (modal || addModal) {
             document.body.classList.add('active-modal');
         } else {
             document.body.classList.remove('active-modal');
         }
-    }, [modal]);
+    }, [modal, addModal]);
     
     function toggleModal() {
         setModal(!modal);
+    };
+
+    function toggleAddModal() {
+        setAddModal(!addModal);
     };
 
     function handleEditClicked(e) {
@@ -45,7 +58,11 @@ function Relevant () {
         console.log(newIndex);
         setIndex(newIndex);
         toggleModal();
-    }
+    };
+
+    function handleAddNewRelevant() {
+        toggleAddModal();
+    };
 
     function handleOnChange(e) {
         const newRelevantExps = relevantExps.map((currExp, i) => {
@@ -61,6 +78,15 @@ function Relevant () {
         setRelevantExps(newRelevantExps);
     };
 
+    function handleOnChangeForAddNewRelevantExp(e) {
+        const newRelevantExps = {
+            ...addNewRelevantExp,
+            [e.target.name]: [e.target.value]
+        };
+
+        setAddNewRelevantExp(newRelevantExps);
+    };
+
     function handleSubmitForm(e) {
         e.preventDefault();
         console.log('form has been submitted!');
@@ -68,6 +94,26 @@ function Relevant () {
         setRelevantExpsInfo(newRelevantExpsInfo);
         console.log('UPDATE COMPLETE');
         toggleModal();
+    };
+
+    function handleSubmitAddNewRelevantExpForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newRelevantExpsInfo = [
+            ...relevantExpsInfo,
+            addNewRelevantExp
+        ];
+        setRelevantExpsInfo(newRelevantExpsInfo);
+        setRelevantExps(newRelevantExpsInfo)
+        setAddNewRelevantExp({
+            project: 'hi',
+            startDate: '',
+            endDate: '',
+            summary:'hi',
+            id: uuidv4(),
+        });
+        console.log('UPDATE COMPLETE');
+        toggleAddModal();
     };
 
     return (
@@ -78,7 +124,10 @@ function Relevant () {
                     <div>
                         <img className="add-new__button-icon" src={addSymbol} alt="plus icon"/>
                     </div>
-                    <p className="add-new__button-text rel">Add new relevant</p>
+                    <p 
+                        className="add-new__button-text rel"
+                        onClick={handleAddNewRelevant}
+                    >Add new relevant</p>
                 </div>
             </div>
             <div className="all-projects rel">
@@ -112,6 +161,13 @@ function Relevant () {
                 relevantExps={relevantExps}
                 index={index}
                 onSubmit={handleSubmitForm}
+            />
+            <AddRelevantModal 
+                modal={addModal}
+                toggleModal={toggleAddModal}
+                addNewRelevantExp={addNewRelevantExp}
+                onChange={handleOnChangeForAddNewRelevantExp}
+                onSubmit={handleSubmitAddNewRelevantExpForm}
             />
         </div>
     );
