@@ -18,7 +18,10 @@ function Skills () {
 
     const [skills, setSkills] = useState(initSkills);
     const [skillsInfo, setSkillsInfo] = useState(initSkills);
-
+    const [addNewSkills, setAddNewSkills] = useState({
+        id: uuidv4(), 
+        skill: 'super speed'
+    });
     const [modal, setModal] = useState(false);
     const [addModal, setAddModal] = useState(false);
 
@@ -56,6 +59,15 @@ function Skills () {
             setSkills(newSkills);
         }
         console.log('you can\'t add a skill, only edit what is there');
+    };
+
+    function handleOnChangeForAddNewSkills(e) {
+        // const newEducation = {
+        //     ...addNewEducation,
+        //     [e.target.name]: [e.target.value]
+        // };
+
+        // setAddNewEducation(newEducation);
     };
 
     function handleSubmitForm(e) {
@@ -114,6 +126,8 @@ function Skills () {
             <AddSkillsModal 
                 modal={addModal}
                 toggleModal={toggleAddModal}
+                addNewSkills={addNewSkills}
+                onChange={handleOnChangeForAddNewSkills}
             />
         </div>
     );

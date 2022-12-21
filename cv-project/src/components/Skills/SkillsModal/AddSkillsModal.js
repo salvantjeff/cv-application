@@ -5,7 +5,7 @@ export default function AddSkillsModal({
     modal,
     toggleModal,
     onChange,
-    skills,
+    addNewSkills,
     onSubmit
 }) {
     
@@ -26,8 +26,8 @@ export default function AddSkillsModal({
                             </div>
                         </div>
                         <AddSkillsForm 
-                            // onChange={onChange}
-                            // skills={skills}
+                            onChange={onChange}
+                            addNewSkills={addNewSkills}
                             // onSubmit={onSubmit}
                         />
                     </div>
