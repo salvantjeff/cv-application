@@ -26,7 +26,15 @@ function Education () {
     };
     const [education, setEducation] = useState([initEducation]);
     const [educationList, setEducationList] = useState([initEducation,  initEducation2]);
-    
+    const [addNewEducation, setAddNewEducation] = useState({
+        university: '',
+        major: '',
+        startDate: '',
+        endDate: '',
+        gpa: 0,
+        id: uuidv4(),
+    });
+
     const [modal, setModal] = useState(false);
     const [addModal, setAddModal] = useState(false);
 
