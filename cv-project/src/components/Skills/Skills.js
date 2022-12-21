@@ -5,6 +5,7 @@ import addSymbol from '../../img/add-1.png';
 import React, { useState, useEffect } from 'react';
 import SkillsModal from './SkillsModal/SkillsModal';
 import { v4 as uuidv4 } from 'uuid';
+import AddSkillsModal from './SkillsModal/AddSkillsModal';
 
 function Skills () {
     const initSkills = [
@@ -19,16 +20,26 @@ function Skills () {
     const [skillsInfo, setSkillsInfo] = useState(initSkills);
 
     const [modal, setModal] = useState(false);
+    const [addModal, setAddModal] = useState(false);
+
     useEffect(() => {
-        if (modal) {
+        if (modal || addModal) {
             document.body.classList.add('active-modal');
         } else {
             document.body.classList.remove('active-modal');
         }
-    }, [modal]);
+    }, [modal, addModal]);
     
     function toggleModal() {
         setModal(!modal);
+    };
+
+    function toggleAddModal() {
+        setAddModal(!addModal);
+    };
+
+    function handleAddNewSkills() {
+        toggleAddModal();
     };
 
     function handleOnChange(e) {
@@ -74,7 +85,10 @@ function Skills () {
                     <div>
                         <img className="add-new__button-icon" src={addSymbol} alt="plus icon"/>
                     </div>
-                    <p className="add-new__button-text">Add new leadership exp</p>
+                    <p 
+                        className="add-new__button-text"
+                        onClick={handleAddNewSkills}
+                    >Add new leadership exp</p>
                 </div>
             </div>
 
@@ -96,6 +110,10 @@ function Skills () {
                 onChange={handleOnChange}
                 skills={skills}
                 onSubmit={handleSubmitForm}
+            />
+            <AddSkillsModal 
+                modal={addModal}
+                toggleModal={toggleAddModal}
             />
         </div>
     );
