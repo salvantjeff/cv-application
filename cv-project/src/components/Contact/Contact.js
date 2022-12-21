@@ -19,6 +19,7 @@ function Contact () {
     const [contactsInfo, setContactsInfo] = useState(initContacts);
 
     const [modal, setModal] = useState(false);
+    
     useEffect(() => {
         if (modal) {
             document.body.classList.add('active-modal');
