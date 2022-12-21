@@ -106,10 +106,10 @@ function Relevant () {
         setRelevantExpsInfo(newRelevantExpsInfo);
         setRelevantExps(newRelevantExpsInfo)
         setAddNewRelevantExp({
-            project: 'hi',
+            project: '',
             startDate: '',
             endDate: '',
-            summary:'hi',
+            summary:'',
             id: uuidv4(),
         });
         console.log('UPDATE COMPLETE');
