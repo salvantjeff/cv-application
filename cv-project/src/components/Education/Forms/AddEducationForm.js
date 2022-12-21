@@ -5,7 +5,7 @@ function AddEducationForm ({ addNewEducation, onChange, index, onSubmit }) {
     // console.log(education);
     return (
         <form 
-            // onSubmit={onSubmit} 
+            onSubmit={onSubmit} 
             className="intro_form"
         >
             <EducationFormItem 

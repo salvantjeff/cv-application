@@ -6,7 +6,6 @@ export default function AddEducationModal({
     toggleModal,
     addNewEducation,
     onChange,
-    index,
     onSubmit
 }) {
     
@@ -29,7 +28,7 @@ export default function AddEducationModal({
                         <AddEducationForm 
                             addNewEducation={addNewEducation}
                             onChange={onChange}
-                            // onSubmit={onSubmit}
+                            onSubmit={onSubmit}
                         />
                     </div>
                 </div>

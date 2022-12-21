@@ -16,6 +16,7 @@ function Education () {
         gpa: 3.5,
         id: uuidv4(),
     };
+
     let initEducation2 = {
         university: 'NYU',
         major: 'Computer Science',
@@ -24,13 +25,14 @@ function Education () {
         gpa: 3.0,
         id: uuidv4(),
     };
+
     const [education, setEducation] = useState([initEducation]);
     const [educationList, setEducationList] = useState([initEducation,  initEducation2]);
     const [addNewEducation, setAddNewEducation] = useState({
-        university: 'hi',
-        major: 'hi',
-        startDate: '2020-02',
-        endDate: '2020-04',
+        university: '',
+        major: '',
+        startDate: '',
+        endDate: '',
         gpa: 0,
         id: uuidv4(),
     });
@@ -66,7 +68,6 @@ function Education () {
         toggleModal();
     };
 
-
     function handleOnChange(e) {
         const newEducation = education.map((currEd, i) => {
             if (i === index) {
@@ -91,7 +92,6 @@ function Education () {
         toggleModal();
     };
 
-
     useEffect(() => {
         setEducation([initEducation, initEducation2])
     }, []);
@@ -104,7 +104,28 @@ function Education () {
 
         setAddNewEducation(newEducation);
     };
-    
+
+    function handleSubmitAddNewEducationForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newEducationList = [
+            ...educationList,
+            addNewEducation
+        ];
+        setEducationList(newEducationList);
+        setEducation(newEducationList)
+        setAddNewEducation({
+            university: '',
+            major: '',
+            startDate: '',
+            endDate: '',
+            gpa: 0,
+            id: uuidv4(),
+        });
+        console.log('UPDATE COMPLETE');
+        toggleAddModal();
+    };
+
     return (
         <div className='education'>
             <div className="heading-block">
@@ -159,6 +180,7 @@ function Education () {
                 toggleModal={toggleAddModal}
                 addNewEducation={addNewEducation}
                 onChange={handleOnChangeForAddNewEducation}
+                onSubmit={handleSubmitAddNewEducationForm}
             />
         </div>
     );
