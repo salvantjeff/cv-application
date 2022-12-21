@@ -5,6 +5,7 @@ import addSymbol from '../../img/add-1.png';
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import EducationModal from './EducationModal/EducationModal';
+import AddEducationModal from './EducationModal/AddEducationModal';
 
 function Education () {
     let initEducation = {
@@ -15,6 +16,7 @@ function Education () {
         gpa: 3.5,
         id: uuidv4(),
     };
+
     let initEducation2 = {
         university: 'NYU',
         major: 'Computer Science',
@@ -23,29 +25,48 @@ function Education () {
         gpa: 3.0,
         id: uuidv4(),
     };
+
     const [education, setEducation] = useState([initEducation]);
     const [educationList, setEducationList] = useState([initEducation,  initEducation2]);
-    
+    const [addNewEducation, setAddNewEducation] = useState({
+        university: '',
+        major: '',
+        startDate: '',
+        endDate: '',
+        gpa: 0,
+        id: uuidv4(),
+    });
+
     const [modal, setModal] = useState(false);
+    const [addModal, setAddModal] = useState(false);
+
     const [index, setIndex] = useState(0);
     useEffect(() => {
-        if (modal) {
+        if (modal || addModal) {
             document.body.classList.add('active-modal');
         } else {
             document.body.classList.remove('active-modal');
         }
-    }, [modal]);
+    }, [modal, addModal]);
     
     function toggleModal() {
         setModal(!modal);
     };
+
+    function toggleAddModal() {
+        setAddModal(!addModal);
+    };
+
+    function handleAddNewEducation() {
+        toggleAddModal();
+    }
 
     function handleEditClicked(e) {
         const newIndex = parseInt(e.target.dataset.index);
         console.log(newIndex);
         setIndex(newIndex);
         toggleModal();
-    }
+    };
 
     function handleOnChange(e) {
         const newEducation = education.map((currEd, i) => {
@@ -71,11 +92,40 @@ function Education () {
         toggleModal();
     };
 
-
     useEffect(() => {
         setEducation([initEducation, initEducation2])
     }, []);
     
+    function handleOnChangeForAddNewEducation(e) {
+        const newEducation = {
+            ...addNewEducation,
+            [e.target.name]: [e.target.value]
+        };
+
+        setAddNewEducation(newEducation);
+    };
+
+    function handleSubmitAddNewEducationForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newEducationList = [
+            ...educationList,
+            addNewEducation
+        ];
+        setEducationList(newEducationList);
+        setEducation(newEducationList)
+        setAddNewEducation({
+            university: '',
+            major: '',
+            startDate: '',
+            endDate: '',
+            gpa: 0,
+            id: uuidv4(),
+        });
+        console.log('UPDATE COMPLETE');
+        toggleAddModal();
+    };
+
     return (
         <div className='education'>
             <div className="heading-block">
@@ -84,7 +134,10 @@ function Education () {
                     <div>
                         <img className="add-new__button-icon" src={addSymbol} alt="plus icon"/>
                     </div>
-                    <p className="add-new__button-text">Add new education</p>
+                    <p 
+                        className="add-new__button-text"
+                        onClick={handleAddNewEducation}
+                    >Add new education</p>
                 </div>
             </div>
             <div className='education-all-items'>
@@ -121,6 +174,13 @@ function Education () {
                 index={index}
                 onChange={handleOnChange}
                 onSubmit={handleSubmitForm}
+            />
+            <AddEducationModal 
+                modal={addModal}
+                toggleModal={toggleAddModal}
+                addNewEducation={addNewEducation}
+                onChange={handleOnChangeForAddNewEducation}
+                onSubmit={handleSubmitAddNewEducationForm}
             />
         </div>
     );
