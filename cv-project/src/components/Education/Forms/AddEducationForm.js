@@ -1,8 +1,7 @@
 import EducationFormItem from "./FormItem/EducationFormItem";
 
-function AddEducationForm ({ addNewEducation, onChange, index, onSubmit }) {
-    const ed = addNewEducation
-    // console.log(education);
+function AddEducationForm ({ addNewEducation, onChange, onSubmit }) {
+    const ed = addNewEducation;
     return (
         <form 
             onSubmit={onSubmit} 
