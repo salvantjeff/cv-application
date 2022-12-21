@@ -1,5 +1,4 @@
 import EducationFormItem from "./FormItem/EducationFormItem";
-import './EditEducationForm.css';
 
 function EditEducationForm ({ education, onChange, index, onSubmit }) {
     const ed = education[index];
