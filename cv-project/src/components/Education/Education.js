@@ -15,6 +15,7 @@ function Education () {
             startDate: '2018-08',
             endDate: '2022-05',
             gpa: 3.5,
+            imageURL: vcuLogo,
             id: uuidv4(),
         },
         {
@@ -23,6 +24,7 @@ function Education () {
             startDate: '2022-08',
             endDate: '2024-05',
             gpa: 3.0,
+            imageURL: '',
             id: uuidv4(),
         }
     ];
@@ -143,7 +145,7 @@ function Education () {
                     return (
                     <div className='education-item' key={currEd.id}>
                         <div className="education-icon-box">
-                            <img className="education-icon" src={vcuLogo} alt="education icon"/>
+                            <img className="education-icon" src={currEd.imageURL} alt="school icon"/>
                         </div>
                         <div className='education-details'>
                             <div className="section-card">
