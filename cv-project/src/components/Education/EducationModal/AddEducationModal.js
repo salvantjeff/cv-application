@@ -4,7 +4,7 @@ import AddEducationForm from "../Forms/AddEducationForm";
 export default function AddEducationModal({ 
     modal,
     toggleModal,
-    education,
+    addNewEducation,
     onChange,
     index,
     onSubmit
@@ -27,9 +27,8 @@ export default function AddEducationModal({
                             </div>
                         </div>
                         <AddEducationForm 
-                            // education={education}
-                            // onChange={onChange}
-                            // index={index}
+                            addNewEducation={addNewEducation}
+                            onChange={onChange}
                             // onSubmit={onSubmit}
                         />
                     </div>

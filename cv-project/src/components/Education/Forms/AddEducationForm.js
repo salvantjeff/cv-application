@@ -1,7 +1,7 @@
 import EducationFormItem from "./FormItem/EducationFormItem";
 
-function AddEducationForm ({ education, onChange, index, onSubmit }) {
-    // const ed = education[index];
+function AddEducationForm ({ addNewEducation, onChange, index, onSubmit }) {
+    const ed = addNewEducation
     // console.log(education);
     return (
         <form 
@@ -13,40 +13,40 @@ function AddEducationForm ({ education, onChange, index, onSubmit }) {
                 id="university"
                 inputName="university"
                 type="text"
-                // inputValue={ed.university}
-                // onChange={onChange}
+                inputValue={ed.university}
+                onChange={onChange}
             />
             <EducationFormItem 
                 labelText="Major"
                 id="major"
                 inputName="major"
                 type="text"
-                // inputValue={ed.major}
-                // onChange={onChange}
+                inputValue={ed.major}
+                onChange={onChange}
             />
             <EducationFormItem 
                 labelText="Start date"
                 id="start-date"
                 inputName="startDate"
                 type="month"
-                // inputValue={ed.startDate}
-                // onChange={onChange}
+                inputValue={ed.startDate}
+                onChange={onChange}
             />
             <EducationFormItem 
                 labelText="End date"
                 id="end-date"
                 inputName="endDate"
                 type="month"
-                // inputValue={ed.endDate}
-                // onChange={onChange}
+                inputValue={ed.endDate}
+                onChange={onChange}
             />
             <EducationFormItem 
                 labelText="GPA"
                 id="gpa"
                 inputName="gpa"
                 type="number"
-                // inputValue={ed.gpa}
-                // onChange={onChange}
+                inputValue={ed.gpa}
+                onChange={onChange}
             />
             <div>
                 <button className="save-button">Save</button>

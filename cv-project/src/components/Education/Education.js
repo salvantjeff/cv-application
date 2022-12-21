@@ -27,10 +27,10 @@ function Education () {
     const [education, setEducation] = useState([initEducation]);
     const [educationList, setEducationList] = useState([initEducation,  initEducation2]);
     const [addNewEducation, setAddNewEducation] = useState({
-        university: '',
-        major: '',
-        startDate: '',
-        endDate: '',
+        university: 'hi',
+        major: 'hi',
+        startDate: '2020-02',
+        endDate: '2020-04',
         gpa: 0,
         id: uuidv4(),
     });
@@ -97,7 +97,7 @@ function Education () {
     }, []);
     
     function handleOnChangeForAddNewEducation() {
-        
+
     }
     return (
         <div className='education'>
@@ -151,6 +151,8 @@ function Education () {
             <AddEducationModal 
                 modal={addModal}
                 toggleModal={toggleAddModal}
+                addNewEducation={addNewEducation}
+                onChange={handleOnChangeForAddNewEducation}
             />
         </div>
     );
