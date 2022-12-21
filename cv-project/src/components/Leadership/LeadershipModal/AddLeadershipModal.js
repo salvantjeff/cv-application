@@ -28,7 +28,7 @@ export default function AddLeadershipModal({
                         <AddLeadershipForm 
                             addNewLeadership={addNewLeadership}
                             onChange={onChange}
-                            // onSubmit={onSubmit}
+                            onSubmit={onSubmit}
                         />
                     </div>
                 </div>

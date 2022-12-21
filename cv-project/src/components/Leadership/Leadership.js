@@ -100,6 +100,27 @@ function Leadership () {
         toggleModal();
     };
 
+    function handleSubmitAddNewLeadershipForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newLeadershipsInfo = [
+            ...leadershipsInfo,
+            addNewLeadership
+        ];
+        setLeadershipsInfo(newLeadershipsInfo);
+        setLeaderships(newLeadershipsInfo)
+        setAddNewLeadership({
+            organization: '',
+            titleRole: '',
+            startDate: '',
+            endDate: '',
+            summary: '',
+            id: uuidv4(),
+        });
+        console.log('UPDATE COMPLETE');
+        toggleAddModal();
+    };
+
     return (
         <div className="leadership">
             <div className="heading-block">
@@ -155,6 +176,7 @@ function Leadership () {
                 toggleModal={toggleAddModal}
                 addNewLeadership={addNewLeadership}
                 onChange={handleOnChangeForAddNewLeadership}
+                onSubmit={handleSubmitAddNewLeadershipForm}
             />
         </div>
     );

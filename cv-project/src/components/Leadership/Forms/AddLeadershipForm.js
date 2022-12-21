@@ -7,7 +7,7 @@ function AddLeadershipForm ({ addNewLeadership, onChange, index, onSubmit }) {
     const maxLength = 100;
     return (
         <form 
-            // onSubmit={onSubmit} 
+            onSubmit={onSubmit} 
             className="intro_form"
         >
             <LeadershipFormItem 
