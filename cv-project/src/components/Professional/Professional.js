@@ -25,17 +25,7 @@ function Professional () {
             startDate: '2019-06',
             endDate: '2019-08',
             location: 'Richmond, Virginia',
-            summary: `
-                flsdkafjlasdkfjl;akfjldkfjaslkfjdl;kfjsdalkjflkasdjf
-                lsdakfjlasd;kfjsdalfkjslakfjsdlkfjasdlkfjslakfjasdlkfjasdlkfjsdlkf
-                jaslkfjl;sakfjsdal;fkj;sdlfkjdaslf;ksdjflkasjdflkdsjflasdkjflasd
-                kfjlsdkfjlkfjal;kfjasdl;fkjsdlofksjflaskfjldkfjasdl;fkjdl;askjfas
-                ifjffoijfkldsfjaklfjdklfjaldjflo;aifjdsl;ifjawofiejlofasdjnvlsdf
-                jkgjoigjgpoiawgjaopigjerpgiorjgtoiaerghjoighjeoaighjaergtyiojrgkl
-                sdfgjnlkfghjadefpioghjopigjdfigjskgjsgkljfkjfkfaklfjslakfjalkfks
-                jflksajflksdfjokjlkjlfkjsldakfjlksdjfklsjfslakfjasl;dfjo2itjugo
-                uhjoighjoighjeraoguihag
-            `,
+            summary: 'Helped resolve angry/upset/confused/kind customers issues.',
             id: uuidv4(),
         }
     ];
@@ -52,6 +42,7 @@ function Professional () {
         summary: '',
         id: uuidv4(),
     });
+
     const [modal, setModal] = useState(false);
     const [addModal, setAddModal] = useState(false);
 
@@ -77,9 +68,10 @@ function Professional () {
         setIndex(newIndex);
         toggleModal();
     };
+
     function handleAddNewProfessionalClicked() {
         toggleAddModal();
-    }
+    };
 
     function handleOnChange(e) {
         const newProfessionals = professionals.map((currProf, i) => {
@@ -136,7 +128,6 @@ function Professional () {
         toggleAddModal();
     };
 
-    console.log(professionals);
     return(
         <div className='professional'>
             <div className="heading-block">
