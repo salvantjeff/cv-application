@@ -50,8 +50,8 @@ function EditEducationForm ({ education, onChange, index, onSubmit }) {
                 id="imageURL"
                 inputName="imageURL"
                 type="text"
-                // inputValue={ed.gpa}
-                // onChange={onChange}
+                inputValue={ed.imageURL}
+                onChange={onChange}
             />
             <div>
                 <button className="save-button">Save</button>
