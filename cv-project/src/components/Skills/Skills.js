@@ -5,6 +5,7 @@ import addSymbol from '../../img/add-1.png';
 import React, { useState, useEffect } from 'react';
 import SkillsModal from './SkillsModal/SkillsModal';
 import { v4 as uuidv4 } from 'uuid';
+import AddSkillsModal from './SkillsModal/AddSkillsModal';
 
 function Skills () {
     const initSkills = [
@@ -17,18 +18,31 @@ function Skills () {
 
     const [skills, setSkills] = useState(initSkills);
     const [skillsInfo, setSkillsInfo] = useState(initSkills);
-
+    const [addNewSkills, setAddNewSkills] = useState({
+        id: uuidv4(), 
+        skill: ''
+    });
     const [modal, setModal] = useState(false);
+    const [addModal, setAddModal] = useState(false);
+
     useEffect(() => {
-        if (modal) {
+        if (modal || addModal) {
             document.body.classList.add('active-modal');
         } else {
             document.body.classList.remove('active-modal');
         }
-    }, [modal]);
+    }, [modal, addModal]);
     
     function toggleModal() {
         setModal(!modal);
+    };
+
+    function toggleAddModal() {
+        setAddModal(!addModal);
+    };
+
+    function handleAddNewSkills() {
+        toggleAddModal();
     };
 
     function handleOnChange(e) {
@@ -47,6 +61,15 @@ function Skills () {
         console.log('you can\'t add a skill, only edit what is there');
     };
 
+    function handleOnChangeForAddNewSkills(e) {
+        const newSkills = {
+            ...addNewSkills,
+            [e.target.name]: [e.target.value]
+        };
+
+        setAddNewSkills(newSkills);
+    };
+
     function handleSubmitForm(e) {
         e.preventDefault();
         console.log('form has been submitted!');
@@ -54,6 +77,23 @@ function Skills () {
         setSkillsInfo(newSkills);
         console.log('UPDATE COMPLETE');
         toggleModal();
+    };
+
+    function handleSubmitAddNewSkillsForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newSkillsInfo = [
+            ...skillsInfo,
+            addNewSkills
+        ];
+        setSkillsInfo(newSkillsInfo);
+        setSkills(newSkillsInfo);
+        setAddNewSkills({
+            id: uuidv4(), 
+            skill: ''
+        });
+        console.log('UPDATE COMPLETE');
+        toggleAddModal();
     };
 
     return (
@@ -74,7 +114,10 @@ function Skills () {
                     <div>
                         <img className="add-new__button-icon" src={addSymbol} alt="plus icon"/>
                     </div>
-                    <p className="add-new__button-text">Add new leadership exp</p>
+                    <p 
+                        className="add-new__button-text"
+                        onClick={handleAddNewSkills}
+                    >Add new technical skill</p>
                 </div>
             </div>
 
@@ -96,6 +139,13 @@ function Skills () {
                 onChange={handleOnChange}
                 skills={skills}
                 onSubmit={handleSubmitForm}
+            />
+            <AddSkillsModal 
+                modal={addModal}
+                toggleModal={toggleAddModal}
+                addNewSkills={addNewSkills}
+                onChange={handleOnChangeForAddNewSkills}
+                onSubmit={handleSubmitAddNewSkillsForm}
             />
         </div>
     );
