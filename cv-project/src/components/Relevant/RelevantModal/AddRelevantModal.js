@@ -29,7 +29,7 @@ export default function AddRelevantModal({
                         <AddRelevantForm 
                             onChange={onChange}
                             addNewRelevantExp={addNewRelevantExp}
-                            // onSubmit={onSubmit}
+                            onSubmit={onSubmit}
                         />
                     </div>
                 </div>

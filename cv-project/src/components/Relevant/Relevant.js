@@ -96,6 +96,26 @@ function Relevant () {
         toggleModal();
     };
 
+    function handleSubmitAddNewRelevantExpForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newRelevantExpsInfo = [
+            ...relevantExpsInfo,
+            addNewRelevantExp
+        ];
+        setRelevantExpsInfo(newRelevantExpsInfo);
+        setRelevantExps(newRelevantExpsInfo)
+        setAddNewRelevantExp({
+            project: 'hi',
+            startDate: '',
+            endDate: '',
+            summary:'hi',
+            id: uuidv4(),
+        });
+        console.log('UPDATE COMPLETE');
+        toggleAddModal();
+    };
+
     return (
         <div className="relevant">
             <div className="heading-block rel">
@@ -147,6 +167,7 @@ function Relevant () {
                 toggleModal={toggleAddModal}
                 addNewRelevantExp={addNewRelevantExp}
                 onChange={handleOnChangeForAddNewRelevantExp}
+                onSubmit={handleSubmitAddNewRelevantExpForm}
             />
         </div>
     );
