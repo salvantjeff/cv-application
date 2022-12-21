@@ -6,6 +6,7 @@ import addSymbol from '../../img/add-1.png';
 import React, { useState, useEffect } from 'react';
 import ProfessionalModal from './ProfessionalModal/ProfessionalModal';
 import { v4 as uuidv4 } from 'uuid';
+import AddProfessionalModal from './ProfessionalModal/AddProfessionalModal';
 
 function Professional () {
     const initProfessionals = [
@@ -42,18 +43,32 @@ function Professional () {
     const [index, setIndex] = useState(0);
     const [professionals, setProfessionals] = useState(initProfessionals);
     const [professionalsInfo, setProfessionalsInfo] = useState(initProfessionals);
-
+    const [addNewProfessional, setAddNewProfessional] = useState({
+        position: '',
+        company: '',
+        startDate: '',
+        endDate: '',
+        location: '',
+        summary: '',
+        id: uuidv4(),
+    });
     const [modal, setModal] = useState(false);
+    const [addModal, setAddModal] = useState(false);
+
     useEffect(() => {
-        if (modal) {
+        if (modal || addModal) {
             document.body.classList.add('active-modal');
         } else {
             document.body.classList.remove('active-modal');
         }
-    }, [modal]);
+    }, [modal, addModal]);
     
     function toggleModal() {
         setModal(!modal);
+    };
+
+    function toggleAddModal() {
+        setAddModal(!addModal);
     };
 
     function handleEditClicked(e) {
@@ -61,6 +76,9 @@ function Professional () {
         console.log(newIndex);
         setIndex(newIndex);
         toggleModal();
+    };
+    function handleAddNewProfessionalClicked() {
+        toggleAddModal();
     }
 
     function handleOnChange(e) {
@@ -77,6 +95,14 @@ function Professional () {
         setProfessionals(newProfessionals);
     };
 
+    function handleOnChangeForAddNewProfessional(e) {
+        const newProfessional = {
+            ...addNewProfessional,
+            [e.target.name]: [e.target.value]
+        };
+        setAddNewProfessional(newProfessional);
+    };
+
     function handleSubmitForm(e) {
         e.preventDefault();
         console.log('form has been submitted!');
@@ -84,6 +110,30 @@ function Professional () {
         setProfessionalsInfo(newProfessionalsInfo);
         console.log('UPDATE COMPLETE');
         toggleModal();
+    };
+
+    function handleSubmitAddNewProfessionalForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+
+        const newProfessionalsInfo = [
+            ...professionalsInfo,
+            addNewProfessional
+        ];
+
+        setProfessionalsInfo(newProfessionalsInfo);
+        setProfessionals(newProfessionalsInfo);
+        setAddNewProfessional({
+            position: '',
+            company: '',
+            startDate: '',
+            endDate: '',
+            location: '',
+            summary: '',
+            id: uuidv4(),
+        });
+        console.log('UPDATE COMPLETE');
+        toggleAddModal();
     };
 
     console.log(professionals);
@@ -95,7 +145,10 @@ function Professional () {
                     <div>
                         <img className="add-new__button-icon" src={addSymbol} alt="plus icon"/>
                     </div>
-                    <p className="add-new__button-text">Add new professional</p>
+                    <p 
+                        className="add-new__button-text"
+                        onClick={handleAddNewProfessionalClicked}
+                    >Add new professional</p>
                 </div>
             </div>
             <div className='all-professional-exp'>
@@ -136,6 +189,13 @@ function Professional () {
                 index={index}
                 onChange={handleOnChange}
                 onSubmit={handleSubmitForm}
+            />
+            <AddProfessionalModal 
+                modal={addModal}
+                toggleModal={toggleAddModal}
+                addNewProfessional={addNewProfessional}
+                onChange={handleOnChangeForAddNewProfessional}
+                onSubmit={handleSubmitAddNewProfessionalForm}
             />
         </div>
     );
