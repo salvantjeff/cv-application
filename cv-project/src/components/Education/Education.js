@@ -96,9 +96,15 @@ function Education () {
         setEducation([initEducation, initEducation2])
     }, []);
     
-    function handleOnChangeForAddNewEducation() {
+    function handleOnChangeForAddNewEducation(e) {
+        const newEducation = {
+            ...addNewEducation,
+            [e.target.name]: [e.target.value]
+        };
 
-    }
+        setAddNewEducation(newEducation);
+    };
+    
     return (
         <div className='education'>
             <div className="heading-block">
