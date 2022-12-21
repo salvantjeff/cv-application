@@ -15,7 +15,6 @@
 
 .skill-item {
     list-style: none;
-    /* margin-bottom: .5rem; */
     display: grid;
     grid-template-columns: 12px 1fr;
     gap: 2px;
