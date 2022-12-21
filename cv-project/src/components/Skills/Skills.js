@@ -20,7 +20,7 @@ function Skills () {
     const [skillsInfo, setSkillsInfo] = useState(initSkills);
     const [addNewSkills, setAddNewSkills] = useState({
         id: uuidv4(), 
-        skill: 'super speed'
+        skill: ''
     });
     const [modal, setModal] = useState(false);
     const [addModal, setAddModal] = useState(false);
@@ -79,6 +79,23 @@ function Skills () {
         toggleModal();
     };
 
+    function handleSubmitAddNewSkillsForm(e) {
+        e.preventDefault();
+        console.log('form has been submitted!');
+        const newSkillsInfo = [
+            ...skillsInfo,
+            addNewSkills
+        ];
+        setSkillsInfo(newSkillsInfo);
+        setSkills(newSkillsInfo);
+        setAddNewSkills({
+            id: uuidv4(), 
+            skill: ''
+        });
+        console.log('UPDATE COMPLETE');
+        toggleAddModal();
+    };
+
     return (
         <div className="skills">
             <div>
@@ -128,6 +145,7 @@ function Skills () {
                 toggleModal={toggleAddModal}
                 addNewSkills={addNewSkills}
                 onChange={handleOnChangeForAddNewSkills}
+                onSubmit={handleSubmitAddNewSkillsForm}
             />
         </div>
     );

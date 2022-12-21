@@ -6,7 +6,7 @@ function AddSkillsForm ({ addNewSkills, onChange, onSubmit }) {
     const maxLength = 300;
     return (
         <form 
-            // onSubmit={onSubmit} 
+            onSubmit={onSubmit} 
             className="intro_form"
         >
             <SkillsFormItem 

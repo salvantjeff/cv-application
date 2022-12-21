@@ -28,7 +28,7 @@ export default function AddSkillsModal({
                         <AddSkillsForm 
                             onChange={onChange}
                             addNewSkills={addNewSkills}
-                            // onSubmit={onSubmit}
+                            onSubmit={onSubmit}
                         />
                     </div>
                 </div>
