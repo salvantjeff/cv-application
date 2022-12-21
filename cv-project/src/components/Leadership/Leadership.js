@@ -31,11 +31,11 @@ function Leadership () {
     const [leaderships, setLeaderships] = useState(initLeaderships);
     const [leadershipsInfo, setLeadershipsInfo] = useState(initLeaderships);
     const [addNewLeadership, setAddNewLeadership] = useState(        {
-        organization: 'hi',
-        titleRole: 'hi',
+        organization: '',
+        titleRole: '',
         startDate: '',
         endDate: '',
-        summary: 'hi',
+        summary: '',
         id: uuidv4(),
     });
     const [modal, setModal] = useState(false);
