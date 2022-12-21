@@ -79,7 +79,12 @@ function Relevant () {
     };
 
     function handleOnChangeForAddNewLeadershipExp(e) {
+        const newRelevantExps = {
+            ...addNewRelevantExp,
+            [e.target.name]: [e.target.value]
+        };
 
+        setAddNewRelevantExp(newRelevantExps);
     };
 
     function handleSubmitForm(e) {
