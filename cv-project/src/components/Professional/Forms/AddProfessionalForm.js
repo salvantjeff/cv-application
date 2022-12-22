@@ -58,6 +58,14 @@ function AddProfessionalForm ({ addNewProfessional, onChange, index, onSubmit })
                 inputValue={currProf.summary}
                 onChange={onChange}
             />
+            <ProfessionalFormItem 
+                labelText="University Image URL"
+                id="imageURL"
+                inputName="imageURL"
+                type="text"
+                inputValue={currProf.imageURL}
+                onChange={onChange}
+            />
             <div>
                 <button className="save-button">Save</button>
             </div>
