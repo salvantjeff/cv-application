@@ -27,6 +27,11 @@
     padding-bottom: .5rem;
 }
 
+.leadership-details.removeBorder {
+    border: none;
+    padding-bottom: .5rem;
+}
+
 .leadership-duration,
 .leadership-position {
     font-size: .85rem;
