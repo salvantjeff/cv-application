@@ -8,7 +8,8 @@ export default function ProfessionalModal({
     professionals,
     onChange,
     index,
-    onSubmit
+    onSubmit,
+    onClick
 }) {
     
     return (
@@ -32,6 +33,7 @@ export default function ProfessionalModal({
                             index={index}
                             onChange={onChange}
                             onSubmit={onSubmit}
+                            onClick={onClick}
                         />
                     </div>
                 </div>

@@ -71,6 +71,17 @@ function Professional () {
         toggleModal();
     };
 
+    function handleDeleteClicked() {
+        console.log('Deleting card...');
+        const newProfessionalsInfo = professionalsInfo.filter((currExp, i) => {
+            return i !== index;
+        });
+        console.log(newProfessionalsInfo);
+        setProfessionalsInfo(newProfessionalsInfo);
+        setProfessionals(newProfessionalsInfo);
+        toggleModal();
+    };
+
     function handleAddNewProfessionalClicked() {
         toggleAddModal();
     };
@@ -183,6 +194,7 @@ function Professional () {
                 index={index}
                 onChange={handleOnChange}
                 onSubmit={handleSubmitForm}
+                onClick={handleDeleteClicked}
             />
             <AddProfessionalModal 
                 modal={addModal}

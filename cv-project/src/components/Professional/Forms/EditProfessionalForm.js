@@ -1,7 +1,13 @@
 import ProfessionalFormItem from "./FormItem/ProfessionalFormItem";
 import ProfessionalTextAreaItem from "./FormItem/ProfessionalTextAreaItem";
 
-function EditProfessionalForm ({ professionals, onChange, index, onSubmit }) {
+function EditProfessionalForm ({ 
+    professionals, 
+    onChange, 
+    index, 
+    onSubmit, 
+    onClick 
+}) {
     const currProf = professionals[index];
     console.log(professionals);
     const maxLength = 100;
@@ -71,7 +77,7 @@ function EditProfessionalForm ({ professionals, onChange, index, onSubmit }) {
                 <button 
                     type="button" 
                     className="delete-button"
-                    // onClick={onClick}
+                    onClick={onClick}
                 >Delete</button>
                 <button type="submit" className="save-button">Save</button>
             </div>
