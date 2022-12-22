@@ -139,6 +139,8 @@ function Education () {
         toggleAddModal();
     };
 
+    const lastIndex = educationList.length - 1;
+    let borderStatus = '';
     return (
         <div className='education'>
             <div className="heading-block">
@@ -155,12 +157,16 @@ function Education () {
             </div>
             <div className='education-all-items'>
                 {educationList.map((currEd, index) => {
+                    if (index === lastIndex) {
+                        borderStatus = 'removeBorder';
+                    };
                     return (
                     <div className='education-item' key={currEd.id}>
                         <div className="education-icon-box">
                             <img className="education-icon" src={currEd.imageURL} alt="school icon"/>
                         </div>
-                        <div className='education-details'>
+                        <div className={`education-details ${borderStatus}`}>
+                        
                             <div className="section-card">
                                 <p className='university'>{currEd.university}</p>
                                 <div className="edit-section-box">
