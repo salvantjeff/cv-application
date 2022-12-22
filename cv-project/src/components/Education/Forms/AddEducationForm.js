@@ -47,6 +47,14 @@ function AddEducationForm ({ addNewEducation, onChange, onSubmit }) {
                 inputValue={ed.gpa}
                 onChange={onChange}
             />
+            <EducationFormItem 
+                labelText="University Image URL"
+                id="imageURL"
+                inputName="imageURL"
+                type="text"
+                inputValue={ed.imageURL}
+                onChange={onChange}
+            />
             <div>
                 <button className="save-button">Save</button>
             </div>
