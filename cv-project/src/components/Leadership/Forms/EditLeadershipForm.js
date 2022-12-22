@@ -1,7 +1,13 @@
 import LeadershipFormItem from "./FormItem/LeadershipFormItem";
 import LeadershipTextAreaItem from "./FormItem/LeadershipTextAreaItem";
 
-function EditLeadershipForm ({ leaderships, onChange, index, onSubmit }) {
+function EditLeadershipForm ({ 
+    leaderships, 
+    onChange, 
+    index, 
+    onSubmit,
+    onClick 
+}) {
     const currExp = leaderships[index];
     console.log(leaderships);
     const maxLength = 100;
@@ -63,7 +69,7 @@ function EditLeadershipForm ({ leaderships, onChange, index, onSubmit }) {
                 <button 
                     type="button" 
                     className="delete-button"
-                    // onClick={onClick}
+                    onClick={onClick}
                 >Delete</button>
                 <button type="submit" className="save-button">Save</button>
             </div>

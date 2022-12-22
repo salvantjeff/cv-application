@@ -67,6 +67,17 @@ function Leadership () {
         toggleModal();
     };
 
+    function handleDeleteClicked() {
+        console.log('Deleting card...');
+        const newLeadershipsInfo = leadershipsInfo.filter((currExp, i) => {
+            return i !== index;
+        });
+        console.log(newLeadershipsInfo);
+        setLeadershipsInfo(newLeadershipsInfo);
+        setLeaderships(newLeadershipsInfo);
+        toggleModal();
+    };
+
     function handleAddNewLeadership() {
         toggleAddModal();
     };
@@ -174,6 +185,7 @@ function Leadership () {
                 leaderships={leaderships}
                 index={index}
                 onSubmit={handleSubmitForm}
+                onClick={handleDeleteClicked}
             />
             <AddLeadershipModal 
                 modal={addModal}
