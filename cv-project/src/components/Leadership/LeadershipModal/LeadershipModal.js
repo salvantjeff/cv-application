@@ -7,7 +7,8 @@ export default function LeadershipModal({
     leaderships,
     onChange,
     index,
-    onSubmit
+    onSubmit,
+    onClick
 }) {
     
     return (
@@ -31,6 +32,7 @@ export default function LeadershipModal({
                             index={index}
                             onChange={onChange}
                             onSubmit={onSubmit}
+                            onClick={onClick}
                         />
                     </div>
                 </div>
