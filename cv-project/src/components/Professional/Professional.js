@@ -143,6 +143,9 @@ function Professional () {
         toggleAddModal();
     };
 
+    const lastIndex = professionalsInfo.length - 1;
+    let borderStatus = '';
+    
     return(
         <div className='professional'>
             <div className="heading-block">
@@ -159,12 +162,15 @@ function Professional () {
             </div>
             <div className='all-professional-exp'>
                 {professionalsInfo.map((professional, index) => {
+                    if (index === lastIndex) {
+                        borderStatus = 'removeBorder';
+                    };
                     return (
                         <div key={professional.id} className='professional-exp'>
                             <div className='professional-icon-box'>
                                 <img className="professional-icon" src={professional.imageURL} alt="Comp. icon"/>
                             </div>
-                            <div className='professional-exp__details'>
+                            <div className={`professional-exp__details ${borderStatus}`}>
                                 <div className="section-card">
                                     <p className='position'>{professional.position}</p>
                                     <div className="edit-section-box">
