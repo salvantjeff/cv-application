@@ -37,6 +37,13 @@ function EditPersonForm ({ person, onChange, onSubmit }) {
                 onChange={onChange}
                 maxLength={maxLength}
             />
+            <PersonFormItem 
+                labelText="Profile Image URL"
+                id="imageURL"
+                inputName="imageURL"
+                // inputValue={person.imageURL}
+                // onChange={onChange}
+            />
             <div>
                 <button className="save-button">Save</button>
             </div>
