@@ -1,5 +1,6 @@
 import './Professional.css';
 import ngLogo from '../../img/ng-logo.png';
+import neofectLogo from '../../img/neofect-logo.jpeg';
 import editPencil from '../../img/pencil.png';
 import addSymbol from '../../img/add-1.png';
 import React, { useState, useEffect } from 'react';
@@ -25,8 +26,8 @@ function Professional () {
             startDate: '2019-06',
             endDate: '2019-08',
             location: 'Richmond, Virginia',
-            summary: 'Helped resolve angry/upset/confused/kind customers issues.',
-            imageURL: '',
+            summary: 'Communicated effectively with upset, confused, and curious customers until customer satisfaction.',
+            imageURL: neofectLogo,
             id: uuidv4(),
         }
     ];
