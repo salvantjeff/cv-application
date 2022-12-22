@@ -52,8 +52,8 @@ function AddEducationForm ({ addNewEducation, onChange, onSubmit }) {
                 id="imageURL"
                 inputName="imageURL"
                 type="text"
-                // inputValue={ed.imageURL}
-                // onChange={onChange}
+                inputValue={ed.imageURL}
+                onChange={onChange}
             />
             <div>
                 <button className="save-button">Save</button>
