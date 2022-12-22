@@ -1,7 +1,13 @@
 import RelevantFormItem from "./FormItem/RelevantFormItem";
 import RelevantTextAreaItem from "./FormItem/RelevantTextAreaItem";
 
-function EditRelevantForm ({ relevantExps, onChange, index, onSubmit }) {
+function EditRelevantForm ({ 
+    relevantExps, 
+    onChange, 
+    index, 
+    onSubmit,
+    onClick
+}) {
     const currExp = relevantExps[index];
     console.log(relevantExps);
     const maxLength = 200;
@@ -48,7 +54,7 @@ function EditRelevantForm ({ relevantExps, onChange, index, onSubmit }) {
                 <button 
                     type="button" 
                     className="delete-button"
-                    // onClick={onClick}
+                    onClick={onClick}
                 >Delete</button>
                 <button type="submit" className="save-button">Save</button>
             </div>
