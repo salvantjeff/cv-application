@@ -10,7 +10,7 @@ function Person () {
         lastName: 'Salvant',
         headline: 'Software Engineering Student',
         imageURL: profileImg,
-        summary: 'Currently, studying software engineering to begin my career in the tech industry. Looking to help contribute towards companies that are positively impacting the world.',
+        summary: 'Currently, studying software engineering to begin my career in the tech industry. Looking to help companies that are positively impacting the world.',
     };
 
     const [personInfo, setPersonInfo] = useState(initPersonInfo);

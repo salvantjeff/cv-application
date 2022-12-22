@@ -16,10 +16,10 @@ function Relevant () {
             id: uuidv4(),
         },
         {
-            project: 'Beach Rake',
-            startDate: '2019-06',
-            endDate: '2019-08',
-            summary:'Design mechanical beach rake for beach preservation',
+            project: 'Mechatronics',
+            startDate: '2021-08',
+            endDate: '2021-12',
+            summary:'Designed a robotic arm for sortation utilizing an Arduino microcontroller, actuators, ultrasonic sensors, and motion sensors.',
             id: uuidv4(),
         }
     ];
