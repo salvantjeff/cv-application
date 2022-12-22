@@ -53,7 +53,8 @@ function EditEducationForm ({ education, onChange, index, onSubmit }) {
                 inputValue={ed.imageURL}
                 onChange={onChange}
             />
-            <div>
+            <div className="edit-form__buttons">
+                <button className="delete-button">Delete</button>
                 <button className="save-button">Save</button>
             </div>
         </form>

@@ -44,3 +44,22 @@
     object-fit: cover;
     object-position: center;
 }
+
+/* Edit forms delete button */
+.edit-form__buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.delete-button {
+    font: inherit;
+    cursor: pointer;
+    padding: .5rem;
+    display: block;
+    width: max-content;
+    border: none;
+    border-radius: .8rem;
+    background-color: rgb(255, 136, 136);
+    color: white;
+}
