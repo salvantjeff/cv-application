@@ -74,7 +74,7 @@ function Person () {
                     </p>
                 </div>
                 <div className="person-image-box">
-                    <img className="person-image" src={personInfo.img} alt="profile pic"/>
+                    <img className="person-image" src={personInfo.imageURL} alt="profile"/>
                 </div>
             </div>
             <PersonModal 
