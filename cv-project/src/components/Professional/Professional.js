@@ -16,6 +16,7 @@ function Professional () {
             endDate: '2021-08',
             location: 'Palmdale, California',
             summary: `Contributed to the structural design team by reviewing and fixing drawing designs`,
+            imageURL: '',
             id: uuidv4(),
         },
         {
@@ -25,6 +26,7 @@ function Professional () {
             endDate: '2019-08',
             location: 'Richmond, Virginia',
             summary: 'Helped resolve angry/upset/confused/kind customers issues.',
+            imageURL: '',
             id: uuidv4(),
         }
     ];
@@ -39,6 +41,7 @@ function Professional () {
         endDate: '',
         location: '',
         summary: '',
+        imageURL: '',
         id: uuidv4(),
     });
 
@@ -121,6 +124,7 @@ function Professional () {
             endDate: '',
             location: '',
             summary: '',
+            imageURL: '',
             id: uuidv4(),
         });
         console.log('UPDATE COMPLETE');
