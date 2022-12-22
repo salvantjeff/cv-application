@@ -44,8 +44,13 @@ function EditRelevantForm ({ relevantExps, onChange, index, onSubmit }) {
                 inputValue={currExp.summary}
                 onChange={onChange}
             />
-            <div>
-                <button className="save-button">Save</button>
+            <div className="edit-form__buttons">
+                <button 
+                    type="button" 
+                    className="delete-button"
+                    // onClick={onClick}
+                >Delete</button>
+                <button type="submit" className="save-button">Save</button>
             </div>
         </form>
     );
