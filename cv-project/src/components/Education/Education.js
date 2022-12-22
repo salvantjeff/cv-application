@@ -19,12 +19,12 @@ function Education () {
             id: uuidv4(),
         },
         {
-            university: 'NYU',
-            major: 'Computer Science',
-            startDate: '2022-08',
-            endDate: '2024-05',
-            gpa: 3.0,
-            imageURL: '',
+            university: 'The Odin Project',
+            major: 'Fullstack SWE',
+            startDate: '2022-07',
+            endDate: '2023-07',
+            gpa: 4.0,
+            imageURL: 'https://pbs.twimg.com/profile_images/853541927781904384/LKvUgs4u_400x400.jpg',
             id: uuidv4(),
         }
     ];
