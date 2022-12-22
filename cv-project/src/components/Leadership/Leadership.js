@@ -144,7 +144,7 @@ function Leadership () {
                     return (
                         <div key={currExp.id} className="leadership-card">
                             <div className='leadership-icon-box'>
-                                <img className="leadership-icon" src={nsbeLogo} alt="leadership icon"/>
+                                <img className="leadership-icon" src={currExp.imageURL} alt="org. icon"/>
                             </div>
                             <div className="leadership-details">
                                 <div className="section-card">
