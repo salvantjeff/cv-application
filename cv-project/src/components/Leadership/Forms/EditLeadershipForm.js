@@ -56,8 +56,8 @@ function EditLeadershipForm ({ leaderships, onChange, index, onSubmit }) {
                 id="imageURL"
                 inputName="imageURL"
                 type="text"
-                // inputValue={currExp.titleRole}
-                // onChange={onChange}
+                inputValue={currExp.imageURL}
+                onChange={onChange}
             />
             <div>
                 <button className="save-button">Save</button>
