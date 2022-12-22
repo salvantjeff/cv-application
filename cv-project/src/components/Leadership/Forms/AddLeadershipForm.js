@@ -51,6 +51,14 @@ function AddLeadershipForm ({ addNewLeadership, onChange, index, onSubmit }) {
                 inputValue={currExp.summary}
                 onChange={onChange}
             />
+            <LeadershipFormItem 
+                labelText="University Image URL"
+                id="imageURL"
+                inputName="imageURL"
+                type="text"
+                inputValue={currExp.imageURL}
+                onChange={onChange}
+            />
             <div>
                 <button className="save-button">Save</button>
             </div>
