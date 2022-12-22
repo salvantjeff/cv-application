@@ -9,7 +9,6 @@ function Person () {
         firstName: 'Jeff',
         lastName: 'Salvant',
         headline: 'Software Engineering Student',
-        img: profileImg,
         imageURL: profileImg,
         summary: 'Currently, studying software engineering to begin my career in the tech industry. Looking to help contribute towards companies that are positively impacting the world.',
     };
