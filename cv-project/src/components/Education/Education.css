@@ -22,6 +22,11 @@
     border-bottom: 1px solid rgb(230, 230, 230);
 }
 
+.education-details.removeBorder {
+    padding-bottom: .5rem;
+    border: none;
+}
+
 .university {
     font-weight: 600;
 }
