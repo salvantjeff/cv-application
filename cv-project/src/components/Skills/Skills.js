@@ -9,11 +9,19 @@ import AddSkillsModal from './SkillsModal/AddSkillsModal';
 
 function Skills () {
     const initSkills = [
-        {id: uuidv4(), skill: 'AI'},
+        {id: uuidv4(), skill: 'Git'},
+        {id: uuidv4(), skill: 'GitHub'},
         {id: uuidv4(), skill: 'React'},
+        {id: uuidv4(), skill: 'Firebase'},
+        {id: uuidv4(), skill: 'TypeScript'},
+        {id: uuidv4(), skill: 'Unit Testing'},
+        {id: uuidv4(), skill: 'Webpack'},
+        {id: uuidv4(), skill: 'OOP/OOD'},
+        {id: uuidv4(), skill: 'HTML'},
+        {id: uuidv4(), skill: 'CSS'},
+        {id: uuidv4(), skill: 'JS'},
         {id: uuidv4(), skill: 'Node'},
-        {id: uuidv4(), skill: 'Java'},
-        {id: uuidv4(), skill: 'TypeScript'}
+        {id: uuidv4(), skill: 'Express'},
     ];
 
     const [skills, setSkills] = useState(initSkills);
