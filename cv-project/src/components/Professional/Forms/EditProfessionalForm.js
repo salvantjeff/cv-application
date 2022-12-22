@@ -1,7 +1,13 @@
 import ProfessionalFormItem from "./FormItem/ProfessionalFormItem";
 import ProfessionalTextAreaItem from "./FormItem/ProfessionalTextAreaItem";
 
-function EditProfessionalForm ({ professionals, onChange, index, onSubmit }) {
+function EditProfessionalForm ({ 
+    professionals, 
+    onChange, 
+    index, 
+    onSubmit, 
+    onClick 
+}) {
     const currProf = professionals[index];
     console.log(professionals);
     const maxLength = 100;
@@ -67,8 +73,13 @@ function EditProfessionalForm ({ professionals, onChange, index, onSubmit }) {
                 inputValue={currProf.imageURL}
                 onChange={onChange}
             />
-            <div>
-                <button className="save-button">Save</button>
+            <div className="edit-form__buttons">
+                <button 
+                    type="button" 
+                    className="delete-button"
+                    onClick={onClick}
+                >Delete</button>
+                <button type="submit" className="save-button">Save</button>
             </div>
         </form>
     );
