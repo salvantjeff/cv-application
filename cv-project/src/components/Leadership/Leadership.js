@@ -15,6 +15,7 @@ function Leadership () {
             startDate: '2018-08',
             endDate: '2019-05',
             summary: 'Presented upcoming events during weekly meetings',
+            imageURL: nsbeLogo,
             id: uuidv4(),
         },
         {
@@ -23,6 +24,7 @@ function Leadership () {
             startDate: '2021-05',
             endDate: '2021-08',
             summary: 'Help organize tables and props for career fair',
+            imageURL: '',
             id: uuidv4(),
         }
     ];
@@ -36,6 +38,7 @@ function Leadership () {
         startDate: '',
         endDate: '',
         summary: '',
+        imageURL: '',
         id: uuidv4(),
     });
     const [modal, setModal] = useState(false);
@@ -115,6 +118,7 @@ function Leadership () {
             startDate: '',
             endDate: '',
             summary: '',
+            imageURL: '',
             id: uuidv4(),
         });
         console.log('UPDATE COMPLETE');
