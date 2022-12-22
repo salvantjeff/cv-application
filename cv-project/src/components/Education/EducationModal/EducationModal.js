@@ -7,7 +7,8 @@ export default function EducationModal({
     education,
     onChange,
     index,
-    onSubmit
+    onSubmit,
+    onClick
 }) {
     
     return (
@@ -31,6 +32,7 @@ export default function EducationModal({
                             onChange={onChange}
                             index={index}
                             onSubmit={onSubmit}
+                            onClick={onClick}
                         />
                     </div>
                 </div>
