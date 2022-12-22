@@ -9,7 +9,7 @@ function Person () {
         firstName: 'Jeff',
         lastName: 'Salvant',
         headline: 'Software Engineering Student',
-        img: profileImg,
+        imageURL: profileImg,
         summary: 'Currently, studying software engineering to begin my career in the tech industry. Looking to help contribute towards companies that are positively impacting the world.',
     };
 
@@ -73,7 +73,7 @@ function Person () {
                     </p>
                 </div>
                 <div className="person-image-box">
-                    <img className="person-image" src={personInfo.img} alt="profile pic"/>
+                    <img className="person-image" src={personInfo.imageURL} alt="profile"/>
                 </div>
             </div>
             <PersonModal 
