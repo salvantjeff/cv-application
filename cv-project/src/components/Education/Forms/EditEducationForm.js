@@ -1,10 +1,19 @@
 import EducationFormItem from "./FormItem/EducationFormItem";
 
-function EditEducationForm ({ education, onChange, index, onSubmit }) {
+function EditEducationForm ({ 
+    education, 
+    onChange, 
+    index, 
+    onSubmit, 
+    onClick
+}) {
     const ed = education[index];
     console.log(education);
     return (
-        <form onSubmit={onSubmit} className="intro_form">
+        <form 
+            onSubmit={onSubmit} 
+            className="intro_form"
+        >
             <EducationFormItem 
                 labelText="University"
                 id="university"
@@ -54,7 +63,11 @@ function EditEducationForm ({ education, onChange, index, onSubmit }) {
                 onChange={onChange}
             />
             <div className="edit-form__buttons">
-                <button type="button" className="delete-button">Delete</button>
+                <button 
+                    type="button" 
+                    className="delete-button"
+                    onClick={onClick}
+                >Delete</button>
                 <button type="submit" className="save-button">Save</button>
             </div>
         </form>

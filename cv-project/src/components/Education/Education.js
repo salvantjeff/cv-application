@@ -73,6 +73,17 @@ function Education () {
         toggleModal();
     };
 
+    function handleDeleteClicked() {
+        console.log('Deleting card...');
+        const newEducationList = educationList.filter((currEd, i) => {
+            return i !== index;
+        });
+        console.log(newEducationList);
+        setEducationList(newEducationList);
+        setEducation(newEducationList);
+        toggleModal();
+    };
+
     function handleOnChange(e) {
         const newEducation = education.map((currEd, i) => {
             if (i === index) {
@@ -176,6 +187,7 @@ function Education () {
                 index={index}
                 onChange={handleOnChange}
                 onSubmit={handleSubmitForm}
+                onClick={handleDeleteClicked}
             />
             <AddEducationModal 
                 modal={addModal}
