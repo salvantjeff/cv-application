@@ -54,8 +54,8 @@ function EditEducationForm ({ education, onChange, index, onSubmit }) {
                 onChange={onChange}
             />
             <div className="edit-form__buttons">
-                <button className="delete-button">Delete</button>
-                <button className="save-button">Save</button>
+                <button type="button" className="delete-button">Delete</button>
+                <button type="submit" className="save-button">Save</button>
             </div>
         </form>
     );
