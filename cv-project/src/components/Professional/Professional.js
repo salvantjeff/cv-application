@@ -16,7 +16,7 @@ function Professional () {
             endDate: '2021-08',
             location: 'Palmdale, California',
             summary: `Contributed to the structural design team by reviewing and fixing drawing designs`,
-            imageURL: '',
+            imageURL: ngLogo,
             id: uuidv4(),
         },
         {
@@ -150,7 +150,7 @@ function Professional () {
                     return (
                         <div key={professional.id} className='professional-exp'>
                             <div className='professional-icon-box'>
-                                <img className="professional-icon" src={ngLogo} alt="professional icon"/>
+                                <img className="professional-icon" src={professional.imageURL} alt="Comp. icon"/>
                             </div>
                             <div className='professional-exp__details'>
                                 <div className="section-card">
