@@ -128,6 +128,9 @@ function Relevant () {
         toggleAddModal();
     };
 
+    const lastIndex = relevantExpsInfo.length - 1;
+    let borderStatus = '';
+
     return (
         <div className="relevant">
             <div className="heading-block rel">
@@ -144,8 +147,14 @@ function Relevant () {
             </div>
             <div className="all-projects rel">
                 {relevantExpsInfo.map((experience, index) => {
+                    if (index === lastIndex) {
+                        borderStatus = 'removeBorder';
+                    };
                     return (
-                        <div key={experience.id} className="project-card rel">
+                        <div 
+                            key={experience.id} 
+                            className={`project-card ${borderStatus} rel`}
+                        >
                             <div className="section-card rel">
                                 <p className="project-name">{experience.project}</p>
                                 <div className="edit-section-box rel">
