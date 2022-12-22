@@ -11,10 +11,10 @@ function Leadership () {
     const initLeaderships = [
         {
             organization: 'NSBE',
-            titleRole: 'Freshman rep',
+            titleRole: 'E-Board: Freshman representative',
             startDate: '2018-08',
             endDate: '2019-05',
-            summary: 'Presented upcoming events during weekly meetings',
+            summary: 'Presented, weekly, upcoming events for NSBE during general body meetings and lead activities for NSBE members to perform.',
             imageURL: nsbeLogo,
             id: uuidv4(),
         },
@@ -23,8 +23,8 @@ function Leadership () {
             titleRole: 'Volunteer',
             startDate: '2021-05',
             endDate: '2021-08',
-            summary: 'Help organize tables and props for career fair',
-            imageURL: '',
+            summary: 'Helped organize tables and props for the career fair',
+            imageURL: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/VCU_Seal_sans_logotype.svg/1200px-VCU_Seal_sans_logotype.svg.png',
             id: uuidv4(),
         }
     ];
