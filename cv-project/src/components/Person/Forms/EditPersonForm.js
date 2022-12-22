@@ -41,8 +41,8 @@ function EditPersonForm ({ person, onChange, onSubmit }) {
                 labelText="Profile Image URL"
                 id="imageURL"
                 inputName="imageURL"
-                // inputValue={person.imageURL}
-                // onChange={onChange}
+                inputValue={person.imageURL}
+                onChange={onChange}
             />
             <div>
                 <button className="save-button">Save</button>
