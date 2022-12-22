@@ -136,6 +136,9 @@ function Leadership () {
         toggleAddModal();
     };
 
+    const lastIndex = leadershipsInfo.length - 1;
+    let borderStatus = '';
+
     return (
         <div className="leadership">
             <div className="heading-block">
@@ -152,12 +155,15 @@ function Leadership () {
             </div>
             <div className="all-leaderships">
                 {leadershipsInfo.map((currExp, index) => {
+                    if (index === lastIndex) {
+                        borderStatus = 'removeBorder';
+                    };
                     return (
                         <div key={currExp.id} className="leadership-card">
                             <div className='leadership-icon-box'>
                                 <img className="leadership-icon" src={currExp.imageURL} alt="org. icon"/>
                             </div>
-                            <div className="leadership-details">
+                            <div className={`leadership-details ${borderStatus}`}>
                                 <div className="section-card">
                                     <p className="leadership-organization">{currExp.organization}</p>
                                     <div className="edit-section-box">
