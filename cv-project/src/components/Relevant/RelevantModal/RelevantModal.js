@@ -8,7 +8,8 @@ export default function RelevantModal({
     relevantExps,
     onChange,
     index,
-    onSubmit
+    onSubmit,
+    onClick
 }) {
     
     return (
@@ -32,6 +33,7 @@ export default function RelevantModal({
                             relevantExps={relevantExps}
                             index={index}
                             onSubmit={onSubmit}
+                            onClick={onClick}
                         />
                     </div>
                 </div>

@@ -61,6 +61,17 @@ function Relevant () {
         toggleModal();
     };
 
+    function handleDeleteClicked() {
+        console.log('Deleting card...');
+        const newRelevantExpsInfo = relevantExpsInfo.filter((currExp, i) => {
+            return i !== index;
+        });
+        console.log(newRelevantExpsInfo);
+        setRelevantExpsInfo(newRelevantExpsInfo);
+        setRelevantExps(newRelevantExpsInfo);
+        toggleModal();
+    };
+
     function handleAddNewRelevant() {
         toggleAddModal();
     };
@@ -162,6 +173,7 @@ function Relevant () {
                 relevantExps={relevantExps}
                 index={index}
                 onSubmit={handleSubmitForm}
+                onClick={handleDeleteClicked}
             />
             <AddRelevantModal 
                 modal={addModal}
