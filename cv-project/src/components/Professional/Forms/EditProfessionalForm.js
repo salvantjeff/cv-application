@@ -59,13 +59,13 @@ function EditProfessionalForm ({ professionals, onChange, index, onSubmit }) {
                 inputValue={currProf.summary}
                 onChange={onChange}
             />
-             <ProfessionalFormItem 
+            <ProfessionalFormItem 
                 labelText="University Image URL"
                 id="imageURL"
                 inputName="imageURL"
                 type="text"
-                // inputValue={currProf.location}
-                // onChange={onChange}
+                inputValue={currProf.imageURL}
+                onChange={onChange}
             />
             <div>
                 <button className="save-button">Save</button>
