@@ -12,7 +12,7 @@ function Contact () {
         {
             logo: emailLogo,
             title: 'Email',
-            content: 'thor@gmail.com',
+            content: 'salvantjt@vcu.edu',
             altText: 'email',
             isLink: false,
             id: uuidv4(),
@@ -20,7 +20,7 @@ function Contact () {
         {
             logo: phoneLogo,
             title: 'Phone',
-            content: '1234567890',
+            content: '(804) 245-6735',
             altText: 'phone',
             isLink: false,
             id: uuidv4(),
