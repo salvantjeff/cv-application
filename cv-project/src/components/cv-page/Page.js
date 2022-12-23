@@ -10,7 +10,7 @@ import './Page.css';
 
 function Page () {
     return (
-        <div className='page-container'>
+        <div className='page-container'> 
             <Person />
             <Education />
             <Skills />
@@ -19,7 +19,6 @@ function Page () {
             <Leadership />
             <Contact />
             <Footer />
-            
         </div>
     );
 };
