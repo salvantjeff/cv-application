@@ -47,6 +47,11 @@
     padding-bottom: .5rem;
 }
 
+.contact-card__details.removeBorder {
+    border: none;
+    padding-bottom: .5rem;
+}
+
 .contact-card__details-content {
     font-size: .85rem;
 }
