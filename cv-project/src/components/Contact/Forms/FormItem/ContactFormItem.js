@@ -4,7 +4,8 @@ function ContactFormItem ({
     inputName, 
     inputValue,
     type,
-    onChange 
+    onChange,
+    index 
 }) {
     return (
         <p className="form_item">
@@ -17,6 +18,7 @@ function ContactFormItem ({
                 name={inputName}
                 value={inputValue}
                 onChange={onChange}
+                data-index={index}
             />
         </p>
     );
