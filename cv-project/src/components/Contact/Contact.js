@@ -80,6 +80,9 @@ function Contact () {
         toggleModal();
     };
 
+    const lastIndex = contactsInfo.length - 1;
+    let borderStatus = '';
+
     return (
         <div className="contact">
             <div className="section-heading">
@@ -95,6 +98,9 @@ function Contact () {
             </div>
             <div className="all-contacts">
                 {contactsInfo.map((contact, index) => {
+                    if (index === lastIndex) {
+                        borderStatus = 'removeBorder';
+                    };
                     if (contact.isLink) {
                         return (
                             <div className="contact-card" key={contact.id}>
@@ -105,7 +111,7 @@ function Contact () {
                                         alt={`${contact.altText} icon`}
                                     />
                                 </div>
-                                <div className="contact-card__details">
+                                <div className={`contact-card__details ${borderStatus}`}>
                                     <p className="contact-card__details-title">{contact.title}</p>
                                     <p className="contact-card__details-content">
                                     <a 
