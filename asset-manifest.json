@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/cv-application/static/css/main.b458502f.css",
+    "main.js": "/cv-application/static/js/main.ecdaf997.js",
+    "static/media/nsbe-logo.png": "/cv-application/static/media/nsbe-logo.eaff96a185b17d64a242.png",
+    "static/media/neofect-logo.jpeg": "/cv-application/static/media/neofect-logo.16ecc2c6a4a13eb7e608.jpeg",
+    "static/media/vcu-logo.jpeg": "/cv-application/static/media/vcu-logo.38df918bd0790d11bd27.jpeg",
+    "static/media/profile-pic.jpeg": "/cv-application/static/media/profile-pic.2a38702da451d19b4a8e.jpeg",
+    "index.html": "/cv-application/index.html",
+    "main.b458502f.css.map": "/cv-application/static/css/main.b458502f.css.map",
+    "main.ecdaf997.js.map": "/cv-application/static/js/main.ecdaf997.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b458502f.css",
+    "static/js/main.ecdaf997.js"
+  ]
+}
