@@ -55,7 +55,7 @@ function Person () {
     return (
         <div className='person'>
             <div className="section-heading">
-                <h1 className="person-name">{personInfo.firstName} {personInfo.lastName}</h1>
+                <h2 className="person-name">{personInfo.firstName} {personInfo.lastName}</h2>
                 <div>
                     <img 
                         className="edit-section" 

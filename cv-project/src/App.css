@@ -66,4 +66,6 @@
 
 .App {
     background-color: #e2e2e2;
+    display: grid;
+    gap: 1rem;
 }
