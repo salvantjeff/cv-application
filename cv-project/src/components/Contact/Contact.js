@@ -8,15 +8,35 @@ import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 function Contact () {
-    const initContacts = {
-        email: 'thor@gmail.com',
-        phoneNumber: '1234567890',
-        linkedIn: 'https://www.linkedin.com/in/jeff-salvant/',
-        id: uuidv4(),
-    };
+    const initAllContacts = [
+        {
+            logo: emailLogo,
+            title: 'Email',
+            content: 'salvantjt@vcu.edu',
+            altText: 'email',
+            isLink: false,
+            id: uuidv4(),
+        },
+        {
+            logo: phoneLogo,
+            title: 'Phone',
+            content: '(804) 245-6735',
+            altText: 'phone',
+            isLink: false,
+            id: uuidv4(),
+        },
+        {
+            logo: linkedInLogo,
+            title: 'LinkedIn',
+            isLink: true,
+            content: 'https://www.linkedin.com/in/jeff-salvant/',
+            altText: 'linkedIn',
+            id: uuidv4(),
+        },
+    ];
        
-    const [contacts, setContacts] = useState(initContacts);
-    const [contactsInfo, setContactsInfo] = useState(initContacts);
+    const [contacts, setContacts] = useState(initAllContacts);
+    const [contactsInfo, setContactsInfo] = useState(initAllContacts);
 
     const [modal, setModal] = useState(false);
     
@@ -37,17 +57,24 @@ function Contact () {
     }
 
     function handleOnChange(e) {
-        const newContacts = {
-            ...contacts,
-            [e.target.name]: [e.target.value]
-        };
+        const target = parseInt(e.target.dataset.index);
+        const newContacts = contacts.map((contact, i) => {
+            if (i === target) {
+                return {
+                    ...contact,
+                    content: [e.target.value]
+                };
+            };
+            return contact;
+        });
+     
         setContacts(newContacts);
     };
 
     function handleSubmitForm(e) {
         e.preventDefault();
         console.log('form has been submitted!');
-        const newContactsInfo = {...contacts};
+        const newContactsInfo = [...contacts];
         setContactsInfo(newContactsInfo);
         console.log('UPDATE COMPLETE');
         toggleModal();
@@ -67,38 +94,41 @@ function Contact () {
                 </div>
             </div>
             <div className="all-contacts">
-                <div className="contact-card">
-                    <div className="contact-icon-box">
-                        <img className="contact-icon" src={emailLogo} alt="email icon"/>
-                    </div>
-                    <div className="contact-card__details">
-                        <p className="contact-card__details-title">Email</p>
-                        <p className="contact-card__details-content">{contactsInfo.email}</p>
-                    </div>
-                </div>
-                <div className="contact-card">
-                    <div className="contact-icon-box">
-                        <img className="contact-icon" src={phoneLogo} alt="phone icon"/>
-                    </div>
-                    <div className="contact-card__details">
-                        <p className="contact-card__details-title">Phone</p>
-                        <p className="contact-card__details-content">{contactsInfo.phoneNumber}</p>
-                    </div>
-                </div>
-                <div className="contact-card">
-                    <div className="contact-icon-box">
-                        <img className="contact-icon" src={linkedInLogo} alt="linkedin icon"/>
-                    </div>
-                    <div className="contact-card__details">
-                        <p className="contact-card__details-title">LinkedIn</p>
-                        <p className="contact-card__details-content">
-                            <a 
-                                className="contact-linkedin-link" 
-                                href={contactsInfo.linkedIn}
-                            >Click here to visit my LinkedIn</a>
-                        </p>
-                    </div>
-                </div>
+                {contactsInfo.map((contact, index) => {
+                    if (contact.isLink) {
+                        return (
+                            <div className="contact-card" key={contact.id}>
+                                <div className="contact-icon-box">
+                                    <img 
+                                        className="contact-icon" 
+                                        src={contact.logo} 
+                                        alt={`${contact.altText} icon`}
+                                    />
+                                </div>
+                                <div className="contact-card__details">
+                                    <p className="contact-card__details-title">{contact.title}</p>
+                                    <p className="contact-card__details-content">
+                                    <a 
+                                        className="contact-linkedin-link" 
+                                        href={contact.content}
+                                    >Click here to visit my {contact.title}</a>
+                                    </p>
+                                </div>
+                            </div>
+                        );
+                    };
+                    return (
+                        <div className="contact-card" key={contact.id}>
+                            <div className="contact-icon-box">
+                                <img className="contact-icon" src={contact.logo} alt={`${contact.altText} icon`}/>
+                            </div>
+                            <div className="contact-card__details">
+                                <p className="contact-card__details-title">{contact.title}</p>
+                                <p className="contact-card__details-content">{contact.content}</p>
+                            </div>
+                        </div>
+                    );
+                })}
                 <ContactModal 
                     modal={modal}
                     toggleModal={toggleModal}
