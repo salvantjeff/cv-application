@@ -1,7 +1,7 @@
 .active-contact .modal.contact-section {
     visibility: visible;
     opacity: 1;
-    transition: opacity 200ms ease-in-out;
+    transition: opacity 250ms ease-in-out;
 }
 
 .modal.contact-section {
