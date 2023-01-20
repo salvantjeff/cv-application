@@ -79,4 +79,6 @@
 
 .close-modal__button {
     cursor: pointer;
+    height: max-content;
+    border: none;
 }
