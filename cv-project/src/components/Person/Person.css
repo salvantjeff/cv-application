@@ -44,3 +44,14 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+.active-person .modal.person-section {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.person-section {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}

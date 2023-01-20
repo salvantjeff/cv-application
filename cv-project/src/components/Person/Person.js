@@ -16,18 +16,18 @@ function Person () {
     const [personInfo, setPersonInfo] = useState(initPersonInfo);
     const [person, setPerson] = useState(initPersonInfo);
     
-    const [modal, setModal] = useState(false);
+    const [personModal, setPersonModal] = useState(false);
 
     useEffect(() => {
-        if (modal) {
-            document.body.classList.add('active-modal');
+        if (personModal) {
+            document.body.classList.add('active-person');
         } else {
-            document.body.classList.remove('active-modal');
+            document.body.classList.remove('active-person');
         }
-    }, [modal]);
+    }, [personModal]);
     
     function toggleModal() {
-        setModal(!modal);
+        setPersonModal(!personModal);
     };
 
     function handleEditClicked() {
@@ -77,7 +77,6 @@ function Person () {
                 </div>
             </div>
             <PersonModal 
-                modal={modal}
                 toggleModal={toggleModal}
                 person={person}
                 onChange={handleOnChange}
