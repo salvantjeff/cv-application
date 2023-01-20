@@ -18,7 +18,7 @@ export default function ContactModal({
                 <div className="modal-content">
                     <div className="modal-content__wrapper">
                         <div className="modal-form__header">
-                            <h2 className="game-over_title">Leadership Exp info</h2>
+                            <h2 className="game-over_title">Contact Info</h2>
                             <div>
                                 <button 
                                     className="close-modal__button" 
