@@ -15,12 +15,12 @@ export default function LeadershipModal({
     return (
         <>
             {modal && (
-            <div className="modal prof">
-                <div className="overlay prof" onClick={toggleModal}></div>
-                <div className="modal-content prof">
-                    <div className="modal-content__wrapper prof">
-                        <div className="modal-form__header prof">
-                            <h2 className="game-over_title prof">Leadership Exp info</h2>
+            <div className="modal">
+                <div className="overlay leadership-section" onClick={toggleModal}></div>
+                <div className="modal-content leadership-section">
+                    <div className="modal-content__wrapper leadership-section">
+                        <div className="modal-form__header">
+                            <h2 className="game-over_title">Leadership Exp info</h2>
                             <div>
                                 <button 
                                     className="close-modal__button" 
