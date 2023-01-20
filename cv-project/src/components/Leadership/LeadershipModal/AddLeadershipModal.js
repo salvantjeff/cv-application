@@ -1,5 +1,6 @@
 import React from "react";
 import AddLeadershipForm from "../Forms/AddLeadershipForm";
+import { GrClose } from "react-icons/gr";
 
 export default function AddLeadershipModal({ 
     modal,
@@ -22,7 +23,7 @@ export default function AddLeadershipModal({
                                 <button 
                                     className="close-modal__button" 
                                     onClick={toggleModal}
-                                >X</button>
+                                ><GrClose size='1.25rem' /></button>
                             </div>
                         </div>
                         <AddLeadershipForm 
