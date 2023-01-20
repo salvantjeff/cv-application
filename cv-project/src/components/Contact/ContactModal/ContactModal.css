@@ -1,0 +1,9 @@
+.active-contact .modal.contact-section {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.contact-section {
+    visibility: hidden;
+    opacity: 0;
+}
