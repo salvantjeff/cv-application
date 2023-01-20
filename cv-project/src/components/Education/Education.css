@@ -49,3 +49,25 @@
     object-fit: cover;
     object-position: center;
 }
+
+.active-add-education .modal.add-education-section {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.add-education-section {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}
+
+.active-education .modal.education-section {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.education-section {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}

@@ -41,25 +41,33 @@ function Education () {
         id: uuidv4(),
     });
 
-    const [modal, setModal] = useState(false);
-    const [addModal, setAddModal] = useState(false);
+    const [educationModal, setEducationModal] = useState(false);
+    const [addEductionModal, setAddEducationModal] = useState(false);
 
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
-        if (modal || addModal) {
-            document.body.classList.add('active-modal');
+        if (educationModal) {
+            document.body.classList.add('active-education');
         } else {
-            document.body.classList.remove('active-modal');
+            document.body.classList.remove('active-education');
         }
-    }, [modal, addModal]);
+    }, [educationModal]);
     
+    useEffect(() => {
+        if (addEductionModal) {
+            document.body.classList.add('active-add-education');
+        } else {
+            document.body.classList.remove('active-add-education');
+        }
+    }, [addEductionModal]);
+
     function toggleModal() {
-        setModal(!modal);
+        setEducationModal(!educationModal);
     };
 
     function toggleAddModal() {
-        setAddModal(!addModal);
+        setAddEducationModal(!addEductionModal);
     };
 
     function handleAddNewEducation() {
@@ -187,7 +195,6 @@ function Education () {
                 })}
             </div>
             <EducationModal 
-                modal={modal}
                 toggleModal={toggleModal}
                 education={education}
                 index={index}
@@ -196,7 +203,6 @@ function Education () {
                 onClick={handleDeleteClicked}
             />
             <AddEducationModal 
-                modal={addModal}
                 toggleModal={toggleAddModal}
                 addNewEducation={addNewEducation}
                 onChange={handleOnChangeForAddNewEducation}
