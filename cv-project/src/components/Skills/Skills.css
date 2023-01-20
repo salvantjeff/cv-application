@@ -33,3 +33,25 @@
 .modal-content__wrapper.skills-section {
     z-index: 3;
 } */
+
+.active-add-skills .modal.add-skills-section {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.add-skills-section {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}
+
+.active-skills .modal.skills-section {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.skills-section {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}

@@ -31,23 +31,31 @@ function Skills () {
         skill: ''
     });
 
-    const [modal, setModal] = useState(false);
-    const [addModal, setAddModal] = useState(false);
+    const [skillsModal, setSkillsModal] = useState(false);
+    const [addSkillsModal, setAddSkillsModal] = useState(false);
 
     useEffect(() => {
-        if (modal || addModal) {
-            document.body.classList.add('active-modal');
+        if (skillsModal) {
+            document.body.classList.add('active-skills');
         } else {
-            document.body.classList.remove('active-modal');
+            document.body.classList.remove('active-skills');
         }
-    }, [modal, addModal]);
+    }, [skillsModal]);
     
+    useEffect(() => {
+        if (addSkillsModal) {
+            document.body.classList.add('active-add-skills');
+        } else {
+            document.body.classList.remove('active-add-skills');
+        }
+    }, [addSkillsModal]);
+
     function toggleModal() {
-        setModal(!modal);
+        setSkillsModal(!skillsModal);
     };
 
     function toggleAddModal() {
-        setAddModal(!addModal);
+        setAddSkillsModal(!addSkillsModal);
     };
 
     function handleAddNewSkills() {
@@ -143,14 +151,12 @@ function Skills () {
                 })}
             </ul>
             <SkillsModal 
-                modal={modal}
                 toggleModal={toggleModal}
                 onChange={handleOnChange}
                 skills={skills}
                 onSubmit={handleSubmitForm}
             />
             <AddSkillsModal 
-                modal={addModal}
                 toggleModal={toggleAddModal}
                 addNewSkills={addNewSkills}
                 onChange={handleOnChangeForAddNewSkills}

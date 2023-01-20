@@ -3,37 +3,32 @@ import AddSkillsForm from "../Forms/AddSkillsForm";
 import { GrClose } from "react-icons/gr";
 
 export default function AddSkillsModal({ 
-    modal,
     toggleModal,
     onChange,
     addNewSkills,
     onSubmit
 }) {
     return (
-        <>
-            {modal && (
-            <div className="modal">
-                <div className="overlay" onClick={toggleModal}></div>
-                <div className="modal-content">
-                    <div className="modal-content__wrapper">
-                        <div className="modal-form__header">
-                            <h2 className="game-over_title">Skills info</h2>
-                            <div>
-                                <button 
-                                    className="close-modal__button" 
-                                    onClick={toggleModal}
-                                ><GrClose size='1.25rem' /></button>
-                            </div>
+        <div className="modal add-skills-section">
+            <div className="overlay" onClick={toggleModal}></div>
+            <div className="modal-content">
+                <div className="modal-content__wrapper">
+                    <div className="modal-form__header">
+                        <h2 className="game-over_title">Skills info</h2>
+                        <div>
+                            <button 
+                                className="close-modal__button" 
+                                onClick={toggleModal}
+                            ><GrClose size='1.25rem' /></button>
                         </div>
-                        <AddSkillsForm 
-                            onChange={onChange}
-                            addNewSkills={addNewSkills}
-                            onSubmit={onSubmit}
-                        />
                     </div>
+                    <AddSkillsForm 
+                        onChange={onChange}
+                        addNewSkills={addNewSkills}
+                        onSubmit={onSubmit}
+                    />
                 </div>
-            </div> 
-            )}
-        </>
+            </div>
+        </div> 
     );
 };
