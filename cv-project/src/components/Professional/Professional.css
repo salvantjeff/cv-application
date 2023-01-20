@@ -77,3 +77,25 @@
 .professional-edit-section {
     padding-right: 1rem;
 }
+
+.active-add-professional .modal.add-professional-section {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.add-professional-section {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}
+
+.active-professional .modal.professional-section {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.professional-section {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}

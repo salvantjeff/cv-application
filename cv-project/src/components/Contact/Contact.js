@@ -38,18 +38,18 @@ function Contact () {
     const [contacts, setContacts] = useState(initAllContacts);
     const [contactsInfo, setContactsInfo] = useState(initAllContacts);
 
-    const [modal, setModal] = useState(false);
+    const [contactModal, setContactModal] = useState(false);
     
     useEffect(() => {
-        if (modal) {
-            document.body.classList.add('active-modal');
+        if (contactModal) {
+            document.body.classList.add('active-contact');
         } else {
-            document.body.classList.remove('active-modal');
+            document.body.classList.remove('active-contact');
         }
-    }, [modal]);
+    }, [contactModal]);
     
     function toggleModal() {
-        setModal(!modal);
+        setContactModal(!contactModal);
     };
 
     function handleEditClicked(e) {
@@ -136,7 +136,6 @@ function Contact () {
                     );
                 })}
                 <ContactModal 
-                    modal={modal}
                     toggleModal={toggleModal}
                     contacts={contacts}
                     onChange={handleOnChange}

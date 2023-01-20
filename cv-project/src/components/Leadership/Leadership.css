@@ -63,3 +63,25 @@
 .leadership-edit-section {
     padding-right: 1rem;
 }
+
+.active-add-leadership .modal.add-leadership-section {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.add-leadership-section {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}
+
+.active-leadership .modal.leadership-section {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.leadership-section {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}

@@ -11,30 +11,26 @@ export default function AddRelevantModal({
     onSubmit
 }) {
     return (
-        <>
-            {modal && (
-            <div className="modal rel">
-                <div className="overlay rel" onClick={toggleModal}></div>
-                <div className="modal-content rel">
-                    <div className="modal-content__wrapper rel">
-                        <div className="modal-form__header rel">
-                            <h2 className="game-over_title rel">Add Relevant Exp</h2>
-                            <div>
-                                <button 
-                                    className="close-modal__button" 
-                                    onClick={toggleModal}
-                                ><GrClose size='1.25rem' /></button>
-                            </div>
+        <div className="modal add-relevant-section rel">
+            <div className="overlay rel" onClick={toggleModal}></div>
+            <div className="modal-content rel">
+                <div className="modal-content__wrapper rel">
+                    <div className="modal-form__header rel">
+                        <h2 className="game-over_title rel">Add Relevant Exp</h2>
+                        <div>
+                            <button 
+                                className="close-modal__button" 
+                                onClick={toggleModal}
+                            ><GrClose size='1.25rem' /></button>
                         </div>
-                        <AddRelevantForm 
-                            onChange={onChange}
-                            addNewRelevantExp={addNewRelevantExp}
-                            onSubmit={onSubmit}
-                        />
                     </div>
+                    <AddRelevantForm 
+                        onChange={onChange}
+                        addNewRelevantExp={addNewRelevantExp}
+                        onSubmit={onSubmit}
+                    />
                 </div>
-            </div> 
-            )}
-        </>
+            </div>
+        </div> 
     );
 };
