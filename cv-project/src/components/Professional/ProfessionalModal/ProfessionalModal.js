@@ -14,32 +14,28 @@ export default function ProfessionalModal({
 }) {
     
     return (
-        <>
-            {modal && (
-            <div className="modal prof">
-                <div className="overlay prof" onClick={toggleModal}></div>
-                <div className="modal-content prof">
-                    <div className="modal-content__wrapper prof">
-                        <div className="modal-form__header prof">
-                            <h2 className="game-over_title prof">Professional info</h2>
-                            <div>
-                                <button 
-                                    className="close-modal__button" 
-                                    onClick={toggleModal}
-                                ><GrClose size='1.25rem' /></button>
-                            </div>
+        <div className="modal professional-section prof">
+            <div className="overlay prof" onClick={toggleModal}></div>
+            <div className="modal-content prof">
+                <div className="modal-content__wrapper prof">
+                    <div className="modal-form__header prof">
+                        <h2 className="game-over_title prof">Professional info</h2>
+                        <div>
+                            <button 
+                                className="close-modal__button" 
+                                onClick={toggleModal}
+                            ><GrClose size='1.25rem' /></button>
                         </div>
-                        <EditProfessionalForm 
-                            professionals={professionals}
-                            index={index}
-                            onChange={onChange}
-                            onSubmit={onSubmit}
-                            onClick={onClick}
-                        />
                     </div>
+                    <EditProfessionalForm 
+                        professionals={professionals}
+                        index={index}
+                        onChange={onChange}
+                        onSubmit={onSubmit}
+                        onClick={onClick}
+                    />
                 </div>
-            </div> 
-            )}
-        </>
+            </div>
+        </div> 
     );
 };

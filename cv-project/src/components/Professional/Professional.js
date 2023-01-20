@@ -46,23 +46,31 @@ function Professional () {
         id: uuidv4(),
     });
 
-    const [modal, setModal] = useState(false);
-    const [addModal, setAddModal] = useState(false);
+    const [professionalModal, setProfessionalModal] = useState(false);
+    const [addProfessionalModal, setAddProfessionalModal] = useState(false);
 
     useEffect(() => {
-        if (modal || addModal) {
-            document.body.classList.add('active-modal');
+        if (professionalModal) {
+            document.body.classList.add('active-professional');
         } else {
-            document.body.classList.remove('active-modal');
+            document.body.classList.remove('active-professional');
         }
-    }, [modal, addModal]);
+    }, [professionalModal]);
     
+    useEffect(() => {
+        if (addProfessionalModal) {
+            document.body.classList.add('active-add-professional');
+        } else {
+            document.body.classList.remove('active-add-professional');
+        }
+    }, [addProfessionalModal]);
+
     function toggleModal() {
-        setModal(!modal);
+        setProfessionalModal(!professionalModal);
     };
 
     function toggleAddModal() {
-        setAddModal(!addModal);
+        setAddProfessionalModal(!addProfessionalModal);
     };
 
     function handleEditClicked(e) {
@@ -196,7 +204,6 @@ function Professional () {
             </div>
             <ProfessionalModal 
                 toggleModal={toggleModal}
-                modal={modal}
                 professionals={professionals}
                 index={index}
                 onChange={handleOnChange}
@@ -204,7 +211,6 @@ function Professional () {
                 onClick={handleDeleteClicked}
             />
             <AddProfessionalModal 
-                modal={addModal}
                 toggleModal={toggleAddModal}
                 addNewProfessional={addNewProfessional}
                 onChange={handleOnChangeForAddNewProfessional}
