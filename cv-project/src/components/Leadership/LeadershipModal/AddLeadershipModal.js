@@ -3,7 +3,6 @@ import AddLeadershipForm from "../Forms/AddLeadershipForm";
 import { GrClose } from "react-icons/gr";
 
 export default function AddLeadershipModal({ 
-    modal,
     toggleModal,
     addNewLeadership,
     onChange,
@@ -11,30 +10,26 @@ export default function AddLeadershipModal({
 }) {
     
     return (
-        <>
-            {modal && (
-            <div className="modal">
-                <div className="overlay" onClick={toggleModal}></div>
-                <div className="modal-content">
-                    <div className="modal-content__wrapper">
-                        <div className="modal-form__header">
-                            <h2 className="game-over_title">Add Leadership Exp</h2>
-                            <div>
-                                <button 
-                                    className="close-modal__button" 
-                                    onClick={toggleModal}
-                                ><GrClose size='1.25rem' /></button>
-                            </div>
+        <div className="modal add-leadership-section">
+            <div className="overlay" onClick={toggleModal}></div>
+            <div className="modal-content">
+                <div className="modal-content__wrapper">
+                    <div className="modal-form__header">
+                        <h2 className="game-over_title">Add Leadership Exp</h2>
+                        <div>
+                            <button 
+                                className="close-modal__button" 
+                                onClick={toggleModal}
+                            ><GrClose size='1.25rem' /></button>
                         </div>
-                        <AddLeadershipForm 
-                            addNewLeadership={addNewLeadership}
-                            onChange={onChange}
-                            onSubmit={onSubmit}
-                        />
                     </div>
+                    <AddLeadershipForm 
+                        addNewLeadership={addNewLeadership}
+                        onChange={onChange}
+                        onSubmit={onSubmit}
+                    />
                 </div>
-            </div> 
-            )}
-        </>
+            </div>
+        </div> 
     );
 };

@@ -41,23 +41,31 @@ function Leadership () {
         imageURL: '',
         id: uuidv4(),
     });
-    const [modal, setModal] = useState(false);
-    const [addModal, setAddModal] = useState(false);
+    const [leadershipModal, setLeadershipModal] = useState(false);
+    const [addLeadershipModal, setAddLeadershipModal] = useState(false);
 
     useEffect(() => {
-        if (modal || addModal) {
-            document.body.classList.add('active-modal');
+        if (leadershipModal) {
+            document.body.classList.add('active-leadership');
         } else {
-            document.body.classList.remove('active-modal');
+            document.body.classList.remove('active-leadership');
         }
-    }, [modal, addModal]);
+    }, [leadershipModal]);
     
+    useEffect(() => {
+        if (addLeadershipModal) {
+            document.body.classList.add('active-add-leadership');
+        } else {
+            document.body.classList.remove('active-add-leadership');
+        }
+    }, [addLeadershipModal]);
+
     function toggleModal() {
-        setModal(!modal);
+        setLeadershipModal(!leadershipModal);
     };
 
     function toggleAddModal() {
-        setAddModal(!addModal);
+        setAddLeadershipModal(!addLeadershipModal);
     };
 
     function handleEditClicked(e) {
@@ -185,7 +193,6 @@ function Leadership () {
                 })}
             </div>
             <LeadershipModal 
-                modal={modal}
                 toggleModal={toggleModal}
                 onChange={handleOnChange}
                 leaderships={leaderships}
@@ -194,7 +201,6 @@ function Leadership () {
                 onClick={handleDeleteClicked}
             />
             <AddLeadershipModal 
-                modal={addModal}
                 toggleModal={toggleAddModal}
                 addNewLeadership={addNewLeadership}
                 onChange={handleOnChangeForAddNewLeadership}
