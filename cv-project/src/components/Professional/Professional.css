@@ -22,7 +22,7 @@
     border-bottom: 1px solid rgb(230, 230, 230);
     width: 100%;
     max-height: 9.75rem;
-    position: relative;
+    /* position: relative; */
 }
 
 .professional-exp__details.removeBorder {
@@ -30,7 +30,7 @@
     border: none;
     width: 100%;
     max-height: 9.75rem;
-    position: relative;
+    /* position: relative; */
 }
 
 .position {
