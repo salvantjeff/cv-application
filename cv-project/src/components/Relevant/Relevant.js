@@ -35,23 +35,31 @@ function Relevant () {
         id: uuidv4(),
     });
     
-    const [modal, setModal] = useState(false);
-    const [addModal, setAddModal] = useState(false);
+    const [relevantModal, setRelevantModal] = useState(false);
+    const [addRelevantModal, setAddRelevantModal] = useState(false);
     
     useEffect(() => {
-        if (modal || addModal) {
-            document.body.classList.add('active-modal');
+        if (relevantModal) {
+            document.body.classList.add('active-relevant');
         } else {
-            document.body.classList.remove('active-modal');
+            document.body.classList.remove('active-relevant');
         }
-    }, [modal, addModal]);
+    }, [relevantModal]);
     
+    useEffect(() => {
+        if (addRelevantModal) {
+            document.body.classList.add('active-add-relevant');
+        } else {
+            document.body.classList.remove('active-add-relevant');
+        }
+    }, [addRelevantModal]);
+
     function toggleModal() {
-        setModal(!modal);
+        setRelevantModal(!relevantModal);
     };
 
     function toggleAddModal() {
-        setAddModal(!addModal);
+        setAddRelevantModal(!addRelevantModal);
     };
 
     function handleEditClicked(e) {
@@ -176,7 +184,6 @@ function Relevant () {
                 })}
             </div>
             <RelevantModal 
-                modal={modal}
                 toggleModal={toggleModal}
                 onChange={handleOnChange}
                 relevantExps={relevantExps}
@@ -185,7 +192,6 @@ function Relevant () {
                 onClick={handleDeleteClicked}
             />
             <AddRelevantModal 
-                modal={addModal}
                 toggleModal={toggleAddModal}
                 addNewRelevantExp={addNewRelevantExp}
                 onChange={handleOnChangeForAddNewRelevantExp}

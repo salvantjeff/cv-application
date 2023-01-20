@@ -49,3 +49,25 @@
     padding-right: 1rem;
     background-color: lightgreen;
 }
+
+.active-add-relevant .modal.add-relevant-section {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.add-relevant-section {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+
+.active-relevant .modal.relevant-section {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.relevant-section {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
