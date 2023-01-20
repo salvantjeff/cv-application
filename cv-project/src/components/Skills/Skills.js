@@ -110,7 +110,7 @@ function Skills () {
             <div>
                 <div className="section-heading">
                     <h4 className='skills-title'>Technical Skills</h4>
-                    <div className="skills-edit-section">
+                    <div className="skills-edit-section edit-pencil">
                         <img 
                             className="edit-section" 
                             src={editPencil} 

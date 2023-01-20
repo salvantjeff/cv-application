@@ -157,7 +157,7 @@ function Relevant () {
                         >
                             <div className="section-card rel">
                                 <p className="project-name">{experience.project}</p>
-                                <div className="edit-section-box rel">
+                                <div className="edit-section-box rel edit-pencil">
                                     <img 
                                         className="edit-section rel" 
                                         src={editPencil} 

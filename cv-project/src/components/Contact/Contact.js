@@ -87,7 +87,7 @@ function Contact () {
         <div className="contact">
             <div className="section-heading">
                 <h4 className="contact-title">Contact</h4>
-                <div className="contact-edit-section">
+                <div className="contact-edit-section edit-pencil">
                     <img 
                         className="edit-section" 
                         src={editPencil} 

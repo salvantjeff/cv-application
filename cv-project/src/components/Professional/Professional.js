@@ -173,7 +173,7 @@ function Professional () {
                             <div className={`professional-exp__details ${borderStatus}`}>
                                 <div className="section-card">
                                     <p className='position'>{professional.position}</p>
-                                    <div className="edit-section-box">
+                                    <div className="edit-section-box edit-pencil">
                                         <img 
                                             className="edit-section" 
                                             src={editPencil} 

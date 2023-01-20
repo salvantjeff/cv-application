@@ -166,7 +166,7 @@ function Leadership () {
                             <div className={`leadership-details ${borderStatus}`}>
                                 <div className="section-card">
                                     <p className="leadership-organization">{currExp.organization}</p>
-                                    <div className="edit-section-box">
+                                    <div className="edit-section-box edit-pencil">
                                         <img 
                                             className="edit-section" 
                                             src={editPencil} 

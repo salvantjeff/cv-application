@@ -169,7 +169,7 @@ function Education () {
                         
                             <div className="section-card">
                                 <p className='university'>{currEd.university}</p>
-                                <div className="edit-section-box">
+                                <div className="edit-section-box edit-pencil">
                                     <img 
                                         className="edit-section" 
                                         src={editPencil} 
