@@ -1,0 +1,3 @@
+1. Add fade in fade out animation for form appearing and closing
+2. Persistent data: firebase or local storage
+3. User creates an account - firebase
