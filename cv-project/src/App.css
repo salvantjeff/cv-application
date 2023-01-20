@@ -73,3 +73,7 @@
     display: grid;
     gap: 1rem;
 }
+
+.close-modal__button {
+    cursor: pointer;
+}
