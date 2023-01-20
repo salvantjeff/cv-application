@@ -1,5 +1,6 @@
 import React from "react";
 import EditContactForm from "../Forms/EditContactForm";
+import { GrClose } from 'react-icons/gr';
 
 export default function ContactModal({ 
     modal,
@@ -12,17 +13,17 @@ export default function ContactModal({
     return (
         <>
             {modal && (
-            <div className="modal prof">
-                <div className="overlay prof" onClick={toggleModal}></div>
-                <div className="modal-content prof">
-                    <div className="modal-content__wrapper prof">
-                        <div className="modal-form__header prof">
-                            <h2 className="game-over_title prof">Leadership Exp info</h2>
+            <div className="modal">
+                <div className="overlay" onClick={toggleModal}></div>
+                <div className="modal-content">
+                    <div className="modal-content__wrapper">
+                        <div className="modal-form__header">
+                            <h2 className="game-over_title">Contact Info</h2>
                             <div>
                                 <button 
                                     className="close-modal__button" 
                                     onClick={toggleModal}
-                                >X</button>
+                                ><GrClose size='1.25rem' /></button>
                             </div>
                         </div>
                         <EditContactForm 

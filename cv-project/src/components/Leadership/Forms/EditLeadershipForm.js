@@ -1,5 +1,6 @@
 import LeadershipFormItem from "./FormItem/LeadershipFormItem";
 import LeadershipTextAreaItem from "./FormItem/LeadershipTextAreaItem";
+import { BsFillTrashFill } from 'react-icons/bs';
 
 function EditLeadershipForm ({ 
     leaderships, 
@@ -70,7 +71,7 @@ function EditLeadershipForm ({
                     type="button" 
                     className="delete-button"
                     onClick={onClick}
-                >Delete</button>
+                ><BsFillTrashFill /> <p>Delete</p></button>
                 <button type="submit" className="save-button">Save</button>
             </div>
         </form>

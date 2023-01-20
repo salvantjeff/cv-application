@@ -1,5 +1,6 @@
 import React from "react";
 import EditEducationForm from "../Forms/EditEducationForm";
+import { GrClose } from 'react-icons/gr';
 
 export default function EducationModal({ 
     modal,
@@ -24,7 +25,7 @@ export default function EducationModal({
                                 <button 
                                     className="close-modal__button" 
                                     onClick={toggleModal}
-                                >X</button>
+                                ><GrClose size='1.25rem' /></button>
                             </div>
                         </div>
                         <EditEducationForm 

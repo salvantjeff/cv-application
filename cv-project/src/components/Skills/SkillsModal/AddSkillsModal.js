@@ -1,5 +1,6 @@
 import React from "react";
 import AddSkillsForm from "../Forms/AddSkillsForm";
+import { GrClose } from "react-icons/gr";
 
 export default function AddSkillsModal({ 
     modal,
@@ -21,7 +22,7 @@ export default function AddSkillsModal({
                                 <button 
                                     className="close-modal__button" 
                                     onClick={toggleModal}
-                                >X</button>
+                                ><GrClose size='1.25rem' /></button>
                             </div>
                         </div>
                         <AddSkillsForm 

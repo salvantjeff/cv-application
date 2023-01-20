@@ -1,6 +1,7 @@
 import React from "react";
 import EditProfessionalForm from "../Forms/EditProfessionalForm";
 import './ProfessionalModal.css';
+import { GrClose } from "react-icons/gr";
 
 export default function ProfessionalModal({ 
     modal,
@@ -25,7 +26,7 @@ export default function ProfessionalModal({
                                 <button 
                                     className="close-modal__button" 
                                     onClick={toggleModal}
-                                >X</button>
+                                ><GrClose size='1.25rem' /></button>
                             </div>
                         </div>
                         <EditProfessionalForm 

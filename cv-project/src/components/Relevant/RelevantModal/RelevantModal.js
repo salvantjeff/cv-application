@@ -1,6 +1,7 @@
 import React from "react";
 import EditRelevantForm from "../Forms/EditRelevantForm";
 import './RelevantModal.css';
+import { GrClose } from "react-icons/gr";
 
 export default function RelevantModal({ 
     modal,
@@ -25,7 +26,7 @@ export default function RelevantModal({
                                 <button 
                                     className="close-modal__button" 
                                     onClick={toggleModal}
-                                >X</button>
+                                ><GrClose size='1.25rem' /></button>
                             </div>
                         </div>
                         <EditRelevantForm 

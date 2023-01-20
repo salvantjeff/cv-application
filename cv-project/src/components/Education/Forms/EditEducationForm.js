@@ -1,4 +1,5 @@
 import EducationFormItem from "./FormItem/EducationFormItem";
+import { BsFillTrashFill } from 'react-icons/bs';
 
 function EditEducationForm ({ 
     education, 
@@ -67,7 +68,7 @@ function EditEducationForm ({
                     type="button" 
                     className="delete-button"
                     onClick={onClick}
-                >Delete</button>
+                ><BsFillTrashFill /> <p>Delete</p></button>
                 <button type="submit" className="save-button">Save</button>
             </div>
         </form>

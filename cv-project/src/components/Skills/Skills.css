@@ -25,3 +25,11 @@
     object-fit: cover;
     object-position: center;
 }
+
+/* .overlay.skills-section {
+    z-index: 0;
+}
+
+.modal-content__wrapper.skills-section {
+    z-index: 3;
+} */

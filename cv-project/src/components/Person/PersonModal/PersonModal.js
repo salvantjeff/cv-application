@@ -1,6 +1,7 @@
 import React from "react";
 import EditPersonForm from "../Forms/EditPersonForm";
 import "./PersonModal.css";
+import { GrClose } from "react-icons/gr";
 
 export default function PersonModal({ 
     modal, 
@@ -18,12 +19,12 @@ export default function PersonModal({
                 <div className="modal-content">
                     <div className="modal-content__wrapper">
                         <div className="modal-form__header">
-                            <h2 className="game-over_title">Person info</h2>
+                            <h2 className="game-over_title">Profile</h2>
                             <div>
                                 <button 
                                     className="close-modal__button" 
                                     onClick={toggleModal}
-                                >X</button>
+                                ><GrClose size='1.25rem' /></button>
                             </div>
                         </div>
                         <EditPersonForm 
