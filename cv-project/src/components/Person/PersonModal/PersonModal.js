@@ -19,7 +19,7 @@ export default function PersonModal({
                 <div className="modal-content">
                     <div className="modal-content__wrapper">
                         <div className="modal-form__header">
-                            <h2 className="game-over_title">Person info</h2>
+                            <h2 className="game-over_title">Profile</h2>
                             <div>
                                 <button 
                                     className="close-modal__button" 
