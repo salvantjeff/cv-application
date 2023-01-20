@@ -1,5 +1,6 @@
 import ProfessionalFormItem from "./FormItem/ProfessionalFormItem";
 import ProfessionalTextAreaItem from "./FormItem/ProfessionalTextAreaItem";
+import { BsFillTrashFill } from 'react-icons/bs';
 
 function EditProfessionalForm ({ 
     professionals, 
@@ -78,7 +79,7 @@ function EditProfessionalForm ({
                     type="button" 
                     className="delete-button"
                     onClick={onClick}
-                >Delete</button>
+                ><BsFillTrashFill /> <p>Delete</p></button>
                 <button type="submit" className="save-button">Save</button>
             </div>
         </form>
